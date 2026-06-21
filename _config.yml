@@ -2,6 +2,12 @@ title: "IT'S YOUR FUTURE"
 description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi e simulazioni tecniche."
 lang: it
 
+# Testi hero homepage — modificabili da qui
+hero:
+  kicker: "Percorsi ludico-didattici ITS"
+  title: "IT'S YOUR FUTURE"
+  description: "Micro-attività da 3–7 minuti per scoprire i corsi ITS attraverso quiz, missioni, escape game rapidi e simulazioni tecniche. Scegli un percorso e immergiti nel ruolo del tecnico superiore."
+
 logo:
   src: "/img/logo-placeholder.png"
   alt: "IT'S YOUR FUTURE"

@@ -14,7 +14,7 @@
     decoding="async"
   >
   {% unless include.hide_text %}
-  <span class="site-logo__text">IT'S YOUR FUTURE</span>
+  <span class="site-logo__text">{{ site.hero.title | default: site.title }}</span>
   {% endunless %}
 {% if include.link == false %}
 </div>
