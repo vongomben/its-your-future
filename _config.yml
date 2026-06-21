@@ -1,8 +1,10 @@
 title: "IT'S YOUR FUTURE"
 description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi e simulazioni tecniche."
 lang: it
-baseurl: ""
-url: ""
+# Necessario per GitHub Pages (project site): senza baseurl il CSS viene cercato
+# su https://vongomben.github.io/assets/... invece che su .../its-your-future/assets/...
+baseurl: "/its-your-future"
+url: "https://vongomben.github.io"
 
 markdown: kramdown
 kramdown:

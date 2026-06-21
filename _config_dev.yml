@@ -1,0 +1,5 @@
+# Override locale: usa con
+#   bundle exec jekyll serve --config _config.yml,_config_dev.yml
+# per aprire http://localhost:4000/ senza il prefisso /its-your-future
+baseurl: ""
+url: "http://localhost:4000"
