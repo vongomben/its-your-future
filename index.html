@@ -15,7 +15,7 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
 </section>
 
 <div class="iyf-note">
-  <strong>Come funziona:</strong> ogni scheda presenta un'attività ludico-didattica collegata a un corso ITS. Clicca su <em>Scopri l'attività</em> per leggere scenario, prove, codice finale e competenze.
+  <strong>{{ site.come_funziona.titolo }}</strong> {{ site.come_funziona.testo }}
 </div>
 
 <section class="iyf-section" id="progetti">
@@ -27,14 +27,16 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
 
   <div class="iyf-section-group">
     <h3 class="iyf-section-group__title">
-      {% include logo-categoria.html gruppo="meccatronica" size="md" %}
-      <span>{{ site.data.gruppi.meccatronica.nome }}</span>
+      {% include logo-categoria.html gruppo="meccatronica" size="md" link=true %}
+      <a class="iyf-section-group__link" href="{{ site.data.gruppi.meccatronica.contatti_url }}" target="_blank" rel="noopener">
+        {{ site.data.gruppi.meccatronica.nome }}
+      </a>
     </h3>
     <div class="iyf-grid">
       {% for p in meccatronica %}
       <article class="iyf-card">
         <div class="iyf-card__brand">
-          {% include logo-categoria.html gruppo=p.gruppo size="sm" %}
+          {% include logo-categoria.html gruppo=p.gruppo size="sm" link=true %}
         </div>
         <div class="iyf-card__meta">
           <span class="iyf-badge">{{ p.area }}</span>
@@ -50,14 +52,16 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
 
   <div class="iyf-section-group">
     <h3 class="iyf-section-group__title">
-      {% include logo-categoria.html gruppo="digitale" size="md" %}
-      <span>{{ site.data.gruppi.digitale.nome }}</span>
+      {% include logo-categoria.html gruppo="digitale" size="md" link=true %}
+      <a class="iyf-section-group__link" href="{{ site.data.gruppi.digitale.contatti_url }}" target="_blank" rel="noopener">
+        {{ site.data.gruppi.digitale.nome }}
+      </a>
     </h3>
     <div class="iyf-grid">
       {% for p in digitale %}
       <article class="iyf-card">
         <div class="iyf-card__brand">
-          {% include logo-categoria.html gruppo=p.gruppo size="sm" %}
+          {% include logo-categoria.html gruppo=p.gruppo size="sm" link=true %}
         </div>
         <div class="iyf-card__meta">
           <span class="iyf-badge iyf-badge--blue">{{ p.area }}</span>
@@ -80,7 +84,7 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
     {% for p in progetti_ordinati %}
     <article class="iyf-card">
       <div class="iyf-card__brand">
-        {% include logo-categoria.html gruppo=p.gruppo size="sm" %}
+        {% include logo-categoria.html gruppo=p.gruppo size="sm" link=true %}
       </div>
       <span class="iyf-badge{% if p.gruppo == 'digitale' %} iyf-badge--blue{% endif %}">{{ p.its }} — {{ p.area }}</span>
       <h3>{{ p.corso }}</h3>

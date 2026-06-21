@@ -2,7 +2,9 @@ meccatronica:
   nome: "ITS La Spezia — Meccatronica"
   logo: "/img/logo_its_meccatronica.png"
   alt: "ITS Meccatronica La Spezia"
+  contatti_url: "https://www.itslaspezia.it/contatti.html"
 digitale:
   nome: "ITS Accademia Digitale Liguria"
   logo: "/img/its-accademi-digitla.svg"
   alt: "ITS Accademia Digitale Liguria"
+  contatti_url: "https://www.accademiadigitaleliguria.it/contatti/"

@@ -1,6 +1,9 @@
 {% assign info = site.data.gruppi[include.gruppo] %}
 {% if info %}
 {% assign size = include.size | default: "sm" %}
+{% if include.link == true and info.contatti_url %}
+<a class="iyf-cat-logo-link" href="{{ info.contatti_url }}" target="_blank" rel="noopener" aria-label="Contatti {{ info.nome }}">
+{% endif %}
 <img
   src="{{ info.logo | relative_url }}"
   alt="{{ info.alt }}"
@@ -10,4 +13,7 @@
   decoding="async"
   loading="lazy"
 >
+{% if include.link == true and info.contatti_url %}
+</a>
+{% endif %}
 {% endif %}

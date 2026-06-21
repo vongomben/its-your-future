@@ -69,6 +69,18 @@
     border-left: 4px solid $accent;
   }
 
+  &__link {
+    color: $brand;
+    text-decoration: none;
+    font-weight: 700;
+
+    &:hover {
+      color: $brand-light;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+  }
+
   h3:not(.iyf-section-group__title) {
     color: $brand;
     font-size: 1.1rem;
@@ -94,6 +106,18 @@
 .iyf-cat-logo--md {
   height: 2.1rem;
   max-width: 7rem;
+}
+
+.iyf-cat-logo-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  border-radius: $radius-sm;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 // Griglia card
