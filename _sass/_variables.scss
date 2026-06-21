@@ -1,0 +1,22 @@
+// Palette principale: blu istituzionale + verde accento
+$brand:       #133b7a;
+$brand-light: #1b65c9;
+$accent:      #00a36c;
+$accent-dark: #096342;
+$accent-soft: #e7f5ee;
+
+$paper:       #ffffff;
+$soft:        #f4f7fb;
+$ink:         #172033;
+$muted:       #5d6b82;
+$border:      #dfe7f2;
+
+$radius-sm:   0.5rem;
+$radius-md:   1rem;
+$radius-lg:   1.5rem;
+
+$shadow-card: 0 6px 18px rgba(15, 33, 65, 0.06);
+$shadow-hover: 0 12px 28px rgba(15, 33, 65, 0.12);
+
+$font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$max-width: 72rem;

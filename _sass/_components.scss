@@ -1,0 +1,328 @@
+// Hero
+.iyf-hero {
+  padding: 3rem 2rem;
+  border-radius: $radius-lg;
+  background: linear-gradient(135deg, $brand, $brand-light);
+  color: $paper;
+  margin: 1.5rem 0 2.5rem;
+
+  h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: $paper;
+  }
+
+  p {
+    max-width: 70ch;
+    font-size: 1.1rem;
+    opacity: 0.95;
+  }
+}
+
+.iyf-kicker {
+  color: rgba($paper, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+
+  &--dark {
+    color: $muted;
+  }
+}
+
+// Sezioni
+.iyf-section {
+  margin: 2.5rem 0;
+
+  > h2 {
+    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+    margin-bottom: 0.5rem;
+    border-bottom: 3px solid $accent;
+    display: inline-block;
+    padding-bottom: 0.25rem;
+  }
+
+  > .iyf-section-desc {
+    color: $muted;
+    max-width: 65ch;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.iyf-section-group {
+  margin-bottom: 2rem;
+
+  h3 {
+    color: $brand;
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+    padding-left: 0.75rem;
+    border-left: 4px solid $accent;
+  }
+}
+
+// Griglia card
+.iyf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.iyf-card {
+  background: $paper;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  padding: 1.25rem;
+  box-shadow: $shadow-card;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow-hover;
+  }
+
+  h3 {
+    margin: 0.5rem 0 0.75rem;
+    font-size: 1.15rem;
+  }
+
+  p {
+    color: $muted;
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+}
+
+.iyf-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.iyf-badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: $accent-soft;
+  color: $accent-dark;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.3;
+
+  &--blue {
+    background: rgba($brand-light, 0.12);
+    color: $brand;
+  }
+}
+
+.iyf-tag {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: $radius-sm;
+  background: $soft;
+  color: $muted;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.iyf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  background: $brand;
+  color: $paper !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  align-self: flex-start;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: $brand-light;
+    color: $paper !important;
+  }
+
+  &--accent {
+    background: $accent;
+
+    &:hover {
+      background: darken($accent, 8%);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    border: 2px solid $brand;
+    color: $brand !important;
+
+    &:hover {
+      background: $brand;
+      color: $paper !important;
+    }
+  }
+}
+
+.iyf-note {
+  background: $paper;
+  border-left: 4px solid $accent;
+  border-radius: $radius-md;
+  padding: 1rem 1.25rem;
+  color: $ink;
+  box-shadow: $shadow-card;
+}
+
+// Pagina progetto
+.progetto-header {
+  padding: 2rem;
+  border-radius: $radius-lg;
+  background: linear-gradient(135deg, $brand 0%, mix($brand-light, $accent, 70%) 100%);
+  color: $paper;
+  margin: 1.5rem 0 2rem;
+
+  h1 {
+    color: $paper;
+    margin: 0.5rem 0;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+  }
+
+  .iyf-kicker {
+    margin: 0;
+  }
+
+  .progetto-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+
+    span {
+      background: rgba($paper, 0.15);
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+    }
+  }
+}
+
+.progetto-content {
+  background: $paper;
+  border-radius: $radius-md;
+  padding: 2rem;
+  box-shadow: $shadow-card;
+
+  h2 {
+    color: $brand;
+    margin-top: 2rem;
+    font-size: 1.35rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    color: $accent-dark;
+    font-size: 1.05rem;
+    margin-top: 1.5rem;
+  }
+
+  blockquote {
+    margin: 1rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid $accent;
+    background: $accent-soft;
+    border-radius: 0 $radius-sm $radius-sm 0;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+
+  th, td {
+    border: 1px solid $border;
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background: $soft;
+    color: $brand;
+    font-weight: 700;
+  }
+
+  tr:nth-child(even) td {
+    background: rgba($soft, 0.5);
+  }
+}
+
+.progetto-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.prova-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+
+  li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid $border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    strong {
+      color: $brand;
+    }
+  }
+}
+
+.competenze-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+
+  li {
+    background: $accent-soft;
+    color: $accent-dark;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+}
+
+.codice-finale {
+  display: inline-block;
+  font-family: "Courier New", monospace;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: $brand;
+  background: $soft;
+  padding: 0.5rem 1.25rem;
+  border-radius: $radius-sm;
+  border: 2px dashed $accent;
+  margin: 0.5rem 0;
+}

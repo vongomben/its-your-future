@@ -1,0 +1,10 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-logo" href="{{ '/' | relative_url }}">IT'S YOUR FUTURE</a>
+    <nav class="site-nav" aria-label="Navigazione principale">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="is-active"{% endif %}>Home</a>
+      <a href="{{ '/' | relative_url }}#progetti">Progetti</a>
+      <a href="{{ '/' | relative_url }}#corsi">Corsi ITS</a>
+    </nav>
+  </div>
+</header>

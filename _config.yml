@@ -1,0 +1,39 @@
+title: "IT'S YOUR FUTURE"
+description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi e simulazioni tecniche."
+lang: it
+baseurl: ""
+url: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+
+plugins: []
+
+collections:
+  progetti:
+    output: true
+    permalink: /progetti/:name/
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: progetti
+    values:
+      layout: progetto
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - its-your-future-jekyll-template.md
+  - vendor

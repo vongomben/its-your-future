@@ -1,0 +1,74 @@
+---
+layout: default
+title: "IT'S YOUR FUTURE"
+permalink: /
+description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi e simulazioni tecniche per l'orientamento."
+---
+
+<section class="iyf-hero">
+  <p class="iyf-kicker">Percorsi ludico-didattici ITS</p>
+  <h1>IT'S YOUR FUTURE</h1>
+  <p>Micro-attività da 3–7 minuti per scoprire i corsi ITS attraverso quiz, missioni, escape game rapidi e simulazioni tecniche. Scegli un percorso e immergiti nel ruolo del tecnico superiore.</p>
+</section>
+
+<div class="iyf-note">
+  <strong>Come funziona:</strong> ogni scheda presenta un'attività ludico-didattica collegata a un corso ITS. Clicca su <em>Scopri l'attività</em> per leggere scenario, prove, codice finale e competenze.
+</div>
+
+<section class="iyf-section" id="progetti">
+  <h2>Progetti educativi</h2>
+  <p class="iyf-section-desc">Sette unità didattiche pronte per stand, open day e orientamento: dalla meccatronica al digitale.</p>
+
+  {% assign meccatronica = site.progetti | where: "gruppo", "meccatronica" | sort: "order" %}
+  {% assign digitale = site.progetti | where: "gruppo", "digitale" | sort: "order" %}
+
+  <div class="iyf-section-group">
+    <h3>ITS La Spezia — Meccatronica</h3>
+    <div class="iyf-grid">
+      {% for p in meccatronica %}
+      <article class="iyf-card">
+        <div class="iyf-card__meta">
+          <span class="iyf-badge">{{ p.area }}</span>
+          <span class="iyf-tag">{{ p.durata }}</span>
+        </div>
+        <h3>{{ p.titolo_attivita }}</h3>
+        <p>{{ p.descrizione_breve }}</p>
+        <a class="iyf-btn" href="{{ p.url | relative_url }}">Scopri l'attività &rarr;</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="iyf-section-group">
+    <h3>ITS Accademia Digitale Liguria</h3>
+    <div class="iyf-grid">
+      {% for p in digitale %}
+      <article class="iyf-card">
+        <div class="iyf-card__meta">
+          <span class="iyf-badge iyf-badge--blue">{{ p.area }}</span>
+          <span class="iyf-tag">{{ p.durata }}</span>
+        </div>
+        <h3>{{ p.titolo_attivita }}</h3>
+        <p>{{ p.descrizione_breve }}</p>
+        <a class="iyf-btn" href="{{ p.url | relative_url }}">Scopri l'attività &rarr;</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="iyf-section" id="corsi">
+  <h2>Corsi collegati</h2>
+  <p class="iyf-section-desc">Ogni attività è legata a un corso tecnico superiore della rete ITS ligustica.</p>
+  <div class="iyf-grid">
+    {% for p in site.progetti %}
+    <article class="iyf-card">
+      <span class="iyf-badge{% if p.gruppo == 'digitale' %} iyf-badge--blue{% endif %}">{{ p.its }} — {{ p.area }}</span>
+      <h3>{{ p.corso }}</h3>
+      {% if p.corso_url %}
+      <a class="iyf-btn iyf-btn--outline" href="{{ p.corso_url }}" target="_blank" rel="noopener">Apri scheda corso</a>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>

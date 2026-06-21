@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: $font-sans;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $ink;
+  background: $soft;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $brand-light;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+
+  &:hover {
+    color: $brand;
+  }
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  color: $ink;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+code {
+  font-size: 0.9em;
+  background: $soft;
+  padding: 0.15em 0.4em;
+  border-radius: $radius-sm;
+}

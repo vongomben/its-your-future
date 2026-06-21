@@ -1,0 +1,70 @@
+.site-header {
+  background: $paper;
+  border-bottom: 1px solid $border;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header__inner {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-logo {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: $brand;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+
+  &:hover {
+    color: $brand-light;
+  }
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+
+  a {
+    color: $muted;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+
+    &:hover,
+    &.is-active {
+      color: $brand;
+    }
+  }
+}
+
+.site-main {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.site-footer {
+  background: $brand;
+  color: rgba($paper, 0.9);
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+
+  a {
+    color: lighten($accent, 20%);
+  }
+
+  p {
+    margin: 0;
+  }
+}

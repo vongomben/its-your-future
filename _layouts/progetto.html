@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="progetto">
+  <header class="progetto-header">
+    <p class="iyf-kicker">{{ page.its }} · {{ page.area }}</p>
+    <h1>{{ page.titolo_attivita }}</h1>
+    <p>{{ page.descrizione_breve }}</p>
+    <div class="progetto-meta">
+      <span>⏱ {{ page.durata }}</span>
+      <span>🎯 {{ page.modalita }}</span>
+      {% if page.codice_finale %}<span>🔑 Codice: {{ page.codice_finale }}</span>{% endif %}
+    </div>
+  </header>
+
+  <div class="progetto-content">
+    {{ content }}
+  </div>
+
+  <nav class="progetto-nav">
+    <a class="iyf-btn iyf-btn--outline" href="{{ '/' | relative_url }}#progetti">&larr; Tutti i progetti</a>
+    {% if page.corso_url %}
+    <a class="iyf-btn iyf-btn--accent" href="{{ page.corso_url }}" target="_blank" rel="noopener">Scheda corso ITS</a>
+    {% endif %}
+  </nav>
+</article>
