@@ -1,0 +1,13 @@
+{% assign info = site.data.gruppi[include.gruppo] %}
+{% if info %}
+{% assign size = include.size | default: "sm" %}
+<img
+  src="{{ info.logo | relative_url }}"
+  alt="{{ info.alt }}"
+  class="iyf-cat-logo iyf-cat-logo--{{ size }}"
+  width="120"
+  height="36"
+  decoding="async"
+  loading="lazy"
+>
+{% endif %}

@@ -1,6 +1,6 @@
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="site-logo" href="{{ '/' | relative_url }}">IT'S YOUR FUTURE</a>
+    {% include logo-brand.html size="header" %}
     <nav class="site-nav" aria-label="Navigazione principale">
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="is-active"{% endif %}>Home</a>
       <a href="{{ '/' | relative_url }}#progetti">Progetti</a>

@@ -6,6 +6,9 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
 ---
 
 <section class="iyf-hero">
+  <div class="iyf-hero__brand">
+    {% include logo-brand.html size="hero" hide_text=true link=false %}
+  </div>
   <p class="iyf-kicker">Percorsi ludico-didattici ITS</p>
   <h1>IT'S YOUR FUTURE</h1>
   <p>Micro-attività da 3–7 minuti per scoprire i corsi ITS attraverso quiz, missioni, escape game rapidi e simulazioni tecniche. Scegli un percorso e immergiti nel ruolo del tecnico superiore.</p>
@@ -23,10 +26,16 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
   {% assign digitale = site.progetti | where: "gruppo", "digitale" | sort: "order" %}
 
   <div class="iyf-section-group">
-    <h3>ITS La Spezia — Meccatronica</h3>
+    <h3 class="iyf-section-group__title">
+      {% include logo-categoria.html gruppo="meccatronica" size="md" %}
+      <span>{{ site.data.gruppi.meccatronica.nome }}</span>
+    </h3>
     <div class="iyf-grid">
       {% for p in meccatronica %}
       <article class="iyf-card">
+        <div class="iyf-card__brand">
+          {% include logo-categoria.html gruppo=p.gruppo size="sm" %}
+        </div>
         <div class="iyf-card__meta">
           <span class="iyf-badge">{{ p.area }}</span>
           <span class="iyf-tag">{{ p.durata }}</span>
@@ -40,10 +49,16 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
   </div>
 
   <div class="iyf-section-group">
-    <h3>ITS Accademia Digitale Liguria</h3>
+    <h3 class="iyf-section-group__title">
+      {% include logo-categoria.html gruppo="digitale" size="md" %}
+      <span>{{ site.data.gruppi.digitale.nome }}</span>
+    </h3>
     <div class="iyf-grid">
       {% for p in digitale %}
       <article class="iyf-card">
+        <div class="iyf-card__brand">
+          {% include logo-categoria.html gruppo=p.gruppo size="sm" %}
+        </div>
         <div class="iyf-card__meta">
           <span class="iyf-badge iyf-badge--blue">{{ p.area }}</span>
           <span class="iyf-tag">{{ p.durata }}</span>
@@ -61,8 +76,12 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
   <h2>Corsi collegati</h2>
   <p class="iyf-section-desc">Ogni attività è legata a un corso tecnico superiore della rete ITS ligustica.</p>
   <div class="iyf-grid">
-    {% for p in site.progetti %}
+    {% assign progetti_ordinati = site.progetti | sort: "order" %}
+    {% for p in progetti_ordinati %}
     <article class="iyf-card">
+      <div class="iyf-card__brand">
+        {% include logo-categoria.html gruppo=p.gruppo size="sm" %}
+      </div>
       <span class="iyf-badge{% if p.gruppo == 'digitale' %} iyf-badge--blue{% endif %}">{{ p.its }} — {{ p.area }}</span>
       <h3>{{ p.corso }}</h3>
       {% if p.corso_url %}

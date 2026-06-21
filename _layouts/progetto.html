@@ -3,6 +3,9 @@ layout: default
 ---
 <article class="progetto">
   <header class="progetto-header">
+    <div class="progetto-header__brand">
+      {% include logo-categoria.html gruppo=page.gruppo size="md" %}
+    </div>
     <p class="iyf-kicker">{{ page.its }} · {{ page.area }}</p>
     <h1>{{ page.titolo_attivita }}</h1>
     <p>{{ page.descrizione_breve }}</p>

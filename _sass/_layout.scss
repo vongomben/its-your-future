@@ -17,6 +17,9 @@
 }
 
 .site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-weight: 800;
   font-size: 1.05rem;
   color: $brand;
@@ -26,6 +29,36 @@
   &:hover {
     color: $brand-light;
   }
+
+  &--static {
+    pointer-events: none;
+  }
+}
+
+.site-logo__text {
+  white-space: nowrap;
+}
+
+.site-logo__img,
+.iyf-brand-logo {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
+
+.iyf-brand-logo--header {
+  height: 2.25rem;
+}
+
+.iyf-brand-logo--hero {
+  height: 4.5rem;
+  filter: brightness(0) invert(1);
+}
+
+.iyf-brand-logo--footer {
+  height: 2rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
 }
 
 .site-nav {
@@ -67,4 +100,10 @@
   p {
     margin: 0;
   }
+}
+
+.site-footer__brand {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
 }

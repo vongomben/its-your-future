@@ -1,0 +1,23 @@
+{% assign cls = include.class | default: "site-logo__img" %}
+{% assign size = include.size | default: "header" %}
+{% if include.link == false %}
+<div class="site-logo site-logo--static">
+{% else %}
+<a class="site-logo" href="{{ '/' | relative_url }}">
+{% endif %}
+  <img
+    src="{{ site.logo.src | relative_url }}"
+    alt="{{ site.logo.alt }}"
+    class="{{ cls }} iyf-brand-logo iyf-brand-logo--{{ size }}"
+    width="180"
+    height="54"
+    decoding="async"
+  >
+  {% unless include.hide_text %}
+  <span class="site-logo__text">IT'S YOUR FUTURE</span>
+  {% endunless %}
+{% if include.link == false %}
+</div>
+{% else %}
+</a>
+{% endif %}
