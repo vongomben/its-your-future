@@ -2,7 +2,7 @@
 layout: default
 title: "IT'S YOUR FUTURE"
 permalink: /
-description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi e simulazioni tecniche per l'orientamento."
+description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per orientamento, open day e installazioni interattive."
 ---
 
 <section class="iyf-hero">
@@ -18,9 +18,43 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
   <strong>{{ site.come_funziona.titolo }}</strong> {{ site.come_funziona.testo }}
 </div>
 
+<section class="iyf-section" id="eventi">
+  <h2>Eventi</h2>
+  <p class="iyf-section-desc">Calendario delle principali iniziative di orientamento e divulgazione in cui è prevista la presenza del progetto.</p>
+
+  <div class="iyf-data-panel">
+    <div class="iyf-table-wrap">
+      <table class="iyf-eventi-table">
+        <thead>
+          <tr>
+            <th>Evento</th>
+            <th>Luogo</th>
+            <th>Periodo</th>
+            <th>Tema</th>
+            <th>spazio</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% assign eventi_ordinati = site.data.eventi | sort: "order" %}
+          {% for e in eventi_ordinati %}
+          <tr>
+            <td><strong>{{ e.titolo }}</strong></td>
+            <td>{{ e.luogo }}</td>
+            <td>{{ e.periodo }}</td>
+            <td>{% if e.tema %}{{ e.tema }}{% else %}—{% endif %}</td>
+            <td>{% if e.spazio %}{{ e.spazio }}{% else %}—{% endif %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <section class="iyf-section" id="progetti">
-  <h2>Progetti educativi</h2>
-  <p class="iyf-section-desc">Sette unità didattiche pronte per stand, open day e orientamento: dalla meccatronica al digitale.</p>
+  <h2>Percorsi ludico-didattici</h2>
+  {% assign totale_progetti = site.progetti | size %}
+  <p class="iyf-section-desc">{{ totale_progetti }} unità didattiche pronte per stand, open day e orientamento: dalla meccatronica al digitale.</p>
 
   {% assign meccatronica = site.progetti | where: "gruppo", "meccatronica" | sort: "order" %}
   {% assign digitale = site.progetti | where: "gruppo", "digitale" | sort: "order" %}
@@ -40,6 +74,7 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
         </div>
         <div class="iyf-card__meta">
           <span class="iyf-badge">{{ p.area }}</span>
+          {% if p.formato %}{% include formato-badges.html items=p.formato %}{% endif %}
           <span class="iyf-tag">{{ p.durata }}</span>
         </div>
         <h3>{{ p.titolo_attivita }}</h3>
@@ -65,6 +100,7 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
         </div>
         <div class="iyf-card__meta">
           <span class="iyf-badge iyf-badge--blue">{{ p.area }}</span>
+          {% if p.formato %}{% include formato-badges.html items=p.formato %}{% endif %}
           <span class="iyf-tag">{{ p.durata }}</span>
         </div>
         <h3>{{ p.titolo_attivita }}</h3>
@@ -76,22 +112,51 @@ description: "Percorsi ludico-didattici ITS: quiz, missioni, escape game rapidi 
   </div>
 </section>
 
-<section class="iyf-section" id="corsi">
-  <h2>Corsi collegati</h2>
-  <p class="iyf-section-desc">Ogni attività è legata a un corso tecnico superiore della rete ITS ligustica.</p>
-  <div class="iyf-grid">
-    {% assign progetti_ordinati = site.progetti | sort: "order" %}
-    {% for p in progetti_ordinati %}
-    <article class="iyf-card">
-      <div class="iyf-card__brand">
-        {% include logo-categoria.html gruppo=p.gruppo size="sm" link=true %}
-      </div>
-      <span class="iyf-badge{% if p.gruppo == 'digitale' %} iyf-badge--blue{% endif %}">{{ p.its }} — {{ p.area }}</span>
-      <h3>{{ p.corso }}</h3>
-      {% if p.corso_url %}
-      <a class="iyf-btn iyf-btn--outline" href="{{ p.corso_url }}" target="_blank" rel="noopener">Apri scheda corso</a>
-      {% endif %}
-    </article>
-    {% endfor %}
+<section class="iyf-section" id="dati-progetto">
+  <h2>Corsi e materiali</h2>
+  <p class="iyf-section-desc">Corsi coinvolti e strumenti utilizzati dalla rete ITS ligustica.</p>
+
+  <div class="iyf-data-panel" id="corsi">
+    <h3>Corsi coinvolti</h3>
+    <div class="iyf-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ITS</th>
+            <th>Corso</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in site.data.corsi %}
+          <tr>
+            <td>{{ c.its }}</td>
+            <td>{{ c.corso }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="iyf-data-panel" id="materiali">
+    <h3>Materiali e strumenti</h3>
+    <div class="iyf-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ITS</th>
+            <th>Materiale</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for m in site.data.materiali %}
+          <tr>
+            <td>{{ m.its }}</td>
+            <td>{{ m.materiale }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>

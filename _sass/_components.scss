@@ -181,6 +181,21 @@
     background: rgba($brand-light, 0.12);
     color: $brand;
   }
+
+  &--formato {
+    text-transform: capitalize;
+    letter-spacing: 0.02em;
+  }
+
+  &--formato-fisico {
+    background: rgba(#2d6a4f, 0.14);
+    color: #1b4332;
+  }
+
+  &--formato-digitale {
+    background: rgba($brand-light, 0.14);
+    color: $brand;
+  }
 }
 
 .iyf-tag {
@@ -275,11 +290,26 @@
     gap: 0.75rem;
     margin-top: 1rem;
     font-size: 0.9rem;
+    align-items: center;
 
     span {
       background: rgba($paper, 0.15);
       padding: 0.3rem 0.75rem;
       border-radius: 999px;
+    }
+
+    .iyf-badge--formato {
+      background: rgba($paper, 0.95);
+    }
+
+    .iyf-badge--formato-fisico {
+      background: rgba(#d8f3dc, 0.95);
+      color: #1b4332;
+    }
+
+    .iyf-badge--formato-digitale {
+      background: rgba($paper, 0.95);
+      color: $brand;
     }
   }
 }
@@ -397,4 +427,64 @@
   border-radius: $radius-sm;
   border: 2px dashed $accent;
   margin: 0.5rem 0;
+}
+
+// Tabelle dati di progetto (homepage)
+.iyf-data-panel {
+  background: $paper;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: $shadow-card;
+
+  h3 {
+    margin: 0 0 1rem;
+    color: $brand;
+    font-size: 1.15rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  th, td {
+    border: 1px solid $border;
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background: $soft;
+    color: $brand;
+    font-weight: 700;
+  }
+
+  tr:nth-child(even) td {
+    background: rgba($soft, 0.5);
+  }
+}
+
+.iyf-table-wrap {
+  overflow-x: auto;
+}
+
+.iyf-table-total td {
+  background: $accent-soft !important;
+  font-weight: 600;
+}
+
+.iyf-eventi-table {
+  td:first-child strong {
+    color: $brand;
+    font-weight: 700;
+  }
+
+  td:nth-child(3) {
+    white-space: nowrap;
+  }
 }

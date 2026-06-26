@@ -7,11 +7,12 @@ gruppo: meccatronica
 order: 2
 durata: "3–7 minuti"
 modalita: "Mini-gioco a tappe / escape game rapido"
-corso: "2° Corso TECNICO SUPERIORE PER L'AUTOMAZIONE E LA ROBOTICA INDUSTRIALE"
+formato:
+  - digitale
+corso: "Corso TECNICO SUPERIORE PER L'AUTOMAZIONE E LA ROBOTICA INDUSTRIALE"
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-2__corso_tecnico_superiore_per_l_automazione_e_la_robotica_industriale_35.html"
-codice_finale: "31582"
 descrizione_breve: "La linea di produzione si è fermata: analizza sensori, logica PLC, qualità e sicurezza per far ripartire il robot."
-description: "Guasto in una linea automatizzata industriale: 5 prove tecniche su sensori, programmazione, KPI e sicurezza."
+description: "Guasto in una linea automatizzata industriale: prove tecniche su sensori, programmazione, KPI e sicurezza."
 ---
 
 ## Obiettivo
@@ -29,17 +30,13 @@ Far capire il ruolo del tecnico superiore nella progettazione, programmazione, c
 
 ## Prove dell'attività
 
-| N° | Titolo | Situazione | Risposta | Codice |
-|:--:|--------|------------|----------|:------:|
-| 1 | Trova il sensore giusto | Quale componente rileva la presenza del pezzo sul nastro? | **Sensore di prossimità** | 3 |
-| 2 | Scegli la logica corretta | Robot attivo solo se pezzo presente E porta chiusa E emergenza non premuta | **Logica AND di sicurezza** | 1 |
-| 3 | Controllo qualità | Perni 49–51 mm accettabili: A=50, B=48, C=51, D=52 | **A e C** | 5 |
-| 4 | KPI della linea | Obiettivo 100 pezzi/ora, prodotti 80 | **80%** | 8 |
-| 5 | Sicurezza prima del riavvio | Porta di sicurezza ancora aperta | **Chiudere la porta e verificare i dispositivi** | 2 |
-
-### Codice finale
-
-<span class="codice-finale">31582</span>
+| N° | Titolo | Domanda o situazione | Risposta corretta | Messaggio didattico |
+|:--:|--------|----------------------|-------------------|---------------------|
+| 1 | Trova il sensore giusto | Un nastro deve fermarsi quando un pezzo arriva davanti al robot. Quale componente rileva la presenza? | **Sensore di prossimità** | I sensori raccolgono informazioni dal mondo fisico e le inviano al sistema di controllo. |
+| 2 | Scegli la logica corretta | Il robot è attivo solo se pezzo presente, porta chiusa ed emergenza non premuta | **Logica AND di sicurezza** | La programmazione industriale serve a far lavorare le macchine in modo sicuro e controllato. |
+| 3 | Controllo qualità | Perni metallici conformi solo se rispettano la tolleranza prevista. Quali pezzi sono accettabili? | **A e C** | Il controllo qualità verifica che il prodotto rispetti gli standard prima di arrivare al cliente. |
+| 4 | KPI della linea | La linea produce meno del target previsto. Come va interpretata la performance? | *Da valutare insieme al facilitatore* | I KPI misurano l'efficienza della produzione e indicano dove intervenire. |
+| 5 | Sicurezza prima del riavvio | Il robot funziona ma la porta di sicurezza è ancora aperta | **Chiudere la porta e verificare i dispositivi** | La sicurezza è parte integrante del progetto, della programmazione e del collaudo. |
 
 ## Esito
 
@@ -52,6 +49,7 @@ Far capire il ruolo del tecnico superiore nella progettazione, programmazione, c
   <li>Progettazione sistemi meccatronici</li>
   <li>Programmazione sistemi automatici</li>
   <li>Robotica industriale</li>
+  <li>Definizione componentistica</li>
   <li>Controllo qualità</li>
   <li>KPI e analisi dati</li>
   <li>Sicurezza normativa</li>

@@ -6,12 +6,12 @@ lang: it
 hero:
   kicker: "Percorsi didattico-orientativi ITS"
   title: "IT'S YOUR FUTURE"
-  description: "Una selezione (in crescita) di Micro-attività da 3–7 minuti per scoprire i corsi ITS attraverso quiz, missioni, goichi rapidi e simulazioni tecniche. Scegli un percorso e immergiti nel ruolo del tecnico superiore. In fase di costruzione"
+  description: "Raccoglie corsi, materiali e percorsi ludico-didattici utilizzabili per orientamento, open day, installazioni interattive e attività brevi da 3–7 minuti."
 
 # Sezione "Come funziona" homepage — modificabile da qui
 come_funziona:
   titolo: "Come funziona:"
-  testo: 'ogni scheda presenta un''attività ludico-didattica collegata a un corso ITS. Clicca su <em>Scopri l''attività</em> per leggere scenario, prove, codice finale e competenze.'
+  testo: 'ogni scheda presenta un''attività ludico-didattica collegata a un corso ITS. Clicca su <em>Scopri l''attività</em> per leggere scenario, prove e competenze.'
 
 logo:
   src: "/img/logo-placeholder.png"
@@ -52,5 +52,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - its-your-future-jekyll-template.md
+  - its-your-future-jekyll-template3.md
   - vendor

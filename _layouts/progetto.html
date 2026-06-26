@@ -12,7 +12,7 @@ layout: default
     <div class="progetto-meta">
       <span>⏱ {{ page.durata }}</span>
       <span>🎯 {{ page.modalita }}</span>
-      {% if page.codice_finale %}<span>🔑 Codice: {{ page.codice_finale }}</span>{% endif %}
+      {% if page.formato %}{% include formato-badges.html items=page.formato %}{% endif %}
     </div>
   </header>
 

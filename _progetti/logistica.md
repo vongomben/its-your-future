@@ -1,59 +1,57 @@
 ---
-title: "Spedizione internazionale"
-titolo_attivita: "Spedizione internazionale"
+title: "Supply Chain Mission"
+titolo_attivita: "Supply Chain Mission"
 its: "ITS La Spezia"
-area: "Logistica e Trasporto"
+area: "Marketing logistico e doganale"
 gruppo: meccatronica
-order: 4
+order: 6
 durata: "3–7 minuti"
-modalita: "Simulazione di spedizione portuale"
-corso: "5° Corso tecnico superiore per la logistica ed il trasporto intermodale"
-corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-5__corso_tecnico_superiore_per_la_logistica_ed_il_trasporto_intermodale_31.html"
-codice_finale: "635284"
-descrizione_breve: "Organizza una spedizione da Torino a Valencia: trasporto intermodale, documenti, costi e tracciabilità."
-description: "Simulazione logistica internazionale con camion, porto e nave."
+modalita: "Simulazione di spedizione internazionale"
+formato:
+  - digitale
+corso: "Tecnico Superiore per la Strategia Commerciale — Marketing logistico e gestione pratiche doganali"
+corso_url: "https://www.itslaspezia.it/i_nostri_corsi.html"
+descrizione_breve: "Gestisci una spedizione internazionale urgente: mercato, trasporto intermodale, dogana, tracciabilità e KPI."
+description: "Dalla strategia commerciale alla consegna doganale: supply chain, logistica intermodale e relazione con il cliente."
 ---
 
 ## Obiettivo
 
-Far capire il ruolo del tecnico superiore nella pianificazione, gestione e controllo dei flussi di merci, mezzi, documenti e informazioni.
+Far capire il ruolo del tecnico superiore nella gestione integrata di strategia commerciale, supply chain, logistica intermodale, pratiche doganali, tracciabilità, KPI e relazione con il cliente.
 
 ## Storia / contesto
 
-> I partecipanti entrano in una casa di spedizioni. Un cliente deve inviare componenti meccanici da Torino a Valencia usando camion, porto e nave. La merce deve arrivare in tempo, con documenti corretti, costi sostenibili e tracciabilità completa.
+> I partecipanti entrano nel team commerciale-logistico di una PMI ligure che deve spedire un lotto di prodotti verso un cliente estero. Bisogna scegliere mercato e target, pianificare il trasporto intermodale, preparare i documenti doganali, garantire tracciabilità e controllare tempi e risorse.
 
 ## Materiali
 
-- **Versione fisica:** schede prova, mappa Torino–Genova–Valencia, card camion/nave/treno, finti documenti di trasporto, tabella costi, QR finale.
-- **Versione digitale:** Google Form, Genially, dashboard di tracking, simulazione percorso.
+- **Versione fisica:** schede prova, mappa semplificata dei trasporti, tabella risorse/tempi, finti documenti doganali, card TARIC/Incoterms, QR finale.
+- **Versione digitale:** Google Form, Genially, dashboard con tracking, WMS/TMS simulato, foglio KPI.
 
 ## Prove dell'attività
 
-| N° | Titolo | Domanda | Risposta | Codice |
-|:--:|--------|---------|----------|:------:|
-| 1 | Modalità di trasporto | Soluzione intermodale Torino → Spagna | **Camion + nave + camion** | 6 |
-| 2 | Documento corretto | Documento per trasporto marittimo | **Bill of Lading / polizza di carico** | 3 |
-| 3 | Costi e ricavi | Cliente paga 2.500 €, costi totali 2.000 € | **Margine 500 €** | 5 |
-| 4 | Inglese tecnico | Conferma data di ritiro al fornitore | **We confirm the pickup on Monday at 9:00 AM.** | 2 |
-| 5 | Sicurezza e qualità | Merce con batterie al litio | **Classificazione, imballaggio, etichettatura e documenti** | 8 |
-| 6 | Tracciabilità | Cliente chiede posizione merce in tempo reale | **Sistema digitale di tracking** | 4 |
-
-### Codice finale
-
-<span class="codice-finale">635284</span>
+| N° | Titolo | Domanda o situazione | Risposta corretta | Messaggio didattico |
+|:--:|--------|----------------------|-------------------|---------------------|
+| 1 | Definire mercato e target | Prima scelta per il piano commerciale | **Analizzare mercato, target, concorrenza e posizionamento** | Una strategia commerciale efficace parte dall'analisi del mercato. |
+| 2 | Scegliere la soluzione intermodale | Merci Italia → cliente estero | **Combinare modalità valutando tempi, risorse, rischi e documenti** | Il trasporto intermodale coordina mezzi diversi. |
+| 3 | Preparare la pratica doganale | Spedizione attraversa frontiera doganale | **TARIC, origine, documenti e dichiarazione doganale** | Le pratiche doganali sono centrali nel commercio internazionale. |
+| 4 | Tracciare la spedizione | Cliente chiede aggiornamenti in tempo reale | **WMS/TMS, RFID, tracking o sensori IoT** | La logistica digitale rende visibili flussi e consegne. |
+| 5 | Controllare KPI e risorse | Ritardo e scostamenti rispetto al previsto | **Analizzare KPI e proporre azioni correttive** | I KPI trasformano i dati in decisioni di miglioramento. |
+| 6 | Gestire cliente e sostenibilità | Cliente chiede consegne più sostenibili | **Registrare feedback nel CRM e valutare green logistics** | CRM, feedback e sostenibilità migliorano servizio e competitività. |
 
 ## Esito
 
-- **Positivo:** *Spedizione approvata: percorso, documenti, costi e tracking sotto controllo.*
-- **Negativo:** *Spedizione bloccata: servono nuove verifiche su documenti, costi, sicurezza e tracciabilità.*
+- **Positivo:** *Spedizione sbloccata: il piano commerciale-logistico è coerente e i documenti sono pronti.*
+- **Negativo:** *Spedizione da rivedere: servono controlli su mercato, trasporto, documenti e tracking.*
 
 ## Competenze collegate
 
 <ul class="competenze-list">
-  <li>Trasporto intermodale</li>
-  <li>Documenti di trasporto</li>
-  <li>Analisi costi e ricavi</li>
-  <li>Inglese tecnico</li>
-  <li>Sicurezza nella logistica</li>
-  <li>Tracciabilità digitale</li>
+  <li>Strategia commerciale e marketing</li>
+  <li>Supply chain management</li>
+  <li>Pianificazione intermodale</li>
+  <li>Pratiche doganali</li>
+  <li>Digitalizzazione della logistica</li>
+  <li>Supply chain analytics e KPI</li>
+  <li>Green logistics e CRM</li>
 </ul>

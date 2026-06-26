@@ -1,0 +1,23 @@
+- order: 1
+  titolo: "Festival della Comunicazione Camogli"
+  luogo: "Camogli"
+  periodo: "10–13 settembre 2026"
+  tema: "Coraggio"
+  spazio: "outdoor / gazebo + stand"
+- order: 2
+  titolo: "Festival della Scienza Genova"
+  luogo: "Genova"
+  periodo: "22 ottobre – 1 novembre 2026"
+  tema: "Prospettive"
+  spazio: "indoor / stand"
+- order: 3
+  titolo: "Orientamenti Genova"
+  luogo: "Porto Antico / Magazzini del Cotone"
+  periodo: "18–21 novembre 2026"
+  spazio: "indoor / stand"
+- order: 4
+  titolo: "JOB&Orienta Verona"
+  luogo: "Verona"
+  periodo: "Mer 25, Gio 26, Ven 27 novembre 2026"
+  orari: "9:00–17:00"
+  spazio: "outdoor / gazebo + stand"

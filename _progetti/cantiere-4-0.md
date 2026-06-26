@@ -1,15 +1,16 @@
 ---
-title: "Cantiere 4.0"
-titolo_attivita: "Cantiere 4.0"
+title: "Cantiere digitale"
+titolo_attivita: "Cantiere digitale"
 its: "ITS La Spezia"
 area: "Meccatronica Avanzata"
 gruppo: meccatronica
-order: 3
+order: 4
 durata: "3–7 minuti"
 modalita: "Simulazione di ufficio tecnico"
-corso: "15° Corso TECNICO SUPERIORE PER LA PROGETTAZIONE E LA PRODUZIONE MECCATRONICA AVANZATA"
+formato:
+  - digitale
+corso: "Corso TECNICO SUPERIORE PER LA PROGETTAZIONE E LA PRODUZIONE MECCATRONICA AVANZATA"
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-15__corso_tecnico_superiore_per_la_progettazione_e_la_produzione_meccatronica_avanzata_34.html"
-codice_finale: "427159"
 descrizione_breve: "Progetta un supporto meccatronico per un motore elettrico nautico: materiali, CAD, CNC, qualità e manutenzione."
 description: "Percorso in ufficio tecnico per un componente nautico: dalla progettazione al collaudo."
 ---
@@ -20,7 +21,7 @@ Far capire il ruolo del tecnico superiore nella progettazione, prototipazione, p
 
 ## Storia / contesto
 
-> I partecipanti entrano nell'ufficio tecnico di un'azienda specializzata in componenti per la nautica da diporto. Devono realizzare un supporto meccatronico per un motore elettrico nautico: resistente, leggero, producibile con macchine CNC, economicamente sostenibile e adatto all'ambiente marino.
+> I partecipanti entrano nell'ufficio tecnico di un'azienda specializzata in componenti per la nautica da diporto. Devono realizzare un supporto meccatronico per un motore elettrico nautico: resistente, leggero, producibile con macchine CNC, sostenibile e adatto all'ambiente marino.
 
 ## Materiali
 
@@ -29,18 +30,14 @@ Far capire il ruolo del tecnico superiore nella progettazione, prototipazione, p
 
 ## Prove dell'attività
 
-| N° | Titolo | Domanda | Risposta | Codice |
-|:--:|--------|---------|----------|:------:|
-| 1 | Capire il vincolo di progetto | Cosa considerare per un supporto nautico? | Resistenza, costo, materiale e ambiente | 4 |
-| 2 | Scegliere il materiale | Materiale per ambiente nautico | **Alluminio anodizzato o acciaio inox** | 2 |
-| 3 | Prototipo virtuale | Strumento per verificare forma e ingombri | **Modello CAD 3D con simulazione** | 7 |
-| 4 | Dal progetto alla produzione | Cosa definire prima della CNC? | **Parametri di lavorazione, utensili e ciclo produttivo** | 1 |
-| 5 | Controllo qualità e collaudo | Verifica post-produzione | **Misure, tolleranze, resistenza e montaggio** | 5 |
-| 6 | Manutenzione e post vendita | Vibrazioni anomale segnalate dal cliente | **Analizzare, controllare dati e pianificare intervento** | 9 |
-
-### Codice finale
-
-<span class="codice-finale">427159</span>
+| N° | Titolo | Domanda o situazione | Risposta corretta | Messaggio didattico |
+|:--:|--------|----------------------|-------------------|---------------------|
+| 1 | Capire il vincolo di progetto | Supporto nautico resistente a vibrazioni, acqua salata e carichi meccanici | **Resistenza, sostenibilità economica, materiale e ambiente** | Progettare significa trovare equilibrio tra prestazioni, risorse e contesto d'uso. |
+| 2 | Scegliere il materiale | Componente in ambiente nautico con umidità e salsedine | **Alluminio anodizzato o acciaio inox** | La scelta del materiale influenza durata, peso e manutenzione. |
+| 3 | Prototipo virtuale | Verificare forma, ingombri e criticità prima della produzione | **Modello CAD tridimensionale con simulazione** | Il prototipo virtuale riduce errori, risorse e tempi. |
+| 4 | Dal progetto alla produzione | Cosa definire prima della lavorazione CNC? | **Parametri di lavorazione, utensili e ciclo produttivo** | Industrializzare significa trasformare un progetto in un processo ripetibile. |
+| 5 | Controllo qualità e collaudo | Verifica post-produzione | **Misure, tolleranze, resistenza e montaggio** | Controllo qualità e collaudo verificano conformità e sicurezza. |
+| 6 | Manutenzione e post vendita | Vibrazioni anomale segnalate dal cliente | **Analizzare, controllare dati e pianificare intervento** | Il lavoro tecnico continua dopo la produzione. |
 
 ## Esito
 
@@ -56,5 +53,5 @@ Far capire il ruolo del tecnico superiore nella progettazione, prototipazione, p
   <li>Industrializzazione</li>
   <li>Controllo qualità e collaudo</li>
   <li>Manutenzione e post vendita</li>
-  <li>Industria 4.0</li>
+  <li>Industria digitale e sostenibilità</li>
 </ul>
