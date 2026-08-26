@@ -9,7 +9,6 @@ durata: "3–7 minuti"
 modalita: "Simulazione di agenzia digital marketing"
 formato:
   - digitale
-  - fisico
 corso: "Tecnico Superiore Digital Media Specialist — social media manager e digital media marketing per l'industria digitale"
 corso_url: "https://www.accademiadigitaleliguria.it/corso/digital-social-marketing-15-3/"
 descrizione_breve: "Crea e ottimizza una campagna digitale per il lancio di una borraccia smart eco-friendly: target, canali, contenuti e KPI."

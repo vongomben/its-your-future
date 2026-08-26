@@ -6,9 +6,6 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
 ---
 
 <section class="iyf-hero">
-  <div class="iyf-hero__brand">
-    {% include logo-brand.html size="hero" hide_text=true link=false %}
-  </div>
   <p class="iyf-kicker">{{ site.hero.kicker }}</p>
   <h1>{{ site.hero.title }}</h1>
   <p>{{ site.hero.description }}</p>
@@ -31,7 +28,7 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
             <th>Luogo</th>
             <th>Periodo</th>
             <th>Tema</th>
-            <th>spazio</th>
+            <th>Orari</th>
           </tr>
         </thead>
         <tbody>
@@ -42,7 +39,7 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
             <td>{{ e.luogo }}</td>
             <td>{{ e.periodo }}</td>
             <td>{% if e.tema %}{{ e.tema }}{% else %}—{% endif %}</td>
-            <td>{% if e.spazio %}{{ e.spazio }}{% else %}—{% endif %}</td>
+            <td>{% if e.orari %}{{ e.orari }}{% else %}—{% endif %}</td>
           </tr>
           {% endfor %}
         </tbody>

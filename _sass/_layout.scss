@@ -47,18 +47,21 @@
 }
 
 .iyf-brand-logo--header {
-  height: 2.25rem;
+  height: 3.25rem;
 }
 
-.iyf-brand-logo--hero {
-  height: 4.5rem;
-  filter: brightness(0) invert(1);
+.iyf-logo-istituzionale {
+  display: block;
+  width: min(100%, 56rem);
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
-.iyf-brand-logo--footer {
-  height: 2rem;
-  filter: brightness(0) invert(1);
-  opacity: 0.92;
+.iyf-logo-istituzionale--footer {
+  max-height: 3.5rem;
+  width: 100%;
+  opacity: 0.95;
 }
 
 .site-nav {
@@ -102,8 +105,11 @@
   }
 }
 
-.site-footer__brand {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.75rem;
+.site-footer__istituzionale {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba($paper, 0.97);
+  border-radius: $radius-sm;
 }
