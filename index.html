@@ -51,10 +51,11 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
 <section class="iyf-section" id="progetti">
   <h2>Percorsi ludico-didattici</h2>
   {% assign totale_progetti = site.progetti | size %}
-  <p class="iyf-section-desc">{{ totale_progetti }} unità didattiche pronte per stand, open day e orientamento: dalla meccatronica al digitale.</p>
+  <p class="iyf-section-desc">{{ totale_progetti }} unità didattiche pronte per stand, open day e orientamento: dalla Meccatronica al Digitale al Turismo.</p>
 
   {% assign meccatronica = site.progetti | where: "gruppo", "meccatronica" | sort: "order" %}
   {% assign digitale = site.progetti | where: "gruppo", "digitale" | sort: "order" %}
+  {% assign turismo = site.progetti | where: "gruppo", "turismo" | sort: "order" %}
 
   <div class="iyf-section-group">
     <h3 class="iyf-section-group__title">
@@ -107,11 +108,54 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
       {% endfor %}
     </div>
   </div>
+    <div class="iyf-section-group">
+    <h3 class="iyf-section-group__title">
+      {% include logo-categoria.html gruppo="turismo" size="md" link=true %}
+      <a
+        class="iyf-section-group__link"
+        href="{{ site.data.gruppi.turismo.contatti_url }}"
+        target="_blank"
+        rel="noopener"
+      >
+        {{ site.data.gruppi.turismo.nome }}
+      </a>
+    </h3>
+
+    <div class="iyf-grid">
+      {% for p in turismo %}
+      <article class="iyf-card">
+
+        <div class="iyf-card__brand">
+          {% include logo-categoria.html gruppo=p.gruppo size="sm" link=true %}
+        </div>
+
+        <div class="iyf-card__meta">
+          <span class="iyf-badge">{{ p.area }}</span>
+
+          {% if p.formato %}
+            {% include formato-badges.html items=p.formato %}
+          {% endif %}
+
+          <span class="iyf-tag">{{ p.durata }}</span>
+        </div>
+
+        <h3>{{ p.titolo_attivita }}</h3>
+
+        <p>{{ p.descrizione_breve }}</p>
+
+        <a class="iyf-btn" href="{{ p.url | relative_url }}">
+          Scopri l'attività &rarr;
+        </a>
+
+      </article>
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
 <section class="iyf-section" id="dati-progetto">
   <h2>Corsi e materiali</h2>
-  <p class="iyf-section-desc">Corsi coinvolti e strumenti utilizzati dalla rete ITS ligustica.</p>
+  <p class="iyf-section-desc">Corsi coinvolti e strumenti utilizzati dalla rete ITS Ligure.</p>
 
   <div class="iyf-data-panel" id="corsi">
     <h3>Corsi coinvolti</h3>

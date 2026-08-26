@@ -8,3 +8,8 @@ digitale:
   logo: "/img/its-accademi-digitla.svg"
   alt: "ITS Accademia Digitale Liguria"
   contatti_url: "https://www.accademiadigitaleliguria.it/contatti/"
+turismo:
+  nome: "ITS Turismo Liguria"
+  logo: "/img/logo_its_turismo_liguria.png"
+  alt: "ITS Turismo Liguria"
+  contatti_url: "https://www.itsturismoliguria.it/"
