@@ -13,7 +13,11 @@ corso: "Gestore di strutture turistico-ricettive"
 corso_url: "https://www.itsturismoliguria.it/corso-gestore-di-strutture-turistico-ricettive/"
 descrizione_breve: "Gestisci un hotel tra RevPAR, pricing dinamico, OTA, overbooking, reputazione online, upselling e housekeeping."
 description: "Simulazione digitale per scoprire il lavoro dell'Hospitality & Revenue Manager attraverso otto decisioni professionali e una mini sfida finale di housekeeping."
+gioco_url: "/hotel-sim/"
+gioco_cta: "Entra in Hotel Sim"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/hotel-sim/' | relative_url }}">Entra in Hotel Sim</a></p>
 
 ## Obiettivo
 
@@ -74,3 +78,5 @@ Far capire il ruolo del **gestore di strutture turistico-ricettive**: calcolo e 
 ## Fonti
 
 - [Corso Gestore di strutture turistico-ricettive — ITS Turismo Liguria](https://www.itsturismoliguria.it/corso-gestore-di-strutture-turistico-ricettive/)
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/hotel-sim/' | relative_url }}">Entra in Hotel Sim</a></p>

@@ -13,6 +13,8 @@ corso: "Industrial IoT e Robotics Developer"
 corso_url: "https://www.accademiadigitaleliguria.it/corso/industrial-iot-e-robotics-developer-16/"
 descrizione_breve: "Programma un robot/gripper per estrarre un container dal deposito del Porto di Genova: analizza il percorso, costruisci la sequenza a blocchi, testa e correggi il programma."
 description: "Sfida digitale di coding e robotica: guida un robot attraverso un labirinto, trasporta il container dal punto A al punto B e completa la missione usando sequenze, cicli e debugging."
+gioco_url: "/codice-lanterna/"
+gioco_cta: "Partecipa alla sfida della Lanterna!"
 ---
 
 <div class="text-center my-4">

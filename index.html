@@ -78,6 +78,9 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
         <h3>{{ p.titolo_attivita }}</h3>
         <p>{{ p.descrizione_breve }}</p>
         <a class="iyf-btn" href="{{ p.url | relative_url }}">Scopri l'attività &rarr;</a>
+        {% if p.gioco_url %}
+        <a class="iyf-btn iyf-btn--accent" href="{{ p.gioco_url | relative_url }}">{{ p.gioco_cta | default: "Gioca ora" }}</a>
+        {% endif %}
       </article>
       {% endfor %}
     </div>
@@ -104,6 +107,9 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
         <h3>{{ p.titolo_attivita }}</h3>
         <p>{{ p.descrizione_breve }}</p>
         <a class="iyf-btn" href="{{ p.url | relative_url }}">Scopri l'attività &rarr;</a>
+        {% if p.gioco_url %}
+        <a class="iyf-btn iyf-btn--accent" href="{{ p.gioco_url | relative_url }}">{{ p.gioco_cta | default: "Gioca ora" }}</a>
+        {% endif %}
       </article>
       {% endfor %}
     </div>
@@ -146,6 +152,9 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
         <a class="iyf-btn" href="{{ p.url | relative_url }}">
           Scopri l'attività &rarr;
         </a>
+        {% if p.gioco_url %}
+        <a class="iyf-btn iyf-btn--accent" href="{{ p.gioco_url | relative_url }}">{{ p.gioco_cta | default: "Gioca ora" }}</a>
+        {% endif %}
 
       </article>
       {% endfor %}

@@ -13,7 +13,11 @@ corso: "Event Manager"
 corso_url: "https://www.itsturismoliguria.it/event-manager/"
 descrizione_breve: "Entra nella regia di un grande evento outdoor e gestisci in tempo reale meteo, fornitori, sicurezza, sponsor, budget e comunicazione di crisi."
 description: "Simulazione digitale per scoprire il lavoro dell'Event Manager attraverso otto decisioni professionali e una mini sfida finale sotto pressione."
+gioco_url: "/crisis-room/"
+gioco_cta: "Entra in Crisis Room"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/crisis-room/' | relative_url }}">Entra in Crisis Room</a></p>
 
 ## Obiettivo
 
@@ -74,3 +78,5 @@ Far capire il ruolo dell'**Event Manager** nella progettazione e conduzione di u
 ## Fonti
 
 - [Corso Event Manager — ITS Turismo Liguria](https://www.itsturismoliguria.it/event-manager/)
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/crisis-room/' | relative_url }}">Entra in Crisis Room</a></p>

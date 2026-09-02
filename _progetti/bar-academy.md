@@ -13,7 +13,11 @@ corso: "Food & Beverage Manager"
 corso_url: "https://www.itsturismoliguria.it/corso-food-beverage-manager/"
 descrizione_breve: "Gestisci una serata di servizio tra mixology, vino, HACCP, allergeni, reclami e food cost prendendo decisioni professionali sotto pressione."
 description: "Simulazione digitale per scoprire il lavoro del Food & Beverage Manager attraverso otto scenari professionali e una mini sfida finale di mise en place."
+gioco_url: "/bar-academy/"
+gioco_cta: "Entra in Bar Academy"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/bar-academy/' | relative_url }}">Entra in Bar Academy</a></p>
 
 ## Obiettivo
 
@@ -74,3 +78,5 @@ Far capire il ruolo del **Food & Beverage Manager** nella gestione di bar e rist
 ## Fonti
 
 - [Corso Food & Beverage Manager — ITS Turismo Liguria](https://www.itsturismoliguria.it/corso-food-beverage-manager/)
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/bar-academy/' | relative_url }}">Entra in Bar Academy</a></p>

@@ -14,6 +14,9 @@ layout: default
       <span>🎯 {{ page.modalita }}</span>
       {% if page.formato %}{% include formato-badges.html items=page.formato %}{% endif %}
     </div>
+    {% if page.gioco_url %}
+    <a class="iyf-btn iyf-btn--accent" href="{{ page.gioco_url | relative_url }}">{{ page.gioco_cta | default: "Gioca ora" }}</a>
+    {% endif %}
   </header>
 
   <div class="progetto-content">

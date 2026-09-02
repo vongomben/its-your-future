@@ -13,7 +13,11 @@ corso: "Corso TECNICO SUPERIORE PER L'AMMINISTRAZIONE, LA GESTIONE FINANZIARIA E
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-2__corso_tecnico_superiore_per_l_amministrazione_la_gestione__finanziaria_e_il_controllo_di_gestione__marketing_e_l_internazionalizzazione_delle_imprese_33.html"
 descrizione_breve: "Diventa il team di controllo di gestione di un'azienda che vuole esportare una bevanda artigianale all'estero."
 description: "Simulazione aziendale: controllo di gestione, internazionalizzazione e strumenti digitali in prove rapide."
+gioco_url: "/salva-lazienda/"
+gioco_cta: "Inizia la missione"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/salva-lazienda/' | relative_url }}">Inizia la missione</a></p>
 
 ## Obiettivo
 
@@ -55,3 +59,5 @@ Far comprendere il ruolo del tecnico superiore nei processi amministrativi, fina
   <li>Software ERP</li>
   <li>Piano commerciale</li>
 </ul>
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/salva-lazienda/' | relative_url }}">Inizia la missione</a></p>
