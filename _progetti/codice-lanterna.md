@@ -51,6 +51,10 @@ L'attività allena **pensiero computazionale, coding visuale a blocchi, ragionam
 | 5 | Testa e correggi | Il robot incontra una parete, si orienta male oppure esegue un'azione non valida. | **Osservare il blocco che genera l'errore, modificare il programma e riprovare.** | Il debugging è parte dello sviluppo: l'errore fornisce informazioni utili per migliorare la soluzione. |
 | 6 | Estrai il container | Il robot raggiunge la zona di estrazione B con il container. | **Rilasciare correttamente il container sulla cella B.** | Missione completata: il container è stato estratto dal deposito. |
 
+## Codice finale
+
+**A6184**
+
 ## Esito
 
 - **Positivo:** *Missione completata: il container viene trasportato dal punto A e rilasciato correttamente nella zona di estrazione sicura B.*

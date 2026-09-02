@@ -52,7 +52,7 @@ Far capire il ruolo dell'**Event Manager** nella progettazione e conduzione di u
 
 ## Codice finale
 
-**450315**
+**T7391**
 
 ## Esito
 

@@ -52,7 +52,7 @@ Far capire il ruolo del **gestore di strutture turistico-ricettive**: calcolo e 
 
 ## Codice finale
 
-**981250**
+**T1573**
 
 ## Esito
 

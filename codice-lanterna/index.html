@@ -3,17 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Codice Lanterna</title>
-    <script type="module" crossorigin src="./assets/index-6iZkTzHh.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BkwbEvjR.css">
+    <title>Codice Lanterna 0.2.0</title>
+    <script type="module" crossorigin src="./assets/index-DQNCdUgB.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BO4RqqGg.css">
   </head>
   <body>
     <div id="app">
       <header class="app-header">
         <div class="app-header__brand">
-          <h1 class="app-header__title">CODICE LANTERNA</h1>
+          <h1 class="app-header__title">
+            <span id="app-title">CODICE LANTERNA</span>
+            <span class="app-version" id="app-version">0.2.0</span>
+          </h1>
         </div>
-        <p class="app-header__mission" id="mission-text">
+        <p
+          class="app-header__mission"
+          id="mission-text"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           Estrai il container dal deposito
         </p>
         <div class="app-header__stats">
@@ -34,7 +43,7 @@
         </section>
 
         <section class="panel panel--blockly" aria-label="Editor Blockly">
-          <p class="blockly-hint">
+          <p class="blockly-hint" id="blockly-hint">
             Completa il programma inserendo i comandi tra PRENDI e RILASCIA.
           </p>
           <div class="blockly-viewport" id="blockly-root"></div>
@@ -59,9 +68,14 @@
           <h2 class="success-overlay__title" id="success-title">
             MISSIONE COMPLETATA
           </h2>
-          <p class="success-overlay__message">
+          <p class="success-overlay__message" id="success-message">
             Container estratto dal deposito.
           </p>
+          <div class="success-overlay__locker" id="success-locker-wrap" hidden>
+            <p class="success-overlay__locker-label">Codice locker</p>
+            <div class="locker__digits" id="success-locker" aria-label="Codice locker"></div>
+            <p class="success-overlay__locker-help">Porta questo codice al locker dello stand.</p>
+          </div>
           <dl class="success-overlay__stats">
             <div class="success-overlay__stat">
               <dt class="success-overlay__stat-label">TEMPO</dt>
@@ -89,14 +103,16 @@
         <div class="splash-screen__inner">
           <div class="splash-screen__content">
             <h1 id="splash-title" class="splash-screen__title">CODICE LANTERNA</h1>
-            <p class="splash-screen__credits">
+            <p class="splash-screen__version" id="splash-version">0.2.0</p>
+            <p class="splash-screen__credits" id="splash-credits">
               da un'idea di Keila, Leonardo, Juan, Matteo
             </p>
-            <p class="splash-screen__cta">PREMI UN TASTO PER INIZIARE</p>
+            <p class="splash-screen__cta" id="splash-cta">PREMI UN TASTO PER INIZIARE</p>
           </div>
-          <div class="splash-lanterna" aria-hidden="true">
+          <div class="splash-lanterna" id="splash-art" aria-hidden="true">
             <img
               class="splash-lanterna__bg"
+              id="splash-bg"
               src="./assets/torre-sfondo-BbFCfQHJ.png"
               alt=""
               width="640"
@@ -105,12 +121,16 @@
             />
             <img
               class="splash-lanterna__tower"
+              id="splash-tower"
               src="./assets/torre-C2kKAv_R.png"
               alt="La Lanterna di Genova"
               width="640"
               height="960"
               decoding="async"
             />
+            <div class="splash-placeholder" id="splash-placeholder" hidden>
+              <span id="splash-placeholder-label">cella produttiva 4.0</span>
+            </div>
           </div>
         </div>
       </div>

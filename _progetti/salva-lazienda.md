@@ -43,6 +43,10 @@ Far comprendere il ruolo del tecnico superiore nei processi amministrativi, fina
 | 3 | Analisi dei risultati | Analisi dei risultati, decisioni correttive | Confronto tra dati previsionali e dati reali della campagna commerciale |
 | 4 | Decisione strategica | Piano commerciale, marketing, ERP | Quale scelta migliora la gestione interna collegando i reparti aziendali? |
 
+## Codice finale
+
+**M4821**
+
 ## Esito
 
 - **Positivo:** *Missione superata*
