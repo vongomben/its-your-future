@@ -591,7 +591,7 @@
   overflow: hidden;
   background: $soft;
 
-  img {
+  > img {
     display: block;
     width: 100%;
     height: min(28rem, 70vw);
@@ -599,15 +599,161 @@
     object-position: center top;
   }
 
+  &--contain > img {
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    background: #0b1c2c;
+  }
+
   &--contain {
     background: #0b1c2c;
-
-    img {
-      height: auto;
-      object-fit: contain;
-      object-position: center;
-    }
   }
+
+  &--interactive {
+    background: #0a0e1a;
+  }
+}
+
+.iyf-faro {
+  margin: 1.5rem 0 0;
+}
+
+.iyf-faro__scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 16rem;
+  max-height: min(70vh, 36rem);
+  overflow: hidden;
+  cursor: pointer;
+  background: #0a0e1a;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.iyf-faro__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05);
+}
+
+.iyf-faro__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 60%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+.iyf-faro__tower-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(28%, 240px);
+  min-width: 110px;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+  user-select: none;
+  pointer-events: none;
+}
+
+.iyf-faro__tower {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.iyf-faro__flare {
+  position: absolute;
+  left: 51.6%;
+  top: 8.7%;
+  width: 26%;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(255, 236, 180, 0.95) 0%,
+    rgba(255, 190, 90, 0.65) 28%,
+    rgba(255, 150, 50, 0.25) 55%,
+    rgba(255, 150, 50, 0) 75%
+  );
+  opacity: 0.28;
+  transition: opacity 90ms ease-out, filter 90ms ease-out;
+  filter: blur(1px);
+  mix-blend-mode: screen;
+}
+
+.iyf-faro__flare.is-lit {
+  opacity: 1;
+  filter: blur(0.5px) brightness(1.15);
+}
+
+.iyf-faro__morse {
+  position: absolute;
+  left: 50%;
+  top: 68%;
+  transform: translate(-50%, -50%);
+  width: min(92%, 640px);
+  text-align: center;
+  color: #ffe9c2;
+  font-family: "Courier New", ui-monospace, monospace;
+  font-weight: 800;
+  font-size: clamp(0.85rem, 2.6vw, 1.7rem);
+  letter-spacing: 0.28em;
+  line-height: 1.6;
+  text-shadow: 0 0 6px rgba(255, 190, 100, 0.9), 0 0 18px rgba(255, 150, 60, 0.6);
+  pointer-events: none;
+  min-height: 1.6em;
+  z-index: 3;
+}
+
+.iyf-faro__panel {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  width: min(90%, 28rem);
+  text-align: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.iyf-faro__hint {
+  color: rgba(252, 233, 201, 0.7);
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 700;
+  margin: 0;
+  transition: opacity 300ms ease;
+}
+
+.iyf-faro__decoded {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  background: rgba(10, 14, 26, 0.6);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 186, 110, 0.35);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.iyf-faro__decoded.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.iyf-faro__decoded-text {
+  color: #ffe3b0;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin: 0;
 }
 
 .iyf-landing__intro {

@@ -7,7 +7,9 @@ layout: default
 {% assign materiali = site.data.materiali | where: "gruppo", page.gruppo %}
 
 <article class="iyf-landing">
-  {% if info.landing_img %}
+  {% if info.landing_interactive == "faro-morse" %}
+    {% include faro-morse.html %}
+  {% elsif info.landing_img %}
   <figure class="iyf-landing__hero{% if info.landing_contain %} iyf-landing__hero--contain{% endif %}">
     <img
       src="{{ info.landing_img | relative_url }}"
@@ -23,7 +25,7 @@ layout: default
     <div class="iyf-landing__brand">
       {% include logo-categoria.html gruppo=page.gruppo size="md" %}
     </div>
-    {% if info.landing_img %}
+    {% if info.landing_img or info.landing_interactive %}
     <h1 class="visually-hidden">{{ info.titolo }}</h1>
     {% else %}
     <p class="iyf-kicker iyf-kicker--dark">{{ info.kicker }}</p>

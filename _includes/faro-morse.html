@@ -1,0 +1,32 @@
+<figure class="iyf-landing__hero iyf-landing__hero--interactive iyf-faro" aria-label="Il Faro: segnale Morse interattivo">
+  <div class="iyf-faro__scene" id="iyf-faro-scene" role="button" tabindex="0" aria-pressed="false" aria-describedby="iyf-faro-hint">
+    <img
+      class="iyf-faro__bg"
+      src="{{ '/img/faro-porto.jpg' | relative_url }}"
+      alt=""
+      width="1024"
+      height="576"
+      decoding="async"
+    >
+    <div class="iyf-faro__vignette" aria-hidden="true"></div>
+    <div class="iyf-faro__tower-wrap">
+      <img
+        class="iyf-faro__tower"
+        src="{{ '/img/faro-torre.png' | relative_url }}"
+        alt=""
+        width="554"
+        height="1007"
+        decoding="async"
+      >
+      <div class="iyf-faro__flare" id="iyf-faro-flare" aria-hidden="true"></div>
+    </div>
+    <div class="iyf-faro__morse" id="iyf-faro-morse" aria-hidden="true"></div>
+    <div class="iyf-faro__panel">
+      <p class="iyf-faro__hint" id="iyf-faro-hint">Tocca il faro per decodificare il segnale.</p>
+      <div class="iyf-faro__decoded" id="iyf-faro-decoded" hidden>
+        <p class="iyf-faro__decoded-text" id="iyf-faro-decoded-text"></p>
+      </div>
+    </div>
+  </div>
+</figure>
+<script src="{{ '/assets/js/faro-morse.js' | relative_url }}" defer></script>
