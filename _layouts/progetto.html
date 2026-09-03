@@ -2,6 +2,17 @@
 layout: default
 ---
 <article class="progetto">
+  {% if page.header_img %}
+  <figure class="progetto-hero">
+    <img
+      src="{{ page.header_img | relative_url }}"
+      alt="{{ page.header_alt | default: page.titolo_attivita }}"
+      width="1408"
+      height="768"
+      decoding="async"
+    >
+  </figure>
+  {% endif %}
   <header class="progetto-header">
     <div class="progetto-header__brand">
       {% include logo-categoria.html gruppo=page.gruppo size="md" %}

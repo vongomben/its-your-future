@@ -30,8 +30,9 @@ turismo:
   logo: "/img/logo_its_turismo_liguria.png"
   alt: "ITS Turismo Liguria"
   contatti_url: "https://www.itsturismoliguria.it/"
-  landing_img: "/img/marketing/podio-turismo.jpg"
-  landing_alt: "Stand ITS Turismo Liguria — IT'S YOUR FUTURE"
+  landing_img: "/img/t-crisis-room.png"
+  landing_alt: "Crisis Room — simulazione Event Management ITS Turismo"
+  landing_contain: true
   percorso_img: ""
   percorso_alt: "Mappa del percorso Turismo in stand"
   percorso_didascalia: "Qui andrà l'immagine del percorso Turismo."

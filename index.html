@@ -55,7 +55,7 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
     {% assign percorsi = "meccatronica,digitale,turismo" | split: "," %}
     {% for slug in percorsi %}
     {% assign info = site.data.gruppi[slug] %}
-    <a class="iyf-percorso-tile" href="{{ '/' | append: slug | append: '/' | relative_url }}">
+    <a class="iyf-percorso-tile{% if info.landing_contain %} iyf-percorso-tile--illustration{% endif %}" href="{{ '/' | append: slug | append: '/' | relative_url }}">
       {% if info.landing_img %}
       <img class="iyf-percorso-tile__foto" src="{{ info.landing_img | relative_url }}" alt="" width="640" height="360" decoding="async">
       {% endif %}

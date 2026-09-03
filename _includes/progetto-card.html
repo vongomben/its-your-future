@@ -1,5 +1,15 @@
 {% assign p = include.progetto %}
-<article class="iyf-card">
+<article class="iyf-card{% if p.header_img %} iyf-card--has-foto{% endif %}">
+  {% if p.header_img %}
+  <img
+    class="iyf-card__foto"
+    src="{{ p.header_img | relative_url }}"
+    alt=""
+    width="704"
+    height="384"
+    decoding="async"
+  >
+  {% endif %}
   <div class="iyf-card__brand">
     {% include logo-categoria.html gruppo=p.gruppo size="sm" link=true %}
   </div>

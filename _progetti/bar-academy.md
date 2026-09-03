@@ -15,6 +15,8 @@ descrizione_breve: "Gestisci una serata di servizio tra mixology, vino, HACCP, a
 description: "Simulazione digitale per scoprire il lavoro del Food & Beverage Manager attraverso otto scenari professionali e una mini sfida finale di mise en place."
 gioco_url: "/bar-academy/"
 gioco_cta: "Entra in Bar Academy"
+header_img: "/img/t-bar-academy.png"
+header_alt: "Bar Academy: The Mixology & Management Challenge"
 ---
 
 <p><a class="iyf-btn iyf-btn--accent" href="{{ '/bar-academy/' | relative_url }}">Entra in Bar Academy</a></p>

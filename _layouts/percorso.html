@@ -8,7 +8,7 @@ layout: default
 
 <article class="iyf-landing">
   {% if info.landing_img %}
-  <figure class="iyf-landing__hero">
+  <figure class="iyf-landing__hero{% if info.landing_contain %} iyf-landing__hero--contain{% endif %}">
     <img
       src="{{ info.landing_img | relative_url }}"
       alt="{{ info.landing_alt | default: info.nome }}"
