@@ -621,109 +621,107 @@
 
 .iyf-faro__scene {
   position: relative;
+  isolation: isolate;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  min-height: 16rem;
-  max-height: min(70vh, 36rem);
+  height: 28rem;
   overflow: hidden;
   cursor: pointer;
-  background: #0a0e1a;
+  background-color: #0a0e1a;
+  background-image: var(--iyf-faro-bg);
+  background-position: center 28%;
+  background-size: cover;
+  background-repeat: no-repeat;
   -webkit-tap-highlight-color: transparent;
-}
-
-.iyf-faro__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(1.05);
 }
 
 .iyf-faro__vignette {
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
-  background: radial-gradient(ellipse at 50% 60%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.55) 100%);
+  background: radial-gradient(ellipse at 50% 58%, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 .iyf-faro__tower-wrap {
   position: absolute;
-  bottom: 0;
   left: 50%;
+  bottom: 0;
+  z-index: 2;
   transform: translateX(-50%);
-  width: min(28%, 240px);
-  min-width: 110px;
-  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
-  user-select: none;
+  height: 94%;
+  width: auto;
   pointer-events: none;
+  user-select: none;
 }
 
 .iyf-faro__tower {
-  width: 100%;
-  height: auto;
   display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
 }
 
 .iyf-faro__flare {
   position: absolute;
   left: 51.6%;
-  top: 8.7%;
-  width: 26%;
+  top: 9%;
+  z-index: 3;
+  width: 140%;
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   pointer-events: none;
   background: radial-gradient(
     circle,
-    rgba(255, 236, 180, 0.95) 0%,
-    rgba(255, 190, 90, 0.65) 28%,
-    rgba(255, 150, 50, 0.25) 55%,
-    rgba(255, 150, 50, 0) 75%
+    rgba(255, 240, 190, 1) 0%,
+    rgba(255, 200, 90, 0.85) 18%,
+    rgba(255, 160, 50, 0.4) 42%,
+    rgba(255, 140, 40, 0) 70%
   );
-  opacity: 0.28;
+  opacity: 0.22;
+  filter: blur(2px);
   transition: opacity 90ms ease-out, filter 90ms ease-out;
-  filter: blur(1px);
-  mix-blend-mode: screen;
 }
 
 .iyf-faro__flare.is-lit {
   opacity: 1;
-  filter: blur(0.5px) brightness(1.15);
+  filter: blur(1px) brightness(1.25);
 }
 
 .iyf-faro__morse {
   position: absolute;
   left: 50%;
-  top: 68%;
+  top: 62%;
+  z-index: 4;
   transform: translate(-50%, -50%);
-  width: min(92%, 640px);
+  width: 92%;
+  max-width: 40rem;
   text-align: center;
   color: #ffe9c2;
   font-family: "Courier New", ui-monospace, monospace;
   font-weight: 800;
-  font-size: clamp(0.85rem, 2.6vw, 1.7rem);
+  font-size: 1.15rem;
   letter-spacing: 0.28em;
   line-height: 1.6;
   text-shadow: 0 0 6px rgba(255, 190, 100, 0.9), 0 0 18px rgba(255, 150, 60, 0.6);
   pointer-events: none;
   min-height: 1.6em;
-  z-index: 3;
 }
 
 .iyf-faro__panel {
   position: absolute;
   left: 50%;
   bottom: 1rem;
-  transform: translateX(-50%);
-  width: min(90%, 28rem);
-  text-align: center;
   z-index: 5;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 28rem;
+  text-align: center;
   pointer-events: none;
 }
 
 .iyf-faro__hint {
-  color: rgba(252, 233, 201, 0.7);
+  color: rgba(252, 233, 201, 0.78);
   font-size: 0.85rem;
   font-style: italic;
   font-weight: 700;
@@ -735,8 +733,7 @@
   margin-top: 0.5rem;
   padding: 0.75rem 1rem;
   border-radius: 14px;
-  background: rgba(10, 14, 26, 0.6);
-  backdrop-filter: blur(6px);
+  background: rgba(10, 14, 26, 0.62);
   border: 1px solid rgba(255, 186, 110, 0.35);
   opacity: 0;
   transform: translateY(6px);
@@ -750,10 +747,20 @@
 
 .iyf-faro__decoded-text {
   color: #ffe3b0;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: 1rem;
   letter-spacing: 0.08em;
   font-weight: 600;
   margin: 0;
+}
+
+@media (min-width: 700px) {
+  .iyf-faro__scene {
+    height: 34rem;
+  }
+
+  .iyf-faro__morse {
+    font-size: 1.45rem;
+  }
 }
 
 .iyf-landing__intro {
