@@ -10,7 +10,7 @@ meccatronica:
   percorso_alt: "Mappa del percorso Meccatronica in stand"
   percorso_didascalia: "Qui andrà l'immagine del percorso Meccatronica."
   kicker: "Percorso ITS"
-  titolo: "Meccatronica"
+  titolo: "Meccatronica e Servizi all'Impresa"
   intro: "Attività ludico-didattiche dell'ITS La Spezia: amministrazione, robotica, meccatronica avanzata e logistica. Stand, open day e giochi da 3–7 minuti."
 digitale:
   nome: "ITS Accademia Digitale Liguria"
@@ -38,5 +38,5 @@ turismo:
   percorso_alt: "Mappa del percorso Turismo in stand"
   percorso_didascalia: "Qui andrà l'immagine del percorso Turismo."
   kicker: "Percorso ITS"
-  titolo: "Turismo"
+  titolo: "Turismo e Cultura"
   intro: "Tre simulazioni per i corsi ITS Turismo Liguria: eventi, food & beverage e hospitality. Decisioni sotto pressione, debrief e codice locker."
