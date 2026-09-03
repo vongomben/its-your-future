@@ -55,8 +55,16 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
     {% assign percorsi = "digitale,meccatronica,turismo" | split: "," %}
     {% for slug in percorsi %}
     {% assign info = site.data.gruppi[slug] %}
-    <a class="iyf-percorso-tile{% if info.landing_contain %} iyf-percorso-tile--illustration{% endif %}" href="{{ '/' | append: slug | append: '/' | relative_url }}">
-      {% if info.landing_img %}
+    <a class="iyf-percorso-tile" href="{{ '/' | append: slug | append: '/' | relative_url }}">
+      {% if info.landing_interactive == "faro-morse" %}
+      <span class="iyf-percorso-tile__foto iyf-percorso-tile__faro" style="--iyf-faro-bg: url('{{ '/img/faro-porto.jpg' | relative_url }}')" aria-hidden="true">
+        <span class="iyf-percorso-tile__faro-sky"></span>
+        <span class="iyf-percorso-tile__faro-tower-wrap">
+          <img class="iyf-percorso-tile__faro-tower" src="{{ '/img/faro-torre.png' | relative_url }}" alt="" width="650" height="975" decoding="async">
+          <span class="iyf-percorso-tile__faro-flare"></span>
+        </span>
+      </span>
+      {% elsif info.landing_img %}
       <img class="iyf-percorso-tile__foto" src="{{ info.landing_img | relative_url }}" alt="" width="640" height="360" decoding="async">
       {% endif %}
       <span class="iyf-percorso-tile__body">
