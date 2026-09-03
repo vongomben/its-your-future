@@ -1,0 +1,109 @@
+---
+layout: default
+---
+{% assign info = site.data.gruppi[page.gruppo] %}
+{% assign attivita = site.progetti | where: "gruppo", page.gruppo | sort: "order" %}
+{% assign corsi = site.data.corsi | where: "gruppo", page.gruppo %}
+{% assign materiali = site.data.materiali | where: "gruppo", page.gruppo %}
+
+<article class="iyf-landing">
+  {% if info.landing_img %}
+  <figure class="iyf-landing__hero">
+    <img
+      src="{{ info.landing_img | relative_url }}"
+      alt="{{ info.landing_alt | default: info.nome }}"
+      width="1200"
+      height="640"
+      decoding="async"
+    >
+  </figure>
+  {% endif %}
+
+  <header class="iyf-landing__intro">
+    <div class="iyf-landing__brand">
+      {% include logo-categoria.html gruppo=page.gruppo size="md" %}
+    </div>
+    <p class="iyf-kicker iyf-kicker--dark">{{ info.kicker }}</p>
+    <h1>{{ info.titolo }}</h1>
+    <p>{{ info.intro }}</p>
+    {% if info.contatti_url %}
+    <a class="iyf-btn iyf-btn--outline" href="{{ info.contatti_url }}" target="_blank" rel="noopener">Sito {{ info.nome }}</a>
+    {% endif %}
+  </header>
+
+  <section class="iyf-section" id="percorso">
+    <h2>Il percorso</h2>
+    <p class="iyf-section-desc">{{ info.percorso_didascalia }}</p>
+    {% if info.percorso_img and info.percorso_img != "" %}
+    <figure class="iyf-landing__percorso">
+      <img
+        src="{{ info.percorso_img | relative_url }}"
+        alt="{{ info.percorso_alt }}"
+        width="1200"
+        height="800"
+        decoding="async"
+      >
+      <figcaption>{{ info.percorso_didascalia }}</figcaption>
+    </figure>
+    {% else %}
+    <div class="iyf-landing__percorso iyf-landing__percorso--empty" role="img" aria-label="{{ info.percorso_alt }}">
+      <p>Immagine del percorso</p>
+      <p class="iyf-landing__percorso-hint">La mappa del percorso in stand verrà inserita qui.</p>
+    </div>
+    {% endif %}
+  </section>
+
+  {% if corsi.size > 0 %}
+  <section class="iyf-section" id="corsi">
+    <h2>Corsi</h2>
+    <p class="iyf-section-desc">Corsi ITS collegati a questo percorso.</p>
+    <div class="iyf-data-panel">
+      <div class="iyf-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ITS</th>
+              <th>Corso</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for c in corsi %}
+            <tr>
+              <td>{{ c.its }}</td>
+              <td>{{ c.corso }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="iyf-section" id="attivita">
+    <h2>Attività</h2>
+    <p class="iyf-section-desc">{{ attivita.size }} unità didattiche di questo percorso.</p>
+    <div class="iyf-grid">
+      {% for p in attivita %}
+        {% include progetto-card.html progetto=p %}
+      {% endfor %}
+    </div>
+  </section>
+
+  {% if materiali.size > 0 %}
+  <section class="iyf-section" id="materiali">
+    <h2>Materiali</h2>
+    <ul class="iyf-landing__materiali">
+      {% for m in materiali %}
+      <li>{{ m.materiale }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {{ content }}
+
+  <nav class="progetto-nav">
+    <a class="iyf-btn iyf-btn--outline" href="{{ '/' | relative_url }}">&larr; Tutti i percorsi</a>
+  </nav>
+</article>

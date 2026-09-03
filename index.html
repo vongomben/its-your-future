@@ -48,6 +48,27 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
   </div>
 </section>
 
+<section class="iyf-section" id="percorsi">
+  <h2>Tre percorsi</h2>
+  <p class="iyf-section-desc">Ogni ITS ha la sua landing: foto, mappa del percorso in stand, corsi e attività.</p>
+  <div class="iyf-percorsi">
+    {% assign percorsi = "meccatronica,digitale,turismo" | split: "," %}
+    {% for slug in percorsi %}
+    {% assign info = site.data.gruppi[slug] %}
+    <a class="iyf-percorso-tile" href="{{ '/' | append: slug | append: '/' | relative_url }}">
+      {% if info.landing_img %}
+      <img src="{{ info.landing_img | relative_url }}" alt="" width="640" height="360" decoding="async">
+      {% endif %}
+      <span class="iyf-percorso-tile__body">
+        {% include logo-categoria.html gruppo=slug size="sm" %}
+        <strong>{{ info.titolo }}</strong>
+        <span>Apri il percorso &rarr;</span>
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
 <section class="iyf-section" id="progetti">
   <h2>Percorsi ludico-didattici</h2>
   {% assign totale_progetti = site.progetti | size %}
@@ -59,104 +80,42 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
 
   <div class="iyf-section-group">
     <h3 class="iyf-section-group__title">
-      {% include logo-categoria.html gruppo="meccatronica" size="md" link=true %}
-      <a class="iyf-section-group__link" href="{{ site.data.gruppi.meccatronica.contatti_url }}" target="_blank" rel="noopener">
+      {% include logo-categoria.html gruppo="meccatronica" size="md" %}
+      <a class="iyf-section-group__link" href="{{ '/meccatronica/' | relative_url }}">
         {{ site.data.gruppi.meccatronica.nome }}
       </a>
     </h3>
     <div class="iyf-grid">
       {% for p in meccatronica %}
-      <article class="iyf-card">
-        <div class="iyf-card__brand">
-          {% include logo-categoria.html gruppo=p.gruppo size="sm" link=true %}
-        </div>
-        <div class="iyf-card__meta">
-          <span class="iyf-badge">{{ p.area }}</span>
-          {% if p.formato %}{% include formato-badges.html items=p.formato %}{% endif %}
-          <span class="iyf-tag">{{ p.durata }}</span>
-        </div>
-        <h3>{{ p.titolo_attivita }}</h3>
-        <p>{{ p.descrizione_breve }}</p>
-        <a class="iyf-btn" href="{{ p.url | relative_url }}">Scopri l'attività &rarr;</a>
-        {% if p.gioco_url %}
-        <a class="iyf-btn iyf-btn--accent" href="{{ p.gioco_url | relative_url }}">{{ p.gioco_cta | default: "Gioca ora" }}</a>
-        {% endif %}
-      </article>
+        {% include progetto-card.html progetto=p %}
       {% endfor %}
     </div>
   </div>
 
   <div class="iyf-section-group">
     <h3 class="iyf-section-group__title">
-      {% include logo-categoria.html gruppo="digitale" size="md" link=true %}
-      <a class="iyf-section-group__link" href="{{ site.data.gruppi.digitale.contatti_url }}" target="_blank" rel="noopener">
+      {% include logo-categoria.html gruppo="digitale" size="md" %}
+      <a class="iyf-section-group__link" href="{{ '/digitale/' | relative_url }}">
         {{ site.data.gruppi.digitale.nome }}
       </a>
     </h3>
     <div class="iyf-grid">
       {% for p in digitale %}
-      <article class="iyf-card">
-        <div class="iyf-card__brand">
-          {% include logo-categoria.html gruppo=p.gruppo size="sm" link=true %}
-        </div>
-        <div class="iyf-card__meta">
-          <span class="iyf-badge iyf-badge--blue">{{ p.area }}</span>
-          {% if p.formato %}{% include formato-badges.html items=p.formato %}{% endif %}
-          <span class="iyf-tag">{{ p.durata }}</span>
-        </div>
-        <h3>{{ p.titolo_attivita }}</h3>
-        <p>{{ p.descrizione_breve }}</p>
-        <a class="iyf-btn" href="{{ p.url | relative_url }}">Scopri l'attività &rarr;</a>
-        {% if p.gioco_url %}
-        <a class="iyf-btn iyf-btn--accent" href="{{ p.gioco_url | relative_url }}">{{ p.gioco_cta | default: "Gioca ora" }}</a>
-        {% endif %}
-      </article>
+        {% include progetto-card.html progetto=p %}
       {% endfor %}
     </div>
   </div>
-    <div class="iyf-section-group">
+
+  <div class="iyf-section-group">
     <h3 class="iyf-section-group__title">
-      {% include logo-categoria.html gruppo="turismo" size="md" link=true %}
-      <a
-        class="iyf-section-group__link"
-        href="{{ site.data.gruppi.turismo.contatti_url }}"
-        target="_blank"
-        rel="noopener"
-      >
+      {% include logo-categoria.html gruppo="turismo" size="md" %}
+      <a class="iyf-section-group__link" href="{{ '/turismo/' | relative_url }}">
         {{ site.data.gruppi.turismo.nome }}
       </a>
     </h3>
-
     <div class="iyf-grid">
       {% for p in turismo %}
-      <article class="iyf-card">
-
-        <div class="iyf-card__brand">
-          {% include logo-categoria.html gruppo=p.gruppo size="sm" link=true %}
-        </div>
-
-        <div class="iyf-card__meta">
-          <span class="iyf-badge">{{ p.area }}</span>
-
-          {% if p.formato %}
-            {% include formato-badges.html items=p.formato %}
-          {% endif %}
-
-          <span class="iyf-tag">{{ p.durata }}</span>
-        </div>
-
-        <h3>{{ p.titolo_attivita }}</h3>
-
-        <p>{{ p.descrizione_breve }}</p>
-
-        <a class="iyf-btn" href="{{ p.url | relative_url }}">
-          Scopri l'attività &rarr;
-        </a>
-        {% if p.gioco_url %}
-        <a class="iyf-btn iyf-btn--accent" href="{{ p.gioco_url | relative_url }}">{{ p.gioco_cta | default: "Gioca ora" }}</a>
-        {% endif %}
-
-      </article>
+        {% include progetto-card.html progetto=p %}
       {% endfor %}
     </div>
   </div>

@@ -1,18 +1,36 @@
 - its: "ITS LA SPEZIA – MECCATRONICA – Amministrazione"
+  gruppo: meccatronica
   corso: "Corso TECNICO SUPERIORE PER L'AMMINISTRAZIONE, LA GESTIONE FINANZIARIA E IL CONTROLLO DI GESTIONE — Marketing e l'Internazionalizzazione delle Imprese"
 - its: "ITS LA SPEZIA – MECCATRONICA – Robotica"
+  gruppo: meccatronica
   corso: "Corso TECNICO SUPERIORE PER L'AUTOMAZIONE E LA ROBOTICA INDUSTRIALE"
 - its: "ITS LA SPEZIA – MECCATRONICA – Meccatronics Avanzata"
+  gruppo: meccatronica
   corso: "Corso TECNICO SUPERIORE PER LA PROGETTAZIONE E LA PRODUZIONE MECCATRONICA AVANZATA"
 - its: "ITS LA SPEZIA – MECCATRONICA – Meccatronics Avanzata"
+  gruppo: meccatronica
   corso: "Corso Tecnico Superiore per la Strategia Commerciale, Marketing Logistico e Gestione delle Pratiche Doganali"
 - its: "ITS Accademia Digitale"
+  gruppo: digitale
   corso: "Full-Stack Developer"
 - its: "ITS Accademia Digitale"
+  gruppo: digitale
   corso: "Industrial IoT e Robotics Developer"
 - its: "ITS Accademia Digitale"
+  gruppo: digitale
   corso: "Cyber Security specialist"
 - its: "ITS Accademia Digitale"
+  gruppo: digitale
   corso: "Ai data specialist"
 - its: "ITS Accademia Digitale"
+  gruppo: digitale
   corso: "Social Digital marketing"
+- its: "ITS Turismo Liguria"
+  gruppo: turismo
+  corso: "Event Manager"
+- its: "ITS Turismo Liguria"
+  gruppo: turismo
+  corso: "Food & Beverage Manager"
+- its: "ITS Turismo Liguria"
+  gruppo: turismo
+  corso: "Gestore di strutture turistico-ricettive"

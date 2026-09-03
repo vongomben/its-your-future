@@ -484,3 +484,150 @@
     white-space: nowrap;
   }
 }
+
+.iyf-percorsi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.iyf-percorso-tile {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  background: $paper;
+  text-decoration: none;
+  color: $ink;
+  box-shadow: $shadow-card;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow-hover;
+    color: $ink;
+  }
+
+  img {
+    width: 100%;
+    height: 9.5rem;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.9rem 1rem 1.1rem;
+
+    strong {
+      color: $brand;
+      font-size: 1.05rem;
+    }
+
+    span:last-child {
+      color: $accent-dark;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.iyf-landing__hero {
+  margin: 1.5rem 0 0;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $soft;
+
+  img {
+    display: block;
+    width: 100%;
+    height: min(28rem, 70vw);
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+.iyf-landing__intro {
+  padding: 1.75rem 0 0.5rem;
+
+  h1 {
+    margin: 0.35rem 0 0.75rem;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+  }
+
+  > p {
+    max-width: 65ch;
+    color: $muted;
+    font-size: 1.05rem;
+  }
+}
+
+.iyf-landing__brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 0.75rem;
+  background: $paper;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+}
+
+.iyf-landing__percorso {
+  margin: 0;
+  border-radius: $radius-md;
+  overflow: hidden;
+  background: $paper;
+  border: 1px solid $border;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    padding: 0.75rem 1rem;
+    color: $muted;
+    font-size: 0.9rem;
+  }
+
+  &--empty {
+    min-height: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 2rem 1.25rem;
+    border: 2px dashed $border;
+    background: $soft;
+    text-align: center;
+
+    p {
+      margin: 0;
+      color: $brand;
+      font-weight: 700;
+    }
+  }
+}
+
+.iyf-landing__percorso-hint {
+  color: $muted !important;
+  font-size: 0.88rem;
+  font-weight: 400 !important;
+  max-width: 40ch;
+}
+
+.iyf-landing__materiali {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: $ink;
+
+  li {
+    margin: 0.35rem 0;
+  }
+}
