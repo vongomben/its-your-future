@@ -147,7 +147,7 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
           {% for c in site.data.corsi %}
           <tr>
             <td>{{ c.its }}</td>
-            <td>{{ c.corso }}</td>
+            <td>{% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.corso }}</a>{% else %}{{ c.corso }}{% endif %}</td>
           </tr>
           {% endfor %}
         </tbody>

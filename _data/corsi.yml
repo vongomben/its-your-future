@@ -1,18 +1,23 @@
 - its: "ITS Accademia Digitale"
   gruppo: digitale
   corso: "Full-Stack Developer"
+  url: "https://www.accademiadigitaleliguria.it/corso/full-stack-developer-16/"
+- its: "ITS Accademia Digitale"
+  gruppo: digitale
+  corso: "AI Data Specialist"
+  url: "https://www.accademiadigitaleliguria.it/corso/ai-data-specialist-16/"
+- its: "ITS Accademia Digitale"
+  gruppo: digitale
+  corso: "Social e Digital Marketing Specialist"
+  url: "https://www.accademiadigitaleliguria.it/corso/social-e-digital-marketing-specialist/"
+- its: "ITS Accademia Digitale"
+  gruppo: digitale
+  corso: "Cyber Security Specialist"
+  url: "https://www.accademiadigitaleliguria.it/corso/cyber-security-specialist-16/"
 - its: "ITS Accademia Digitale"
   gruppo: digitale
   corso: "Industrial IoT e Robotics Developer"
-- its: "ITS Accademia Digitale"
-  gruppo: digitale
-  corso: "Cyber Security specialist"
-- its: "ITS Accademia Digitale"
-  gruppo: digitale
-  corso: "Ai data specialist"
-- its: "ITS Accademia Digitale"
-  gruppo: digitale
-  corso: "Social Digital marketing"
+  url: "https://www.accademiadigitaleliguria.it/corso/industrial-iot-e-robotics-developer-16/"
 - its: "ITS LA SPEZIA – MECCATRONICA – Amministrazione"
   gruppo: meccatronica
   corso: "Corso TECNICO SUPERIORE PER L'AMMINISTRAZIONE, LA GESTIONE FINANZIARIA E IL CONTROLLO DI GESTIONE — Marketing e l'Internazionalizzazione delle Imprese"
