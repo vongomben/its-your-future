@@ -52,7 +52,7 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
   <h2>Tre percorsi</h2>
   <p class="iyf-section-desc">Ogni ITS ha la sua landing: foto, mappa del percorso in stand, corsi e attività.</p>
   <div class="iyf-percorsi">
-    {% assign percorsi = "meccatronica,digitale,turismo" | split: "," %}
+    {% assign percorsi = "digitale,meccatronica,turismo" | split: "," %}
     {% for slug in percorsi %}
     {% assign info = site.data.gruppi[slug] %}
     <a class="iyf-percorso-tile{% if info.landing_contain %} iyf-percorso-tile--illustration{% endif %}" href="{{ '/' | append: slug | append: '/' | relative_url }}">
@@ -72,25 +72,11 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
 <section class="iyf-section" id="progetti">
   <h2>Percorsi ludico-didattici</h2>
   {% assign totale_progetti = site.progetti | size %}
-  <p class="iyf-section-desc">{{ totale_progetti }} unità didattiche pronte per stand, open day e orientamento: dalla Meccatronica al Digitale al Turismo.</p>
+  <p class="iyf-section-desc">{{ totale_progetti }} unità didattiche pronte per stand, open day e orientamento: dall'Accademia Digitale alla Meccatronica al Turismo.</p>
 
-  {% assign meccatronica = site.progetti | where: "gruppo", "meccatronica" | sort: "order" %}
   {% assign digitale = site.progetti | where: "gruppo", "digitale" | sort: "order" %}
+  {% assign meccatronica = site.progetti | where: "gruppo", "meccatronica" | sort: "order" %}
   {% assign turismo = site.progetti | where: "gruppo", "turismo" | sort: "order" %}
-
-  <div class="iyf-section-group">
-    <h3 class="iyf-section-group__title">
-      {% include logo-categoria.html gruppo="meccatronica" size="md" %}
-      <a class="iyf-section-group__link" href="{{ '/meccatronica/' | relative_url }}">
-        {{ site.data.gruppi.meccatronica.nome }}
-      </a>
-    </h3>
-    <div class="iyf-grid">
-      {% for p in meccatronica %}
-        {% include progetto-card.html progetto=p %}
-      {% endfor %}
-    </div>
-  </div>
 
   <div class="iyf-section-group">
     <h3 class="iyf-section-group__title">
@@ -101,6 +87,20 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
     </h3>
     <div class="iyf-grid">
       {% for p in digitale %}
+        {% include progetto-card.html progetto=p %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="iyf-section-group">
+    <h3 class="iyf-section-group__title">
+      {% include logo-categoria.html gruppo="meccatronica" size="md" %}
+      <a class="iyf-section-group__link" href="{{ '/meccatronica/' | relative_url }}">
+        {{ site.data.gruppi.meccatronica.nome }}
+      </a>
+    </h3>
+    <div class="iyf-grid">
+      {% for p in meccatronica %}
         {% include progetto-card.html progetto=p %}
       {% endfor %}
     </div>

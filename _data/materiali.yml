@@ -1,3 +1,12 @@
+- its: "ITS Accademia Digitale"
+  gruppo: digitale
+  materiale: "Ozobot"
+- its: "ITS Accademia Digitale"
+  gruppo: digitale
+  materiale: "Webcam professionale (e forse a breve webcam panoramica?)"
+- its: "ITS Accademia Digitale"
+  gruppo: digitale
+  materiale: "Mixer e sistema Radio per attività orientativa"
 - its: "ITS La Spezia"
   gruppo: meccatronica
   materiale: "Dobot Magician Lite"
@@ -16,12 +25,3 @@
 - its: "ITS La Spezia"
   gruppo: meccatronica
   materiale: "Scanner tridimensionale"
-- its: "ITS Accademia Digitale"
-  gruppo: digitale
-  materiale: "Ozobot"
-- its: "ITS Accademia Digitale"
-  gruppo: digitale
-  materiale: "Webcam professionale (e forse a breve webcam panoramica?)"
-- its: "ITS Accademia Digitale"
-  gruppo: digitale
-  materiale: "Mixer e sistema Radio per attività orientativa"
