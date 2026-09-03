@@ -23,18 +23,22 @@ layout: default
     <div class="iyf-landing__brand">
       {% include logo-categoria.html gruppo=page.gruppo size="md" %}
     </div>
+    {% if info.landing_img %}
+    <h1 class="visually-hidden">{{ info.titolo }}</h1>
+    {% else %}
     <p class="iyf-kicker iyf-kicker--dark">{{ info.kicker }}</p>
     <h1>{{ info.titolo }}</h1>
+    {% endif %}
     <p>{{ info.intro }}</p>
     {% if info.contatti_url %}
     <a class="iyf-btn iyf-btn--outline" href="{{ info.contatti_url }}" target="_blank" rel="noopener">Sito {{ info.nome }}</a>
     {% endif %}
   </header>
 
+  {% if info.percorso_img and info.percorso_img != "" %}
   <section class="iyf-section" id="percorso">
     <h2>Il percorso</h2>
     <p class="iyf-section-desc">{{ info.percorso_didascalia }}</p>
-    {% if info.percorso_img and info.percorso_img != "" %}
     <figure class="iyf-landing__percorso">
       <img
         src="{{ info.percorso_img | relative_url }}"
@@ -45,13 +49,8 @@ layout: default
       >
       <figcaption>{{ info.percorso_didascalia }}</figcaption>
     </figure>
-    {% else %}
-    <div class="iyf-landing__percorso iyf-landing__percorso--empty" role="img" aria-label="{{ info.percorso_alt }}">
-      <p>Immagine del percorso</p>
-      <p class="iyf-landing__percorso-hint">La mappa del percorso in stand verrà inserita qui.</p>
-    </div>
-    {% endif %}
   </section>
+  {% endif %}
 
   {% if corsi.size > 0 %}
   <section class="iyf-section" id="corsi">
