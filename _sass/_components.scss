@@ -755,11 +755,28 @@
 
 @media (min-width: 700px) {
   .iyf-faro__scene {
-    height: 34rem;
+    height: 30rem;
+    background-position: center 88%;
+  }
+
+  .iyf-faro__tower-wrap {
+    height: auto;
+    width: 18%;
+    max-width: 230px;
+  }
+
+  .iyf-faro__tower {
+    height: auto;
+    width: 100%;
   }
 
   .iyf-faro__morse {
-    font-size: 1.45rem;
+    top: 48%;
+    font-size: 1.35rem;
+  }
+
+  .iyf-faro__panel {
+    bottom: 1.5rem;
   }
 }
 
