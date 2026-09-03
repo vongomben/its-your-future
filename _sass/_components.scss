@@ -95,13 +95,15 @@
 }
 
 .iyf-cat-logo--sm {
-  height: 1.65rem;
-  max-width: 5.5rem;
+  height: auto;
+  max-height: 2.5rem;
+  max-width: 100%;
 }
 
 .iyf-cat-logo--md {
-  height: 2.1rem;
-  max-width: 7rem;
+  height: auto;
+  max-height: 3.25rem;
+  max-width: 100%;
 }
 
 .iyf-cat-logo-link {
@@ -509,12 +511,21 @@
     color: $ink;
   }
 
-  img {
+  &__foto {
     width: 100%;
     height: 9.5rem;
     object-fit: cover;
     object-position: center top;
     display: block;
+  }
+
+  .iyf-cat-logo {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 2.6rem;
+    object-fit: contain;
+    object-position: left center;
   }
 
   &__body {

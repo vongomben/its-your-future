@@ -57,7 +57,7 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
     {% assign info = site.data.gruppi[slug] %}
     <a class="iyf-percorso-tile" href="{{ '/' | append: slug | append: '/' | relative_url }}">
       {% if info.landing_img %}
-      <img src="{{ info.landing_img | relative_url }}" alt="" width="640" height="360" decoding="async">
+      <img class="iyf-percorso-tile__foto" src="{{ info.landing_img | relative_url }}" alt="" width="640" height="360" decoding="async">
       {% endif %}
       <span class="iyf-percorso-tile__body">
         {% include logo-categoria.html gruppo=slug size="sm" %}
