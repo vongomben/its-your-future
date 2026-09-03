@@ -29,7 +29,7 @@ Far capire il ruolo dell'**Event Manager** nella progettazione e conduzione di u
 
 > Anno 2026, Space Academy ITS. Il giocatore entra nella **Crisis Room**, la regia di un festival turistico-culturale outdoor con 800 ospiti, sponsor, artisti e fornitori collegati in diretta.
 >
-> Sei l'Event Manager di turno: ogni alert che arriva in regia — meteo, service, ingressi, sponsor o social — richiede una decisione entro 15 secondi. Ogni scelta modifica il livello di controllo dell'evento e viene seguita da un breve debrief tecnico.
+> Sei l'Event Manager di turno: ogni alert che arriva in regia — meteo, service, ingressi, sponsor o social — richiede una decisione entro 30 secondi. Ogni scelta modifica il livello di controllo dell'evento e viene seguita da un breve debrief tecnico.
 
 ## Materiali
 

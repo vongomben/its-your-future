@@ -29,7 +29,7 @@ Far capire il ruolo del **Food & Beverage Manager** nella gestione di bar e rist
 
 > Anno 2026, Space Academy ITS. Il giocatore entra nella **Bar Academy**, il ristorante-bar dell'Accademia in piena serata di servizio, tra ordini al banco, sala piena e cucina sotto pressione.
 >
-> Sei il Food & Beverage Manager di turno: ogni ordine, reclamo o controllo richiede una decisione tecnica entro 15 secondi. Ogni scelta modifica la qualità del servizio e viene seguita da un breve debrief professionale.
+> Sei il Food & Beverage Manager di turno: ogni ordine, reclamo o controllo richiede una decisione entro 30 secondi. Ogni scelta modifica la qualità del servizio e viene seguita da un breve debrief professionale.
 
 ## Materiali
 
@@ -44,10 +44,10 @@ Far capire il ruolo del **Food & Beverage Manager** nella gestione di bar e rist
 |:--:|--------|----------------------|-------------------|---------------------|
 | 1 | Negroni IBA | Un cliente ordina un Negroni. Qual è la ricetta IBA corretta? | **1/3 Gin · 1/3 Vermouth Rosso · 1/3 Bitter Campari.** | Il Negroni è costruito su tre parti uguali e si serve nel tumbler basso con scorza d'arancia. |
 | 2 | Il Vermentino giusto | Il cliente ordina un Vermentino ligure. A quale temperatura lo servi? | **8–10 °C, in secchiello con ghiaccio e acqua.** | I bianchi giovani devono mantenere freschezza e profilo aromatico. |
-| 3 | Acciughe al verde | Con acciughe al verde e salsa piccante, quale vino consigli? | **Vermentino Colli di Luni, fresco e sapido.** | Sapidità, acidità e territorialità guidano un abbinamento coerente. |
+| 3 | Vino col pesce | Pesce con salsa un po' piccante: l'ospite chiede un vino che ci stia, niente di pesante. | **Un bianco fresco e locale, spiegando perché.** | Con il pesce si cerca un vino fresco e sapido, che accompagni senza coprire. |
 | 4 | Catena del freddo | Un vassoio di antipasti di pesce è rimasto a temperatura ambiente per 3 ore. | **Lo smaltisci: la catena del freddo è compromessa.** | Il rischio microbiologico non è visibile: la sicurezza alimentare viene prima del costo del prodotto. |
 | 5 | Il piatto freddo | Un cliente lamenta che il piatto è freddo. Come gestisci il reclamo? | **Ti scusi, ritiri il piatto, lo fai rifare subito e offri un gesto di cortesia.** | Il modello LEARN aiuta a trasformare un reclamo in un'occasione di fidelizzazione. |
-| 6 | Food cost al 30% | Un piatto costa 6 €. A quanto lo prezzi per un food cost del 30%? | **20 €.** | Prezzo = costo / percentuale desiderata: 6 / 0,30 = 20. |
+| 6 | Il prezzo del piatto | Un secondo costa 6 € di ingredienti. Cucina propone 12 € «per fare volume». | **Un prezzo che copre gli ingredienti e lascia margine.** | Volume a basso margine brucia il conto: listino e coperti devono stare insieme. |
 | 7 | Shakerato o stirred? | Devi preparare un Martini Cocktail con gin e vermouth secco. | **Stirred, nel mixing glass.** | I cocktail composti da distillati limpidi vengono mescolati per mantenere trasparenza e struttura. |
 | 8 | Allergia ai crostacei | Un cliente dichiara un'allergia ai crostacei. Qual è il tuo obbligo? | **Consultare la scheda allergeni e verificare la cross-contamination in cucina.** | La normativa richiede informazione sugli allergeni e attenzione anche alle contaminazioni indirette. |
 | BONUS | Mise en place | Hai 12 secondi per scegliere solo gli ingredienti corretti per il banco bar. | **Seleziona prodotti freschi e utili, evitando scaduti o rischiosi.** | Dietro al banco velocità e precisione devono convivere con la sicurezza. |

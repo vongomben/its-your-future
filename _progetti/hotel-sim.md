@@ -23,13 +23,13 @@ header_alt: "Hotel Sim: Revenue, Service & Reputation Simulator"
 
 ## Obiettivo
 
-Far capire il ruolo del **gestore di strutture turistico-ricettive**: calcolo e lettura del RevPAR, pricing dinamico, mix dei canali e disintermediazione dalle OTA, gestione dell'overbooking, online reputation, upselling di front office, housekeeping sostenibile e segmentazione della clientela.
+Far capire il ruolo del **gestore di strutture turistico-ricettive**: lettura di riempimento e prezzo (idea del RevPAR), pricing dinamico, mix dei canali e disintermediazione dalle OTA, gestione dell'overbooking, online reputation, upselling di front office, housekeeping sostenibile e segmentazione della clientela.
 
 ## Storia / contesto
 
 > Anno 2026, Space Academy ITS. Il giocatore prende il comando dell'**Hotel Sim**, la struttura ricettiva orbitante dell'Accademia, con 100 camere da riempire e ospiti in arrivo da tutta la galassia.
 >
-> Sei il gestore della struttura: ogni prenotazione, richiesta o recensione richiede una decisione entro 15 secondi. Le scelte modificano la performance dell'hotel e vengono accompagnate da un breve debrief professionale.
+> Sei il gestore della struttura: ogni prenotazione, richiesta o recensione richiede una decisione entro 30 secondi. Le scelte modificano la performance dell'hotel e vengono accompagnate da un breve debrief professionale.
 
 ## Materiali
 
@@ -42,7 +42,7 @@ Far capire il ruolo del **gestore di strutture turistico-ricettive**: calcolo e 
 
 | N° | Titolo | Domanda o situazione | Risposta corretta | Messaggio didattico |
 |:--:|--------|----------------------|-------------------|---------------------|
-| 1 | Il RevPAR | Hotel con 100 camere: 80 vendute a 120 € medi. Qual è il RevPAR? | **96 € — RevPAR = ADR × Occupancy.** | Il RevPAR bilancia prezzo e occupazione in un unico KPI. |
+| 1 | Com'è andata la notte? | Molte camere occupate, alcune vuote, prezzi diversi. Cosa guardi per primo? | **Riempimento e prezzo insieme: le camere vuote contano quanto quelle vendute.** | Il quadro buono tiene insieme occupancy e tariffa (è l'idea del RevPAR). |
 | 2 | Le ultime 8 camere | Sabato pomeriggio, pickup molto alto: restano 8 camere su 100. Cosa fai col prezzo? | **Aumenti la tariffa delle ultime camere del 25–40%.** | Con domanda alta e scarsità, il pricing dinamico protegge il margine. |
 | 3 | Dipendenza dalle OTA | Il 70% delle prenotazioni arriva da Booking con commissione al 18%. | **Investi su sito diretto, parity rate e programma di fidelizzazione.** | Le OTA danno visibilità, ma il canale diretto riduce costi e costruisce relazione con l'ospite. |
 | 4 | Overbooking | Arrivano 2 ospiti in più rispetto alle camere disponibili. | **Walk in hotel di pari categoria a tue spese e gesto compensativo.** | La prenotazione confermata è un impegno: il walk deve tutelare l'ospite. |
