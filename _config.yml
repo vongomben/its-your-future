@@ -17,10 +17,11 @@ logo:
   src: "/img/IT-Y-Flogo.png"
   alt: "IT'S YOUR FUTURE"
   composizione_orizzontale_lunga: "/img/composizione_orizzontale_lunga.png"
-# Necessario per GitHub Pages (project site): senza baseurl il CSS viene cercato
-# su https://vongomben.github.io/assets/... invece che su .../its-your-future/assets/...
-baseurl: "/its-your-future"
-url: "https://vongomben.github.io"
+# Dominio custom in root (its-your-future.it). Con baseurl vuoto,
+# {{ '/assets/...' | relative_url }} diventa /assets/... e funziona
+# sia in locale sia sul dominio.
+baseurl: ""
+url: "https://its-your-future.it"
 
 markdown: kramdown
 kramdown:
