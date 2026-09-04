@@ -1,0 +1,56 @@
+<article class="iyf-corso" id="corso-{{ c.id | default: forloop.index }}">
+  <header class="iyf-corso__header">
+    <p class="iyf-corso__its">{{ c.its }}</p>
+    <h3 class="iyf-corso__title">{{ c.corso }}</h3>
+    {% if c.tagline %}<p class="iyf-corso__tagline">{{ c.tagline }}</p>{% endif %}
+  </header>
+  {% if c.testo %}<p class="iyf-corso__testo">{{ c.testo }}</p>{% endif %}
+  {% if c.diploma %}<p class="iyf-corso__diploma"><strong>Diploma.</strong> {{ c.diploma }}</p>{% endif %}
+  {% if c.fatti %}
+  <dl class="iyf-corso__fatti">
+    {% for f in c.fatti %}
+    <div>
+      <dt>{{ f.label }}</dt>
+      <dd>{{ f.valore }}</dd>
+    </div>
+    {% endfor %}
+  </dl>
+  {% endif %}
+  {% if c.competenze %}
+  <h4>Cosa imparerai</h4>
+  <ul class="iyf-corso__list">
+    {% for item in c.competenze %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if c.destinatari %}<p class="iyf-corso__note">{{ c.destinatari }}</p>{% endif %}
+  {% if c.note_iscrizione %}<p class="iyf-corso__note">{{ c.note_iscrizione }}</p>{% endif %}
+  {% if c.note_date %}<p class="iyf-corso__note iyf-corso__note--muted">{{ c.note_date }}</p>{% endif %}
+  <p class="iyf-corso__actions">
+    {% if c.url %}
+    <a class="iyf-btn iyf-btn--outline" href="{{ c.url }}" target="_blank" rel="noopener">Scheda ufficiale</a>
+    {% endif %}
+    {% if c.iscrizione_url %}
+    <a class="iyf-btn iyf-btn--accent" href="{{ c.iscrizione_url }}" target="_blank" rel="noopener">{{ c.iscrizione_label | default: "Iscriviti" }}</a>
+    {% endif %}
+    {% if c.calendario_url %}
+    <a class="iyf-btn" href="{{ c.calendario_url }}" target="_blank" rel="noopener">Calendario formativo</a>
+    {% endif %}
+    {% if c.scheda_iscrizione_url %}
+    <a class="iyf-btn" href="{{ c.scheda_iscrizione_url }}" target="_blank" rel="noopener">Scheda di iscrizione (PDF)</a>
+    {% endif %}
+    {% if c.programma_url %}
+    <a class="iyf-btn" href="{{ c.programma_url }}" target="_blank" rel="noopener">Programma (PDF)</a>
+    {% endif %}
+    {% if c.bando_url %}
+    <a class="iyf-btn" href="{{ c.bando_url }}" target="_blank" rel="noopener">Bando (PDF)</a>
+    {% endif %}
+    {% if c.guida_iscrizione_url %}
+    <a class="iyf-btn" href="{{ c.guida_iscrizione_url }}" target="_blank" rel="noopener">Guida iscrizione (PDF)</a>
+    {% endif %}
+    {% if c.scheda_corso_url %}
+    <a class="iyf-btn" href="{{ c.scheda_corso_url }}" target="_blank" rel="noopener">Scheda corso (PDF)</a>
+    {% endif %}
+  </p>
+</article>

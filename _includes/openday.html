@@ -1,0 +1,16 @@
+{% if info.openday %}
+<aside class="iyf-openday" id="open-day" aria-labelledby="iyf-openday-title">
+  <p class="iyf-openday__kicker">{{ info.openday.kicker }}</p>
+  <p class="iyf-openday__date">{{ info.openday.data }}</p>
+  <h2 id="iyf-openday-title">{{ info.openday.titolo }}</h2>
+  <p class="iyf-openday__testo">{{ info.openday.testo }}</p>
+  <p class="iyf-openday__actions">
+    {% if info.openday.url %}
+    <a class="iyf-btn iyf-btn--accent" href="{{ info.openday.url }}" target="_blank" rel="noopener">{{ info.openday.cta_sito | default: "Sito ufficiale" }}</a>
+    {% endif %}
+    {% if info.openday.iscrizione_url %}
+    <a class="iyf-btn" href="{{ info.openday.iscrizione_url }}" target="_blank" rel="noopener">{{ info.openday.cta_iscrizione | default: "Iscriviti" }}</a>
+    {% endif %}
+  </p>
+</aside>
+{% endif %}

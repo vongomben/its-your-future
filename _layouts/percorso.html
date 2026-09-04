@@ -21,6 +21,8 @@ layout: default
   </figure>
   {% endif %}
 
+  {% include openday.html %}
+
   <header class="iyf-landing__intro">
     <div class="iyf-landing__brand">
       {% include logo-categoria.html gruppo=page.gruppo size="md" %}
@@ -57,26 +59,11 @@ layout: default
   {% if corsi.size > 0 %}
   <section class="iyf-section" id="corsi">
     <h2>Corsi</h2>
-    <p class="iyf-section-desc">Corsi ITS collegati a questo percorso.</p>
-    <div class="iyf-data-panel">
-      <div class="iyf-table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>ITS</th>
-              <th>Corso</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for c in corsi %}
-            <tr>
-              <td>{{ c.its }}</td>
-              <td>{% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.corso }}</a>{% else %}{{ c.corso }}{% endif %}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
+    <p class="iyf-section-desc">Testi, date e iscrizioni dalle schede ufficiali delle scuole. I form restano sui siti ITS.</p>
+    <div class="iyf-corsi">
+      {% for c in corsi %}
+        {% include corso-scheda.html %}
+      {% endfor %}
     </div>
   </section>
   {% endif %}

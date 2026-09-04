@@ -1,41 +1,292 @@
-- its: "ITS Accademia Digitale"
+# Testi e date tratti dalle schede ufficiali (settembre 2026).
+# I link di iscrizione e i PDF restano sui siti delle scuole.
+
+- id: full-stack
+  its: "ITS Accademia Digitale"
   gruppo: digitale
   corso: "Full-Stack Developer"
+  tagline: "Impara a sviluppare ciò che tutti utilizzano."
   url: "https://www.accademiadigitaleliguria.it/corso/full-stack-developer-16/"
-- its: "ITS Accademia Digitale"
+  iscrizione_url: "https://www.accademiadigitaleliguria.it/corso/full-stack-developer-16/#form"
+  iscrizione_label: "Iscriviti al corso"
+  scheda_iscrizione_url: "https://www.accademiadigitaleliguria.it/wp-content/uploads/2026/07/16.1_-Allegato-10-Scheda-di-iscrizione_Full-Stack-Developer_compilabile.pdf"
+  programma_url: "https://www.accademiadigitaleliguria.it/wp-content/uploads/2026/05/programma-corso-Full-Stack-16.1.pdf"
+  testo: "Il corso Full-Stack Developer dell’ITS-ICT Accademia Digitale Liguria ti porta nel cuore dello sviluppo software, dal front-end al back-end. Imparerai a progettare e creare applicazioni reali usando linguaggi, framework e metodologie richieste dalle aziende. Forma Tecnici Superiori sviluppatori di software con specializzazione per l’industria 4.0, in grado di operare sia lato front-end che back-end, con metodologie DevOps e Agile e strumenti di AI per lo sviluppo."
+  diploma: "Diploma di specializzazione per le tecnologie applicate — Tecnico superiore sviluppatore di software con specializzazione per l’industria 4.0, Full-Stack Developer. 5° livello EQF, valido per i pubblici concorsi."
+  fatti:
+    - { label: "Costo", valore: "Gratuito" }
+    - { label: "Durata", valore: "Biennale, 1.000 ore" }
+    - { label: "Stage", valore: "800 ore" }
+    - { label: "Diploma", valore: "5° livello EQF" }
+    - { label: "Iscrizioni", valore: "Aperte fino al 23 ottobre 2026" }
+    - { label: "Open Day", valore: "15 settembre 2026" }
+  competenze:
+    - "Sviluppo front-end e back-end: linguaggi Object Oriented, scripting e SQL; framework React, Angular, .NET/C#, Java; Web Services e database."
+    - "DevOps e ciclo di vita del software: Agile, sicurezza dei dati, mobile e cloud, revisione e controllo del codice."
+    - "AI per lo sviluppo software: strumenti di intelligenza artificiale per accelerare lo sviluppo, individuare bug e ottimizzare il codice."
+  destinatari: "Per chi vuole avviare una carriera nello sviluppo software, anche da zero. Serve un diploma di scuola secondaria superiore (o titolo equivalente); non è richiesta esperienza professionale."
+
+- id: ai-data
+  its: "ITS Accademia Digitale"
   gruppo: digitale
   corso: "AI Data Specialist"
+  tagline: "Impara a usare l’AI per comprendere il futuro."
   url: "https://www.accademiadigitaleliguria.it/corso/ai-data-specialist-16/"
-- its: "ITS Accademia Digitale"
+  iscrizione_url: "https://www.accademiadigitaleliguria.it/corso/ai-data-specialist-16/#form"
+  iscrizione_label: "Iscriviti al corso"
+  scheda_iscrizione_url: "https://www.accademiadigitaleliguria.it/wp-content/uploads/2026/07/16.2_-Allegato-10-Scheda-di-iscrizione_AI-Data-Specialist_compilabile.pdf"
+  programma_url: "https://www.accademiadigitaleliguria.it/wp-content/uploads/2026/05/programma-corso-AI-16.2.pdf"
+  testo: "Il corso AI Data Specialist introduce all’analisi dei dati e alle tecniche di intelligenza artificiale. Forma Tecnici Superiori Data Manager con specializzazione nello sviluppo di applicazioni per Big Data e industria 4.0: statistica, informatica e matematica per modelli di machine learning e AI che automatizzano decisioni e ottimizzano processi."
+  diploma: "Diploma di specializzazione per le tecnologie applicate — Tecnico superiore Data Manager, sviluppo di applicazioni per Big Data con specializzazione per l’industria 4.0, AI Data Specialist."
+  fatti:
+    - { label: "Costo", valore: "Gratuito" }
+    - { label: "Durata", valore: "Biennale, 1.000 ore" }
+    - { label: "Stage", valore: "800 ore" }
+    - { label: "Diploma", valore: "5° livello EQF" }
+    - { label: "Iscrizioni", valore: "Aperte fino al 23 ottobre 2026" }
+    - { label: "Open Day", valore: "15 settembre 2026" }
+  competenze:
+    - "Programmazione e analisi statistica: due linguaggi e due paradigmi; R e Python (API e librerie) per il trattamento dei dati."
+    - "Machine Learning e AI: data wrangling, algoritmi di ML, potenzialità e limiti dell’AI, strumenti Big Data come Apache Spark."
+    - "Visualizzazione e database: Power BI; database relazionali e non relazionali."
+  destinatari: "Per chi vuole lavorare sui dati e sull’intelligenza artificiale. Serve un diploma di scuola secondaria superiore (o titolo equivalente)."
+
+- id: social
+  its: "ITS Accademia Digitale"
   gruppo: digitale
   corso: "Social e Digital Marketing Specialist"
+  tagline: "Impara a far vibrare storie online."
   url: "https://www.accademiadigitaleliguria.it/corso/social-e-digital-marketing-specialist/"
-- its: "ITS Accademia Digitale"
+  iscrizione_url: "https://www.accademiadigitaleliguria.it/corso/social-e-digital-marketing-specialist/#form"
+  iscrizione_label: "Iscriviti al corso"
+  scheda_iscrizione_url: "https://www.accademiadigitaleliguria.it/wp-content/uploads/2026/07/16.3_Allegato-10-Scheda-di-iscrizione_DigitalSocial-Marketing-Specialist_compilabile.pdf"
+  programma_url: "https://www.accademiadigitaleliguria.it/wp-content/uploads/2026/05/programma-corso-Digital-16.3.pdf"
+  testo: "Due anni per creare, gestire e far crescere strategie di comunicazione online: contenuti, creatività e strumenti digitali, dalla progettazione alla produzione, fino alle campagne e all’analisi dei dati. Forma Tecnici Superiori Digital Media Specialist in social media management e digital media marketing per l’industria 4.0, anche con AI generativa."
+  diploma: "Diploma di specializzazione per le tecnologie applicate — Tecnico superiore Digital Media Specialist, social media manager e digital media marketing con specializzazione per l’industria 4.0."
+  fatti:
+    - { label: "Costo", valore: "Gratuito" }
+    - { label: "Durata", valore: "Biennale, 1.000 ore" }
+    - { label: "Stage", valore: "800 ore" }
+    - { label: "Diploma", valore: "5° livello EQF" }
+    - { label: "Iscrizioni", valore: "Aperte fino al 23 ottobre 2026" }
+    - { label: "Open Day", valore: "15 settembre 2026" }
+  competenze:
+    - "Social media e content: profili aziendali su Facebook, Instagram, LinkedIn, TikTok; testi, foto, video e podcast; basi di visual design."
+    - "Advertising e strategie: campagne su Google, Meta, LinkedIn, TikTok, Spotify; SEO, influencer e e-mail marketing; AI generativa nel flusso di lavoro."
+    - "Analytics e normative: Google Analytics 4; GDPR, diritto d’autore, policy advertising."
+  destinatari: "Per chi vuole lavorare su brand, contenuti e campagne digitali. Serve un diploma di scuola secondaria superiore (o titolo equivalente)."
+
+- id: cyber
+  its: "ITS Accademia Digitale"
   gruppo: digitale
   corso: "Cyber Security Specialist"
+  tagline: "Impara a custodire i dati sensibili del mondo digitale."
   url: "https://www.accademiadigitaleliguria.it/corso/cyber-security-specialist-16/"
-- its: "ITS Accademia Digitale"
+  iscrizione_url: "https://www.accademiadigitaleliguria.it/corso/cyber-security-specialist-16/#form"
+  iscrizione_label: "Iscriviti al corso"
+  scheda_iscrizione_url: "https://www.accademiadigitaleliguria.it/wp-content/uploads/2026/07/16.4_Allegato-10-Scheda-di-iscrizione_Cybersecurity-specialist_compilabile.pdf"
+  programma_url: "https://www.accademiadigitaleliguria.it/wp-content/uploads/2026/05/programma-corso-Cyber-16.4.pdf"
+  testo: "Forma chi protegge sistemi, reti e dati: riconoscere vulnerabilità, valutare rischi e mettere in sicurezza infrastrutture reali. Unisce competenze di amministrazione sistemi hardware/software e reti, con specializzazione nella gestione della cybersecurity per l’industria 4.0, anche con tool di AI e standard internazionali."
+  diploma: "Diploma di specializzazione per le tecnologie applicate — Tecnico superiore System Cybersecurity, gestione della cybersecurity con specializzazione per l’industria 4.0."
+  fatti:
+    - { label: "Costo", valore: "Gratuito" }
+    - { label: "Durata", valore: "Biennale, 1.000 ore" }
+    - { label: "Stage", valore: "800 ore" }
+    - { label: "Diploma", valore: "5° livello EQF" }
+    - { label: "Iscrizioni", valore: "Aperte fino al 23 ottobre 2026" }
+    - { label: "Open Day", valore: "15 settembre 2026" }
+  competenze:
+    - "Reti e infrastrutture IT: architetture e protocolli cablati e wifi; switch, router, firewall; fondamenti di cloud."
+    - "Sicurezza informatica: livelli di difesa, backup e disaster recovery, virtualizzazione e container, load balancing con AI."
+    - "Scripting e AI per la sicurezza: scripting Windows e Linux; tool di AI generativa per defensive security."
+  destinatari: "Per chi vuole lavorare sulla protezione di sistemi e dati. Serve un diploma di scuola secondaria superiore (o titolo equivalente)."
+
+- id: iot
+  its: "ITS Accademia Digitale"
   gruppo: digitale
   corso: "Industrial IoT e Robotics Developer"
+  tagline: "Impara a dare intelligenza alle cose che usiamo ogni giorno."
   url: "https://www.accademiadigitaleliguria.it/corso/industrial-iot-e-robotics-developer-16/"
-- its: "ITS LA SPEZIA – MECCATRONICA – Amministrazione"
+  iscrizione_url: "https://www.accademiadigitaleliguria.it/corso/industrial-iot-e-robotics-developer-16/#form"
+  iscrizione_label: "Iscriviti al corso"
+  scheda_iscrizione_url: "https://www.accademiadigitaleliguria.it/wp-content/uploads/2026/07/16.5_Allegato-10-Scheda-di-iscrizione_Industrial-IoTRobotics-developer_compilabile.pdf"
+  programma_url: "https://www.accademiadigitaleliguria.it/wp-content/uploads/2026/05/programma-corso-IoT-16.5.pdf"
+  testo: "Progettare, sviluppare e gestire sistemi in cui oggetti con sensori e microchip comunicano, raccolgono dati e interagiscono con persone e ambienti. Forma Tecnici Superiori per metodi di sviluppo di sistemi IoT, automazione industriale e robotica con specializzazione Industria 4.0."
+  diploma: "Diploma di specializzazione per le tecnologie applicate — Tecnico superiore per la digitalizzazione dei processi con soluzioni AI di base e metodi per lo sviluppo di sistemi IoT, automazione industriale e robotica, Industria 4.0."
+  fatti:
+    - { label: "Costo", valore: "Gratuito" }
+    - { label: "Durata", valore: "Biennale, 1.000 ore" }
+    - { label: "Stage", valore: "800 ore" }
+    - { label: "Diploma", valore: "5° livello EQF" }
+    - { label: "Iscrizioni", valore: "Aperte fino al 23 ottobre 2026" }
+    - { label: "Open Day", valore: "15 settembre 2026" }
+  competenze:
+    - "Programmazione e software IoT: linguaggi Object Oriented e scripting, pattern e framework, ciclo di vita del software, applicazioni in cloud."
+    - "Hardware, sensori e automazione: sensori e attuatori IIoT, prototipazione con microcontrollori, protocolli IIoT, elementi di SCADA e PLC."
+    - "Machine learning e sicurezza dei dati: basi di apprendimento automatico, sicurezza dei dati, problem solving sul software."
+  destinatari: "Per chi vuole lavorare su IoT, robotica e automazione. Serve un diploma di scuola secondaria superiore (o titolo equivalente)."
+
+- id: amm-finanza
+  its: "ITS La Spezia — Meccatronica"
   gruppo: meccatronica
-  corso: "Corso TECNICO SUPERIORE PER L'AMMINISTRAZIONE, LA GESTIONE FINANZIARIA E IL CONTROLLO DI GESTIONE — Marketing e l'Internazionalizzazione delle Imprese"
-- its: "ITS LA SPEZIA – MECCATRONICA – Robotica"
+  corso: "Amministrazione, gestione finanziaria e controllo di gestione — Marketing e internazionalizzazione"
+  url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-2__corso_tecnico_superiore_per_l_amministrazione_la_gestione__finanziaria_e_il_controllo_di_gestione__marketing_e_l_internazionalizzazione_delle_imprese_33.html"
+  scheda_corso_url: "https://www.itslaspezia.it/uploaded_files/attachments/202506301751273931/its_2025_2_corso_amministrativo_scheda_validata.pdf"
+  testo: "Forma tecnici qualificati per i servizi d’impresa, specializzati nei processi amministrativi, commerciali e di internazionalizzazione e nel controllo dei processi produttivi e gestionali. Il Tecnico superiore per i servizi d’impresa è una figura polivalente: collabora ad amministrazione, gestione finanziaria e controllo di gestione per migliorare le performance aziendali."
+  fatti:
+    - { label: "Tipologia", valore: "ITS post diploma biennale" }
+    - { label: "Durata", valore: "2.000 ore" }
+    - { label: "Orario", valore: "9:00–18:00" }
+    - { label: "Inizio (scheda ufficiale)", valore: "30/10/2025" }
+    - { label: "Stage", valore: "800 ore" }
+    - { label: "Sede", valore: "La Spezia" }
+    - { label: "Costo", valore: "Gratuito, totalmente finanziato" }
+    - { label: "Posti", valore: "25, dopo selezione" }
+  competenze:
+    - "Analizzare i processi aziendali e predisporre la contabilità analitica."
+    - "Controllare la contabilità generale e modellare il controllo di gestione, anche con software ERP."
+    - "Supportare produzione, piano commerciale e vendita; pianificazione strategica sui mercati internazionali."
+  destinatari: "Diploma di scuola secondaria di secondo grado (o titolo equivalente). 25 partecipanti senza limiti di età, dopo le selezioni."
+  note_date: "Date di avvio e documentazione come pubblicate sulla scheda ITS La Spezia; verificare sul sito ufficiale se è aperta una nuova edizione."
+
+- id: robotica
+  its: "ITS La Spezia — Meccatronica"
   gruppo: meccatronica
-  corso: "Corso TECNICO SUPERIORE PER L'AUTOMAZIONE E LA ROBOTICA INDUSTRIALE"
-- its: "ITS LA SPEZIA – MECCATRONICA – Meccatronics Avanzata"
+  corso: "Automazione e robotica industriale"
+  url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-2__corso_tecnico_superiore_per_l_automazione_e_la_robotica_industriale_35.html"
+  scheda_corso_url: "https://www.itslaspezia.it/uploaded_files/attachments/202506301751274309/its_2025_2_corso_automazione_e_robotica_scheda_validata.pdf"
+  testo: "Forma supertecnici specializzati in automazione avanzata e programmazione, con curvatura sulle tecnologie digitali abilitanti 4.0. Il Tecnico superiore per l’automazione e la robotica industriale opera nella progettazione e programmazione di sistemi meccatronici e robotici: realizzazione, assemblaggio, installazione, manutenzione, collaudo e sviluppo, anche presso l’utilizzatore finale."
+  fatti:
+    - { label: "Tipologia", valore: "ITS post diploma biennale" }
+    - { label: "Durata", valore: "2.000 ore" }
+    - { label: "Orario", valore: "9:00–18:00" }
+    - { label: "Inizio (scheda ufficiale)", valore: "29/10/2025" }
+    - { label: "Stage", valore: "800 ore" }
+    - { label: "Sede", valore: "La Spezia" }
+    - { label: "Costo", valore: "Gratuito, totalmente finanziato" }
+    - { label: "Posti", valore: "25, dopo selezione" }
+  competenze:
+    - "Progettare e programmare sistemi meccatronici, linee di automazione e robot."
+    - "Gestire comando, controllo, qualità (TQM) e interfacce macchina–PLC."
+    - "Definire KPI, sostenibilità ed efficienza energetica; aspetti economici, normativi e di sicurezza."
+  destinatari: "Diploma di scuola secondaria di secondo grado (o titolo equivalente). 25 partecipanti senza limiti di età, dopo le selezioni."
+  note_date: "Date di avvio e documentazione come pubblicate sulla scheda ITS La Spezia; verificare sul sito ufficiale se è aperta una nuova edizione."
+
+- id: meccatronica-avanzata
+  its: "ITS La Spezia — Meccatronica"
   gruppo: meccatronica
-  corso: "Corso TECNICO SUPERIORE PER LA PROGETTAZIONE E LA PRODUZIONE MECCATRONICA AVANZATA"
-- its: "ITS LA SPEZIA – MECCATRONICA – Meccatronics Avanzata"
+  corso: "Progettazione e produzione meccatronica avanzata"
+  url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-15__corso_tecnico_superiore_per_la_progettazione_e_la_produzione_meccatronica_avanzata_34.html"
+  scheda_corso_url: "https://www.itslaspezia.it/uploaded_files/attachments/202506301751273104/its_2025_15_corso_meccatronica_scheda_validata.pdf"
+  testo: "Forma figure qualificate in meccanica avanzata, elettronica/elettrotecnica e in ambito navale e nautica da diporto, per la gestione del processo produttivo secondo Industria 4.0. Si lavora in uffici tecnici, pianificazione della produzione e studi di progettazione meccanica, elettronica, navale e nautica."
+  fatti:
+    - { label: "Tipologia", valore: "ITS post diploma biennale" }
+    - { label: "Durata", valore: "2.000 ore" }
+    - { label: "Orario", valore: "9:00–18:00" }
+    - { label: "Inizio (scheda ufficiale)", valore: "28/10/2025" }
+    - { label: "Stage", valore: "800 ore" }
+    - { label: "Sede", valore: "La Spezia" }
+    - { label: "Costo", valore: "Gratuito, totalmente finanziato" }
+    - { label: "Posti", valore: "25, dopo selezione" }
+  competenze:
+    - "Collaborare alla progettazione di prodotti meccanici anche complessi e allo sviluppo di prototipi virtuali."
+    - "Progettare ciclo produttivo, attrezzature e parametri CNC; gestire commesse e sistemi produttivi."
+    - "Politiche di manutenzione e post vendita."
+  destinatari: "Diploma di scuola secondaria di secondo grado (o titolo equivalente). 25 partecipanti senza limiti di età, dopo le selezioni."
+  note_date: "Date di avvio e documentazione come pubblicate sulla scheda ITS La Spezia; verificare sul sito ufficiale se è aperta una nuova edizione."
+
+- id: logistica
+  its: "ITS La Spezia — Meccatronica"
   gruppo: meccatronica
-  corso: "Corso Tecnico Superiore per la Strategia Commerciale, Marketing Logistico e Gestione delle Pratiche Doganali"
-- its: "ITS Turismo Liguria"
+  corso: "Strategia commerciale — Marketing logistico e pratiche doganali"
+  url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-1__corso_tecnico_superiore_per_la_strategia_commerciale___marketing_logistico_e_gestione_pratiche_doganali_40.html"
+  iscrizione_url: "https://sistemaits.istruzione.gov.it/portaleitsacademy"
+  iscrizione_label: "Iscriviti sul Portale ITS Academy"
+  scheda_iscrizione_url: "https://www.itslaspezia.it/uploaded_files/attachments/202606301782822264/all_10___scheda_iscrizione_3_amm_1_comm.pdf"
+  bando_url: "https://www.itslaspezia.it/uploaded_files/attachments/202606301782822274/bando_its_1_commerciale.pdf"
+  guida_iscrizione_url: "https://www.itslaspezia.it/uploaded_files/attachments/202607021783002283/guida_per_iscrizione_on_line_dal_portale_its_academy_(1).pdf"
+  testo: "Forma tecnici per i servizi d’impresa specializzati nei processi commerciali nazionali e internazionali: strategia commerciale, marketing, supply chain, magazzini digitalizzati, pratiche doganali e commercio estero. Figura polivalente che collega commerciale, logistica e dogane, con visione sistemica del business."
+  fatti:
+    - { label: "Tipologia", valore: "ITS post diploma biennale" }
+    - { label: "Durata", valore: "2.000 ore" }
+    - { label: "Orario", valore: "9:00–18:00" }
+    - { label: "Inizio corso", valore: "30/10/2026" }
+    - { label: "Stage", valore: "800 ore" }
+    - { label: "Sede", valore: "La Spezia, Via Pianagrande 18" }
+    - { label: "Costo", valore: "Gratuito, totalmente finanziato" }
+    - { label: "Domande", valore: "Online 1 luglio–14 ottobre 2026; a mano anche 1 luglio–5 agosto e 26 agosto–14 ottobre 2026" }
+  competenze:
+    - "Documenti di trasporto, procedure amministrative e contabili del ciclo logistico, pianificazione e costi."
+    - "Modi di trasporto, innovazione su logistica e tracciabilità, piano di marketing e vendite."
+    - "Aspetti logistico-organizzativi delle consegne, assortimenti e scorte."
+  destinatari: "Diploma di scuola secondaria di secondo grado (o titolo equivalente). 25 partecipanti senza limiti di età, dopo le selezioni."
+  note_iscrizione: "Domanda (Allegato 10) più CV europeo, titolo di studio, documento, foto tessere. Online con SPID sul Portale ITS Academy, oppure a mano in sede lunedì–venerdì 9:00–13:00. Info: info@itslaspezia.it"
+
+- id: event-manager
+  its: "ITS Turismo Liguria"
   gruppo: turismo
   corso: "Event Manager"
-- its: "ITS Turismo Liguria"
+  url: "https://www.itsturismoliguria.it/event-manager/"
+  iscrizione_url: "https://www.itsturismoliguria.it/event-manager/#iscriviti"
+  iscrizione_label: "Iscriviti al corso"
+  calendario_url: "https://www.itsturismoliguria.it/calendario-formativo/"
+  scheda_iscrizione_url: "https://www.itsturismoliguria.it/wp-content/uploads/2026/07/Scheda-iscrizione-Event-Manager-2.pdf"
+  programma_url: "https://www.itsturismoliguria.it/wp-content/uploads/2026/07/Piano_didattico_Event_Manager-copia.pdf"
+  testo: "Forma il professionista che idea, organizza, promuove e gestisce eventi di ogni tipo: congressi, matrimoni, sportivi, culturali, enogastronomici, corporate e spettacoli. In due anni: progettazione, budgeting, logistica, marketing e coordinamento operativo, dall’idea ai risultati. Profilo: Tecnico superiore per l’organizzazione e la promozione di eventi in ambito turistico e culturale (cod. 9.1.3)."
+  diploma: "Diploma di Specializzazione per le Tecnologie Applicate (L. 99/2022), 5° livello EQF, valido per i pubblici concorsi."
+  fatti:
+    - { label: "Costo", valore: "Gratuito" }
+    - { label: "Durata", valore: "Biennale, 1.800 ore (900 per anno)" }
+    - { label: "Stage", valore: "720 ore" }
+    - { label: "Posti", valore: "25, numero chiuso con selezione" }
+    - { label: "Avvio", valore: "Entro il 30 novembre 2026" }
+    - { label: "Orientamento", valore: "Da giugno a fine ottobre 2026" }
+  competenze:
+    - "Ciclo di vita dell’evento: brief, pianificazione, budget, logistica, fornitori on-site, promozione digitale e monitoraggio."
+  destinatari: "Percorso biennale, gratuito e cofinanziato dall’Unione Europea, con didattica laboratoriale e stage in azienda."
+
+- id: food-beverage
+  its: "ITS Turismo Liguria"
   gruppo: turismo
   corso: "Food & Beverage Manager"
-- its: "ITS Turismo Liguria"
+  url: "https://www.itsturismoliguria.it/corso-food-beverage-manager/"
+  iscrizione_url: "https://www.itsturismoliguria.it/corso-food-beverage-manager/#iscriviti"
+  iscrizione_label: "Iscriviti al corso"
+  calendario_url: "https://www.itsturismoliguria.it/calendario-formativo/"
+  scheda_iscrizione_url: "https://www.itsturismoliguria.it/wp-content/uploads/2026/07/Scheda-iscrizione-FB.pdf"
+  programma_url: "https://www.itsturismoliguria.it/wp-content/uploads/2026/07/Piano_didattico_FB_Manager-1.pdf"
+  testo: "Forma chi organizza, coordina e valorizza i servizi Food & Beverage: sala, cantina, bar e gestione economica. Competenze tecniche, linguistiche, relazionali e manageriali per la ristorazione e l’ospitalità di qualità. Profilo: Tecnico superiore per la gestione dei servizi di supporto agli ospiti (cod. 9.1.4)."
+  diploma: "Diploma di Specializzazione per le Tecnologie Applicate (L. 99/2022), 5° livello EQF, valido per i pubblici concorsi."
+  fatti:
+    - { label: "Costo", valore: "Gratuito" }
+    - { label: "Durata", valore: "Biennale, 1.800 ore (900 per anno)" }
+    - { label: "Stage", valore: "720 ore" }
+    - { label: "Posti", valore: "25, numero chiuso con selezione" }
+    - { label: "Avvio", valore: "Entro il 30 novembre 2026" }
+    - { label: "Orientamento", valore: "Da giugno a fine ottobre 2026" }
+  competenze:
+    - "Pianificare l’offerta F&B, coordinare sala, bar e approvvigionamenti, gestire costi e revenue, curare l’ospite e i prodotti del territorio."
+  destinatari: "Percorso biennale, gratuito e cofinanziato dall’Unione Europea, con didattica laboratoriale e stage in azienda."
+
+- id: hospitality
+  its: "ITS Turismo Liguria"
   gruppo: turismo
   corso: "Gestore di strutture turistico-ricettive"
+  url: "https://www.itsturismoliguria.it/corso-gestore-di-strutture-turistico-ricettive/"
+  iscrizione_url: "https://www.itsturismoliguria.it/corso-gestore-di-strutture-turistico-ricettive/#iscriviti"
+  iscrizione_label: "Iscriviti al corso"
+  calendario_url: "https://www.itsturismoliguria.it/calendario-formativo/"
+  scheda_iscrizione_url: "https://www.itsturismoliguria.it/wp-content/uploads/2026/07/Scheda-iscrizione-Gestione.pdf"
+  programma_url: "https://www.itsturismoliguria.it/wp-content/uploads/2026/07/Piano_didattico_Gestore_Strutture-1.pdf"
+  testo: "Forma chi organizza, gestisce e promuove hotel, B&B, residence, agriturismi, case vacanza e locazioni turistiche. In due anni: competenze operative, gestionali, digitali e linguistiche per coordinare i reparti, i numeri della struttura, il revenue e l’esperienza dell’ospite. Profilo: Tecnico superiore per lo sviluppo dei processi di gestione dell’offerta delle filiere turistiche e culturali (cod. 9.1.2)."
+  diploma: "Diploma di Specializzazione per le Tecnologie Applicate (L. 99/2022), 5° livello EQF, valido per i pubblici concorsi."
+  fatti:
+    - { label: "Costo", valore: "Gratuito" }
+    - { label: "Durata", valore: "Biennale, 1.800 ore (900 per anno)" }
+    - { label: "Stage", valore: "720 ore" }
+    - { label: "Posti", valore: "25, numero chiuso con selezione" }
+    - { label: "Avvio", valore: "Entro il 30 novembre 2026" }
+    - { label: "Orientamento", valore: "Da giugno a fine ottobre 2026" }
+  competenze:
+    - "Coordinare front office, housekeeping e amministrazione; prenotazioni e canali di vendita; contabilità, budget e revenue; promozione digitale e qualità."
+  destinatari: "Percorso biennale, gratuito e cofinanziato dall’Unione Europea, con didattica laboratoriale e stage in azienda."

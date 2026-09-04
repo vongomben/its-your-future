@@ -26,6 +26,15 @@ digitale:
   kicker: "Percorso ITS"
   titolo: "Accademia Digitale"
   intro: "Attività dell'ITS Accademia Digitale Liguria: coding, IoT, cybersecurity, dati e digital marketing. Dallo stand al browser, in pochi minuti."
+  openday:
+    kicker: "Open Day"
+    data: "15 settembre 2026"
+    titolo: "Open Day Accademia Digitale"
+    testo: "Martedì 15 settembre 2026: giornata aperta per conoscere i cinque corsi biennali. Le iscrizioni ai percorsi 2026–28 sono aperte fino al 23 ottobre 2026."
+    url: "https://www.accademiadigitaleliguria.it/"
+    iscrizione_url: "https://www.accademiadigitaleliguria.it/iscriviti/"
+    cta_sito: "Vai al sito Accademia Digitale"
+    cta_iscrizione: "Iscriviti ai corsi"
 turismo:
   nome: "ITS Turismo Liguria"
   logo: "/img/logo_its_turismo_liguria.png"

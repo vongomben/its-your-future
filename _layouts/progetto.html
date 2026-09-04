@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+{% assign info = site.data.gruppi[page.gruppo] %}
 <article class="progetto">
   {% if page.header_img %}
   <figure class="progetto-hero">
@@ -29,6 +30,8 @@ layout: default
     <a class="iyf-btn iyf-btn--accent" href="{{ page.gioco_url | relative_url }}">{{ page.gioco_cta | default: "Gioca ora" }}</a>
     {% endif %}
   </header>
+
+  {% include openday.html %}
 
   <div class="progetto-content">
     {{ content }}

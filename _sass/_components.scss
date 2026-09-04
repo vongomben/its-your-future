@@ -907,3 +907,172 @@
     margin: 0.35rem 0;
   }
 }
+
+.iyf-openday {
+  margin: 1.5rem 0 0;
+  padding: 1.35rem 1.5rem 1.5rem;
+  border-radius: $radius-md;
+  background: linear-gradient(135deg, $brand 0%, $brand-light 100%);
+  color: $paper;
+  box-shadow: $shadow-hover;
+
+  h2 {
+    margin: 0 0 0.5rem;
+    color: $paper;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+}
+
+.iyf-openday__kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.iyf-openday__date {
+  margin: 0.15rem 0 0.35rem;
+  font-size: clamp(1.85rem, 4.5vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.iyf-openday__testo {
+  margin: 0 0 1rem;
+  max-width: 62ch;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.iyf-openday__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+
+  .iyf-btn {
+    margin-top: 0;
+    background: $paper;
+    color: $brand !important;
+    border: 2px solid $paper;
+
+    &:hover {
+      background: $soft;
+      color: $brand !important;
+    }
+  }
+
+  .iyf-btn--accent {
+    background: $accent;
+    color: $paper !important;
+    border-color: $accent;
+
+    &:hover {
+      background: darken($accent, 8%);
+      color: $paper !important;
+    }
+  }
+}
+
+.iyf-corsi {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.iyf-corso {
+  background: $paper;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  padding: 1.35rem 1.4rem 1.45rem;
+  box-shadow: $shadow-card;
+}
+
+.iyf-corso__its {
+  margin: 0 0 0.2rem;
+  color: $muted;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.iyf-corso__title {
+  margin: 0;
+  color: $brand;
+  font-size: 1.25rem;
+}
+
+.iyf-corso__tagline {
+  margin: 0.35rem 0 0;
+  font-weight: 700;
+  color: $brand-light;
+}
+
+.iyf-corso__testo,
+.iyf-corso__diploma,
+.iyf-corso__note {
+  margin: 0.85rem 0 0;
+  max-width: 72ch;
+}
+
+.iyf-corso__note--muted {
+  color: $muted;
+  font-size: 0.92rem;
+}
+
+.iyf-corso h4 {
+  margin: 1.1rem 0 0.4rem;
+  font-size: 1rem;
+  color: $brand;
+}
+
+.iyf-corso__list {
+  margin: 0;
+  padding-left: 1.15rem;
+
+  li {
+    margin: 0.35rem 0;
+  }
+}
+
+.iyf-corso__fatti {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: 0.65rem;
+  margin: 1rem 0 0;
+
+  div {
+    background: $soft;
+    border-radius: $radius-sm;
+    padding: 0.55rem 0.7rem;
+  }
+
+  dt {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: $muted;
+  }
+
+  dd {
+    margin: 0.15rem 0 0;
+    font-weight: 700;
+    color: $brand;
+  }
+}
+
+.iyf-corso__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.1rem 0 0;
+
+  .iyf-btn {
+    margin-top: 0;
+  }
+}
