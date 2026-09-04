@@ -10,6 +10,7 @@ modalita: "Simulazione a scenari interattiva con timer e debrief immediato"
 formato:
   - digitale
 corso: "Event Manager"
+corso_id: event-manager
 corso_url: "https://www.itsturismoliguria.it/event-manager/"
 descrizione_breve: "Entra nella regia di un grande evento outdoor e gestisci in tempo reale meteo, fornitori, sicurezza, sponsor, budget e comunicazione di crisi."
 description: "Simulazione digitale per scoprire il lavoro dell'Event Manager attraverso otto decisioni professionali e una mini sfida finale sotto pressione."

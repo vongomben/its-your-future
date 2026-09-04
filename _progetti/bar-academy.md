@@ -10,6 +10,7 @@ modalita: "Simulazione a scenari interattiva con timer, debrief e mini sfida fin
 formato:
   - digitale
 corso: "Food & Beverage Manager"
+corso_id: food-beverage
 corso_url: "https://www.itsturismoliguria.it/corso-food-beverage-manager/"
 descrizione_breve: "Gestisci una serata di servizio tra mixology, vino, HACCP, allergeni, reclami e food cost prendendo decisioni professionali sotto pressione."
 description: "Simulazione digitale per scoprire il lavoro del Food & Beverage Manager attraverso otto scenari professionali e una mini sfida finale di mise en place."

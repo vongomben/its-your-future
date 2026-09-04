@@ -10,7 +10,8 @@ modalita: "Simulazione di spedizione internazionale"
 formato:
   - digitale
 corso: "Tecnico Superiore per la Strategia Commerciale — Marketing logistico e gestione pratiche doganali"
-corso_url: "https://www.itslaspezia.it/i_nostri_corsi.html"
+corso_id: logistica
+corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-1__corso_tecnico_superiore_per_la_strategia_commerciale___marketing_logistico_e_gestione_pratiche_doganali_40.html"
 descrizione_breve: "Gestisci una spedizione internazionale urgente: mercato, trasporto intermodale, dogana, tracciabilità e KPI."
 description: "Dalla strategia commerciale alla consegna doganale: supply chain, logistica intermodale e relazione con il cliente."
 ---

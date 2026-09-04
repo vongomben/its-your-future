@@ -10,6 +10,7 @@ modalita: "Simulazione di software house"
 formato:
   - digitale
 corso: "Full-Stack Developer — Tecnico superiore sviluppatore di software per l'industria digitale"
+corso_id: full-stack
 corso_url: "https://www.accademiadigitaleliguria.it/corso/full-stack-developer-16/"
 descrizione_breve: "Un'app web per prenotare laboratori smette di funzionare: risolvi front-end, back-end, database, sicurezza e deploy cloud."
 description: "Simulazione full-stack: correzione delle scelte tecniche prima del rilascio in produzione."

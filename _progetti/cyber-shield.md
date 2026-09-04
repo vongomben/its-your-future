@@ -11,6 +11,7 @@ formato:
   - digitale
   - fisico
 corso: "Cyber Security Specialist — 5° livello EQF"
+corso_id: cyber
 corso_url: "https://www.accademiadigitaleliguria.it/corso/cyber-security-specialist-16/"
 descrizione_breve: "Entra nel SOC di un'azienda sotto attacco: riconosci minacce, applica contromisure e proteggi l'infrastruttura."
 description: "Mini-simulazione da Security Operations Center: rete, server, cloud, dati e IoT."

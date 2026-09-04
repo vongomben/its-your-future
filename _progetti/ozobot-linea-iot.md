@@ -10,6 +10,7 @@ modalita: "Mini-percorso con robot da pavimento e codici colore"
 formato:
   - fisico
 corso: "Industrial IoT e Robotics Developer"
+corso_id: iot
 corso_url: "https://www.accademiadigitaleliguria.it/corso/industrial-iot-e-robotics-developer-16/"
 descrizione_breve: "Programma un Ozobot con codici colore per simulare una mini-linea IoT: routing, checkpoint e monitoraggio del flusso."
 description: "Attività STEAM con Ozobot per introdurre logica di controllo e monitoraggio in un contesto IoT industriale."

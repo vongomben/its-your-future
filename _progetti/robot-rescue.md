@@ -10,6 +10,7 @@ modalita: "Mini-gioco a tappe / escape game rapido"
 formato:
   - digitale
 corso: "Corso TECNICO SUPERIORE PER L'AUTOMAZIONE E LA ROBOTICA INDUSTRIALE"
+corso_id: robotica
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-2__corso_tecnico_superiore_per_l_automazione_e_la_robotica_industriale_35.html"
 descrizione_breve: "La linea di produzione si è fermata: analizza sensori, logica PLC, qualità e sicurezza per far ripartire il robot."
 description: "Guasto in una linea automatizzata industriale: prove tecniche su sensori, programmazione, KPI e sicurezza."

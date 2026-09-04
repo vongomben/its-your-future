@@ -10,6 +10,7 @@ modalita: "Simulazione a scenari interattiva con timer, debrief e mini sfida fin
 formato:
   - digitale
 corso: "Gestore di strutture turistico-ricettive"
+corso_id: hospitality
 corso_url: "https://www.itsturismoliguria.it/corso-gestore-di-strutture-turistico-ricettive/"
 descrizione_breve: "Gestisci un hotel tra RevPAR, pricing dinamico, OTA, overbooking, reputazione online, upselling e housekeeping."
 description: "Simulazione digitale per scoprire il lavoro dell'Hospitality & Revenue Manager attraverso otto decisioni professionali e una mini sfida finale di housekeeping."

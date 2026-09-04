@@ -10,7 +10,8 @@ modalita: "Simulazione di agenzia digital marketing"
 formato:
   - digitale
 corso: "Tecnico Superiore Digital Media Specialist — social media manager e digital media marketing per l'industria digitale"
-corso_url: "https://www.accademiadigitaleliguria.it/corso/digital-social-marketing-15-3/"
+corso_id: social
+corso_url: "https://www.accademiadigitaleliguria.it/corso/social-e-digital-marketing-specialist/"
 descrizione_breve: "Crea e ottimizza una campagna digitale per il lancio di una borraccia smart eco-friendly: target, canali, contenuti e KPI."
 description: "Percorso creativo per strategia digitale, social media, advertising, analytics e ottimizzazione campagna."
 ---

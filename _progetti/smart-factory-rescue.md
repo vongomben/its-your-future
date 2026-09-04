@@ -10,6 +10,7 @@ modalita: "Simulazione di fabbrica smart"
 formato:
   - digitale
 corso: "Industrial IoT e Robotics Developer"
+corso_id: iot
 corso_url: "https://www.accademiadigitaleliguria.it/corso/industrial-iot-e-robotics-developer-16/"
 descrizione_breve: "Il sistema IoT ha smesso di inviare dati al cloud: ricostruisci la catena sensore → microcontrollore → rete → dashboard → robot."
 description: "Riattiva una smart factory: sensori, IoT industriale, cybersecurity OT e robotica."

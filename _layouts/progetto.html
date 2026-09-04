@@ -37,6 +37,17 @@ layout: default
     {{ content }}
   </div>
 
+  {% if page.corso_id %}
+    {% assign c = site.data.corsi | where: "id", page.corso_id | first %}
+    {% if c %}
+  <section class="iyf-section" id="corso">
+    <h2>Il corso</h2>
+    <p class="iyf-section-desc">Testo, date e iscrizione dalla scheda ufficiale della scuola. Il form resta sul sito ITS.</p>
+    {% include corso-scheda.html %}
+  </section>
+    {% endif %}
+  {% endif %}
+
   <nav class="progetto-nav">
     <a class="iyf-btn iyf-btn--outline" href="{{ '/' | relative_url }}#progetti">&larr; Tutti i progetti</a>
     {% if page.corso_url %}
