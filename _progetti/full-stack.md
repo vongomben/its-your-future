@@ -14,7 +14,11 @@ corso_id: full-stack
 corso_url: "https://www.accademiadigitaleliguria.it/corso/full-stack-developer-16/"
 descrizione_breve: "Un'app web per prenotare laboratori smette di funzionare: risolvi front-end, back-end, database, sicurezza e deploy cloud."
 description: "Simulazione full-stack: correzione delle scelte tecniche prima del rilascio in produzione."
+gioco_url: "/app-in-panne/"
+gioco_cta: "Sistema l'app"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/app-in-panne/' | relative_url }}">Sistema l'app</a></p>
 
 ## Obiettivo
 
@@ -27,7 +31,8 @@ Far capire il ruolo del Full-Stack Developer nello sviluppo di applicazioni real
 ## Materiali
 
 - **Versione fisica:** schede prova, card HTML/CSS/JS, card API, mini-tabella database, finti log di errore, card cloud/deploy, QR finale.
-- **Versione digitale:** Google Form, Genially, dashboard di bug, mockup interfaccia, frammenti di codice.
+- **Versione digitale:** gioco web *App in panne* (5 stazioni, 5 minuti, sul dispositivo).
+- **Versione alternativa:** Google Form, Genially, dashboard di bug, mockup interfaccia, frammenti di codice.
 
 ## Prove dell'attività
 
