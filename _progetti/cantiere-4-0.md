@@ -14,7 +14,11 @@ corso_id: meccatronica-avanzata
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-15__corso_tecnico_superiore_per_la_progettazione_e_la_produzione_meccatronica_avanzata_34.html"
 descrizione_breve: "Progetta un supporto meccatronico per un motore elettrico nautico: materiali, CAD, CNC, qualità e manutenzione."
 description: "Percorso in ufficio tecnico per un componente nautico: dalla progettazione al collaudo."
+gioco_url: "/cantiere-4-0/"
+gioco_cta: "Entra in ufficio tecnico"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/cantiere-4-0/' | relative_url }}">Entra in ufficio tecnico</a></p>
 
 ## Obiettivo
 
@@ -27,7 +31,8 @@ Far capire il ruolo del tecnico superiore nella progettazione, prototipazione, p
 ## Materiali
 
 - **Versione fisica:** schede prova, immagini componenti, modello CAD, tabella materiali, scheda di collaudo, QR finale.
-- **Versione digitale:** Google Form, Genially, quiz interattivo, simulazione CAD/CAM, dashboard di produzione.
+- **Versione digitale:** gioco web *Ufficio tecnico* (6 prove, sul dispositivo).
+- **Versione alternativa:** Google Form, Genially, quiz interattivo, simulazione CAD/CAM, dashboard di produzione.
 
 ## Prove dell'attività
 

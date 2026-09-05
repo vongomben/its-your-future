@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ufficio Tecnico — Supporto Meccatronico Nautico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d2438;
+    --bg-2:#123650;
+    --panel:#123a56;
+    --panel-2:#164162;
+    --line:#28546f;
+    --brass:#c9974c;
+    --brass-dim:#6b5327;
+    --teal:#4fb8ac;
+    --coral:#e2665a;
+    --ink:#eaf3f8;
+    --ink-dim:#9fb8c9;
+    --ink-dimmer:#5f7d90;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  .iyf-site-nav{
+    position:sticky;top:0;z-index:3000;
+    width:100%;
+    display:flex;align-items:center;justify-content:space-between;gap:0.75rem;
+    min-height:52px;
+    padding:max(0.4rem, env(safe-area-inset-top)) 0.85rem 0.4rem;
+    background:#fff;border-bottom:1px solid #d8dee8;
+  }
+  .iyf-site-nav__home{
+    display:flex;align-items:center;min-height:44px;min-width:44px;flex-shrink:0;text-decoration:none;
+  }
+  .iyf-site-nav__logo{display:block;height:40px;width:auto;max-width:140px;object-fit:contain;}
+  .iyf-site-nav__percorso{
+    margin-left:auto;display:inline-flex;align-items:center;min-height:44px;
+    font-family:'Bitter',serif;font-size:clamp(0.72rem,2.8vw,0.95rem);font-weight:700;
+    letter-spacing:0.02em;line-height:1.25;text-align:right;text-decoration:none;color:#133b7a;
+  }
+  .iyf-site-nav__percorso:hover,.iyf-site-nav__percorso:focus-visible{text-decoration:underline;}
+  body{
+    background:
+      linear-gradient(180deg, #0a1f30 0%, var(--bg) 100%);
+    color:var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:0 0 40px 0;
+  }
+  /* faint blueprint grid on body */
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size:26px 26px;
+    pointer-events:none;
+    z-index:0;
+  }
+  .hud, main, footer{position:relative;z-index:1;}
+
+  .hud{
+    width:100%;
+    max-width:780px;
+    padding:20px 22px 16px 22px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .hud-top{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .brand{
+    font-family:'Bitter', serif;
+    font-weight:700;
+    font-size:1.2rem;
+    letter-spacing:0.01em;
+    color:var(--ink);
+  }
+  .brand small{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:400;
+    font-size:0.68rem;
+    color:var(--ink-dim);
+    letter-spacing:0.03em;
+    margin-top:2px;
+  }
+  .status-pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:3px;
+    border:1px solid var(--coral);
+    color:var(--coral);
+    background:rgba(226,102,90,0.08);
+    white-space:nowrap;
+    transition:all .4s ease;
+  }
+  .status-pill.ok{
+    border-color:var(--teal);
+    color:var(--teal);
+    background:rgba(79,184,172,0.1);
+  }
+
+  /* slipway progress */
+  .slipway{
+    position:relative;
+    height:34px;
+  }
+  .slipway-track{
+    position:absolute;
+    top:16px;left:0;right:0;
+    height:2px;
+    background:var(--line);
+  }
+  .slipway-track::after{
+    content:'';
+    position:absolute;right:-4px;top:-5px;
+    width:0;height:0;
+    border-top:6px solid transparent;
+    border-bottom:6px solid transparent;
+    border-left:8px solid var(--line);
+  }
+  .slipway-ticks{
+    position:absolute;
+    top:0;left:0;right:0;
+    display:flex;
+    justify-content:space-between;
+  }
+  .tick{
+    width:2px;height:10px;
+    background:var(--ink-dimmer);
+    margin-top:11px;
+  }
+  .tick.done{background:var(--brass);}
+  .boat{
+    position:absolute;
+    top:-2px;
+    transform:translateX(-50%);
+    transition:left .6s cubic-bezier(.4,0,.2,1);
+    font-size:1.15rem;
+    filter:drop-shadow(0 0 4px rgba(201,151,76,0.5));
+  }
+
+  .code-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.7rem;
+    color:var(--ink-dim);
+  }
+  .code-letters{display:flex;gap:5px;}
+  .code-letters span{
+    width:22px;height:26px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;
+    color:var(--ink-dimmer);
+    background:var(--panel);
+    font-size:0.85rem;
+    transition:all .3s ease;
+  }
+  .code-letters span.lit{
+    color:var(--brass);
+    border-color:var(--brass);
+    background:rgba(201,151,76,0.1);
+  }
+
+  main{
+    width:100%;
+    max-width:780px;
+    padding:26px 20px 10px 20px;
+    flex:1;
+  }
+
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:2px;
+  }
+
+  .titleblock{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+    border-bottom:1px solid var(--line);
+    background:var(--panel-2);
+    font-size:0.64rem;
+    color:var(--ink-dim);
+    letter-spacing:0.02em;
+    flex-wrap:wrap;
+    gap:6px 18px;
+  }
+  .titleblock b{color:var(--brass);font-weight:600;}
+
+  .card-body{padding:22px 24px 22px 24px;}
+
+  .card-eyebrow{
+    font-size:0.68rem;
+    color:var(--brass);
+    letter-spacing:0.03em;
+    margin-bottom:6px;
+    font-weight:500;
+  }
+  .card-art{
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:3392 / 1248;
+    object-fit:cover;
+    object-position:center;
+    border-radius:2px;
+    margin:0 0 16px 0;
+    background:var(--bg-2);
+    border:1px solid var(--line);
+  }
+  .card h2{
+    font-family:'Bitter', serif;
+    font-weight:700;
+    font-size:1.3rem;
+    margin:0 0 14px 0;
+    color:var(--ink);
+    line-height:1.28;
+  }
+  .scenario{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.9rem;
+    line-height:1.6;
+    color:#d3e2ea;
+    margin-bottom:18px;
+  }
+
+  .schematic{
+    border:1px dashed var(--line);
+    border-radius:2px;
+    padding:14px 16px;
+    margin-bottom:18px;
+    background:var(--bg-2);
+  }
+  .schematic-title{
+    font-size:0.64rem;
+    color:var(--ink-dim);
+    letter-spacing:0.03em;
+    margin-bottom:8px;
+  }
+  table.mat{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.83rem;
+  }
+  table.mat th, table.mat td{
+    padding:6px 8px;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+    color:#d3e2ea;
+  }
+  table.mat th{color:var(--ink-dim);font-weight:500;font-size:0.7rem;}
+  table.mat td.fail{color:var(--coral);}
+  table.mat td.pass{color:var(--teal);}
+
+  .options{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .opt{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:11px 14px;
+    border:1px solid var(--line);
+    border-radius:2px;
+    background:var(--bg-2);
+    cursor:pointer;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.84rem;
+    color:#dfe9ef;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .opt:hover{border-color:var(--ink-dimmer);}
+  .opt.selected{border-color:var(--brass);background:rgba(201,151,76,0.08);}
+  .opt.correct{border-color:var(--teal);background:rgba(79,184,172,0.1);color:var(--teal);}
+  .opt.wrong{border-color:var(--coral);background:rgba(226,102,90,0.1);color:var(--coral);}
+  .opt .marker{
+    width:16px;height:16px;flex-shrink:0;
+    border:1.5px solid var(--ink-dimmer);
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.6rem;
+    color:transparent;
+  }
+  .opt.radio .marker{border-radius:50%;}
+  .opt.checkbox .marker{border-radius:3px;}
+  .opt.selected .marker{border-color:var(--brass);color:var(--brass);}
+  .opt.correct .marker{border-color:var(--teal);color:var(--teal);}
+  .opt.wrong .marker{border-color:var(--coral);color:var(--coral);}
+
+  .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  button{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:0.8rem;
+    letter-spacing:0.02em;
+    padding:11px 20px;
+    border-radius:2px;
+    border:1px solid var(--brass);
+    background:var(--brass);
+    color:#1c1300;
+    cursor:pointer;
+    transition:opacity .15s ease, transform .1s ease;
+  }
+  button:hover{opacity:0.88;}
+  button:active{transform:scale(0.98);}
+  button:disabled{
+    background:transparent;
+    color:var(--ink-dimmer);
+    border-color:var(--line);
+    cursor:not-allowed;
+  }
+  button.ghost{
+    background:transparent;
+    color:var(--ink-dim);
+    border-color:var(--line);
+  }
+
+  .feedback{
+    margin-top:14px;
+    padding:12px 14px;
+    border-radius:2px;
+    font-size:0.85rem;
+    line-height:1.5;
+    display:none;
+  }
+  .feedback.show{display:block;}
+  .feedback.ok{background:rgba(79,184,172,0.1);border:1px solid var(--teal);color:#cdece7;}
+  .feedback.bad{background:rgba(226,102,90,0.1);border:1px solid var(--coral);color:#f7d6d2;}
+  .feedback .fb-title{font-weight:700;font-family:'Bitter',serif;font-size:0.78rem;letter-spacing:0.01em;margin-bottom:4px;}
+  .feedback.ok .fb-title{color:var(--teal);}
+  .feedback.bad .fb-title{color:var(--coral);}
+
+  .final{
+    text-align:center;
+    padding:14px 0 6px 0;
+  }
+  .final .icon{font-size:3rem;margin-bottom:10px;}
+  .final h2{font-family:'Bitter',serif;font-size:1.6rem;margin:0 0 8px 0;}
+  .final p.lead{color:#d3e2ea;font-size:0.95rem;margin:0 0 22px 0;}
+  .report{
+    text-align:left;
+    background:var(--bg-2);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:16px 18px;
+    margin-bottom:20px;
+    font-size:0.82rem;
+  }
+  .report-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line);color:#d3e2ea;}
+  .report-row:last-child{border-bottom:none;}
+  .report-row span:last-child{color:var(--brass);font-weight:600;}
+
+  footer{
+    max-width:780px;
+    width:100%;
+    text-align:center;
+    color:var(--ink-dimmer);
+    font-size:0.68rem;
+    padding:18px 22px 0 22px;
+  }
+
+  @media (max-width:520px){
+    .card-body{padding:18px 16px;}
+    .card h2{font-size:1.12rem;}
+    .titleblock{font-size:0.6rem;}
+  }
+</style>
+</head>
+<body>
+<nav class="iyf-site-nav" aria-label="Navigazione sito">
+  <a class="iyf-site-nav__home" href="../" aria-label="Torna alla home IT'S YOUR FUTURE">
+    <img class="iyf-site-nav__logo" src="../img/IT-Y-Flogo.png" alt="IT'S YOUR FUTURE" onerror="this.remove()">
+  </a>
+  <a class="iyf-site-nav__percorso" href="../meccatronica/">percorsi ITS Meccatronica e Servizi all'Impresa</a>
+</nav>
+
+<div class="hud">
+  <div class="hud-top">
+    <div class="brand">UFFICIO TECNICO<small>Cantiere componenti nautici — Progetto SM-14</small></div>
+    <div class="status-pill" id="statusPill"><span id="statusText">PROGETTO IN CORSO</span></div>
+  </div>
+  <div class="slipway">
+    <div class="slipway-track"></div>
+    <div class="slipway-ticks" id="ticks"></div>
+    <div class="boat" id="boat">⛴</div>
+  </div>
+  <div class="code-row">
+    <span>CODICE DI VARO</span>
+    <div class="code-letters" id="codeLetters"></div>
+  </div>
+</div>
+
+<main>
+  <div class="card">
+    <div class="titleblock" id="titleblock"></div>
+    <div class="card-body" id="cardBody"></div>
+  </div>
+</main>
+
+<footer>Supporto meccatronico per motore elettrico nautico: resistente, leggero, producibile, sostenibile.</footer>
+
+<script>
+const CODE = "VARATO";
+
+const stations = [
+  {
+    letter: "V",
+    eyebrow: "PROVA 1 · VINCOLI DI PROGETTO",
+    title: "Capire il vincolo di progetto",
+    image: "img/01.jpg",
+    imageAlt: "Disegno del supporto: vincoli di resistenza, costi e ambiente marino",
+    scenario: "Il supporto deve resistere a vibrazioni continue, esposizione all'acqua salata e carichi meccanici del motore elettrico nautico. Quali vincoli deve tenere in conto chi progetta questo componente?",
+    type: "checkbox",
+    options: [
+      "Resistenza meccanica alle vibrazioni e ai carichi",
+      "Sostenibilità economica del componente",
+      "Materiale adatto all'ambiente marino",
+      "Colore di tendenza del momento",
+      "Marchio del fornitore preferito dall'ufficio acquisti"
+    ],
+    correct: [0, 1, 2],
+    feedbackOk: "Progettare significa trovare equilibrio tra prestazioni, risorse e contesto d'uso: resistenza, costi sostenibili e compatibilità con l'ambiente marino sono i vincoli reali del progetto.",
+    feedbackBad: "Alcuni di questi non sono vincoli tecnici del progetto, ma preferenze estetiche o commerciali. Concentrati su prestazioni, costi e ambiente d'uso."
+  },
+  {
+    letter: "A",
+    eyebrow: "PROVA 2 · SCELTA DEL MATERIALE",
+    title: "Scegliere il materiale",
+    image: "img/02.jpg",
+    imageAlt: "Confronto tra materiali per un componente in ambiente nautico",
+    scenario: "Il componente opererà in un ambiente con umidità costante e salsedine. Quali materiali sono adatti a questo impiego?",
+    schematic: `
+      <div class="schematic-title">COMPORTAMENTO IN AMBIENTE MARINO</div>
+      <table class="mat">
+        <tr><th>Materiale</th><th>Resistenza alla corrosione</th></tr>
+        <tr><td>Alluminio anodizzato</td><td class="pass">adatto</td></tr>
+        <tr><td>Acciaio inox</td><td class="pass">adatto</td></tr>
+        <tr><td>Acciaio al carbonio non trattato</td><td class="fail">si corrode rapidamente</td></tr>
+        <tr><td>Legno multistrato standard</td><td class="fail">non adatto</td></tr>
+      </table>`,
+    type: "checkbox",
+    options: [
+      "Alluminio anodizzato",
+      "Acciaio inox",
+      "Acciaio al carbonio non trattato",
+      "Legno multistrato standard",
+      "Plastica ABS economica"
+    ],
+    correct: [0, 1],
+    feedbackOk: "La scelta del materiale influenza durata, peso e manutenzione: alluminio anodizzato e acciaio inox resistono alla salsedine senza degradarsi rapidamente.",
+    feedbackBad: "Guarda la tabella di resistenza alla corrosione: solo due materiali reggono bene l'esposizione a umidità e salsedine."
+  },
+  {
+    letter: "R",
+    eyebrow: "PROVA 3 · PROTOTIPO VIRTUALE",
+    title: "Prototipo virtuale",
+    image: "img/03.jpg",
+    imageAlt: "Modello CAD tridimensionale del supporto con quote e simulazione",
+    scenario: "Prima di produrre il pezzo reale, l'ufficio tecnico deve verificare forma, ingombri e criticità del supporto. Cosa permette questa verifica senza sprecare materiale?",
+    type: "radio",
+    options: [
+      "Un modello CAD tridimensionale con simulazione",
+      "Un disegno a mano libera su carta",
+      "Una descrizione verbale al cliente",
+      "Un prototipo fisico costruito senza alcuna verifica preventiva"
+    ],
+    correct: [0],
+    feedbackOk: "Il prototipo virtuale riduce errori, risorse e tempi: un modello CAD 3D con simulazione permette di individuare le criticità prima di lavorare materiale reale.",
+    feedbackBad: "Serve uno strumento che permetta di verificare geometria e comportamento del pezzo prima di produrlo fisicamente."
+  },
+  {
+    letter: "A",
+    eyebrow: "PROVA 4 · DAL PROGETTO ALLA PRODUZIONE",
+    title: "Dal progetto alla produzione",
+    image: "img/04.jpg",
+    imageAlt: "Dal modello CAD al ciclo di lavorazione CNC",
+    scenario: "Il modello CAD è approvato. Prima di lanciare la lavorazione su macchina CNC, cosa deve essere definito dall'ufficio tecnico?",
+    schematic: `
+      <div class="schematic-title">SCHEDA CICLO CNC — DA COMPILARE</div>
+      <table class="mat">
+        <tr><th>Parametro</th><th>Stato</th></tr>
+        <tr><td>Velocità di taglio e avanzamento</td><td>da definire</td></tr>
+        <tr><td>Utensili necessari</td><td>da definire</td></tr>
+        <tr><td>Sequenza delle operazioni</td><td>da definire</td></tr>
+      </table>`,
+    type: "checkbox",
+    options: [
+      "Parametri di lavorazione (velocità, avanzamento)",
+      "Scelta degli utensili",
+      "Ciclo produttivo e sequenza delle operazioni",
+      "Colore della confezione finale",
+      "Nome commerciale del prodotto"
+    ],
+    correct: [0, 1, 2],
+    feedbackOk: "Industrializzare significa trasformare un progetto in un processo ripetibile: parametri, utensili e ciclo produttivo vanno definiti prima di lavorare il pezzo.",
+    feedbackBad: "Packaging e naming non riguardano la lavorazione CNC. Pensa a cosa serve alla macchina per lavorare il pezzo in modo ripetibile."
+  },
+  {
+    letter: "T",
+    eyebrow: "PROVA 5 · CONTROLLO QUALITÀ E COLLAUDO",
+    title: "Controllo qualità e collaudo",
+    image: "img/05.jpg",
+    imageAlt: "Collaudo del pezzo: misure, tolleranze e montaggio",
+    scenario: "Il componente è stato prodotto. Cosa va verificato nel collaudo post-produzione prima di consegnarlo?",
+    type: "checkbox",
+    options: [
+      "Misure e tolleranze dimensionali",
+      "Resistenza meccanica del pezzo",
+      "Corretto montaggio sul motore",
+      "Gradimento estetico personale",
+      "Prezzo di vendita al pubblico"
+    ],
+    correct: [0, 1, 2],
+    feedbackOk: "Controllo qualità e collaudo verificano conformità e sicurezza: misure, resistenza e corretto montaggio sono le verifiche indispensabili prima della consegna.",
+    feedbackBad: "Estetica personale e prezzo non fanno parte del collaudo tecnico. Pensa a cosa garantisce che il pezzo funzioni in sicurezza."
+  },
+  {
+    letter: "O",
+    eyebrow: "PROVA 6 · MANUTENZIONE E POST VENDITA",
+    title: "Manutenzione e post vendita",
+    image: "img/06.jpg",
+    imageAlt: "Diagnosi su un motore: analisi dati e intervento di manutenzione",
+    scenario: "Alcuni mesi dopo la consegna, un cliente segnala vibrazioni anomale sul motore. Come si comporta correttamente il tecnico superiore?",
+    type: "radio",
+    options: [
+      "Ignora la segnalazione, il prodotto è già stato venduto",
+      "Analizza i dati, controlla lo stato del componente e pianifica un intervento",
+      "Sostituisce subito l'intero motore senza alcuna verifica",
+      "Risponde che non è responsabilità dell'azienda"
+    ],
+    correct: [1],
+    feedbackOk: "Il lavoro tecnico continua dopo la produzione: analizzare i dati, verificare il componente e pianificare l'intervento è la gestione corretta del post vendita.",
+    feedbackBad: "Ignorare la segnalazione o sostituire tutto senza diagnosi non sono risposte tecniche corrette al problema."
+  }
+];
+
+let current = 0;
+let selected = [];
+let answered = false;
+let mistakes = 0;
+let startTime = Date.now();
+
+const ticksEl = document.getElementById('ticks');
+const boatEl = document.getElementById('boat');
+const codeLettersEl = document.getElementById('codeLetters');
+const titleblockEl = document.getElementById('titleblock');
+const cardBodyEl = document.getElementById('cardBody');
+const statusPill = document.getElementById('statusPill');
+const statusText = document.getElementById('statusText');
+
+function initHud(){
+  ticksEl.innerHTML = stations.map((_, i) => `<div class="tick" data-i="${i}"></div>`).join('');
+  codeLettersEl.innerHTML = CODE.split('').map(l => `<span>${l}</span>`).join('');
+}
+
+function updateHud(){
+  document.querySelectorAll('.tick').forEach((el, i) => {
+    el.classList.toggle('done', i < current);
+  });
+  document.querySelectorAll('.code-letters span').forEach((el, i) => {
+    el.classList.toggle('lit', i < current);
+  });
+  const pct = (current / stations.length) * 100;
+  boatEl.style.left = `calc(${pct}% )`;
+
+  const s = stations[current] || stations[stations.length - 1];
+  titleblockEl.innerHTML = `
+    <span>PROGETTO: <b>Supporto motore nautico SM-14</b></span>
+    <span>SCALA 1:2</span>
+    <span>REV: <b>${Math.min(current + 1, stations.length)}/${stations.length}</b></span>
+  `;
+}
+
+function renderStation(){
+  answered = false;
+  selected = [];
+  const s = stations[current];
+  cardBodyEl.innerHTML = `
+    <div class="card-eyebrow">${s.eyebrow}</div>
+    ${s.image ? `<img class="card-art" src="${s.image}" alt="${s.imageAlt || ''}" width="1200" height="442">` : ''}
+    <h2>${s.title}</h2>
+    <div class="scenario">${s.scenario}</div>
+    ${s.schematic ? `<div class="schematic">${s.schematic}</div>` : ''}
+    <div class="options" id="opts">
+      ${s.options.map((opt, i) => `
+        <div class="opt ${s.type}" data-i="${i}">
+          <span class="marker">${s.type === 'checkbox' ? '✓' : '●'}</span>
+          <span>${opt}</span>
+        </div>`).join('')}
+    </div>
+    <div class="actions">
+      <button id="confirmBtn" disabled>Conferma</button>
+    </div>
+    <div class="feedback" id="feedback"></div>
+  `;
+
+  document.querySelectorAll('.opt').forEach(el => {
+    el.addEventListener('click', () => {
+      if (answered) return;
+      const i = parseInt(el.dataset.i);
+      if (s.type === 'radio') {
+        selected = [i];
+        document.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+        el.classList.add('selected');
+      } else {
+        if (selected.includes(i)) {
+          selected = selected.filter(x => x !== i);
+          el.classList.remove('selected');
+        } else {
+          selected.push(i);
+          el.classList.add('selected');
+        }
+      }
+      document.getElementById('confirmBtn').disabled = selected.length === 0;
+    });
+  });
+
+  document.getElementById('confirmBtn').addEventListener('click', () => checkAnswer());
+  updateHud();
+}
+
+function arraysMatch(a, b){
+  if (a.length !== b.length) return false;
+  const sa = [...a].sort();
+  const sb = [...b].sort();
+  return sa.every((v, i) => v === sb[i]);
+}
+
+function checkAnswer(){
+  const s = stations[current];
+  const isCorrect = arraysMatch(selected, s.correct);
+  const feedback = document.getElementById('feedback');
+  const confirmBtn = document.getElementById('confirmBtn');
+
+  document.querySelectorAll('.opt').forEach((el, i) => {
+    el.style.pointerEvents = 'none';
+    if (s.correct.includes(i)) el.classList.add('correct');
+    else if (selected.includes(i)) el.classList.add('wrong');
+  });
+
+  feedback.classList.add('show');
+  if (isCorrect) {
+    answered = true;
+    feedback.classList.add('ok');
+    feedback.classList.remove('bad');
+    feedback.innerHTML = `<div class="fb-title">CORRETTO</div>${s.feedbackOk}`;
+    confirmBtn.textContent = current < stations.length - 1 ? 'Prova successiva' : 'Vai al varo';
+    confirmBtn.disabled = false;
+    confirmBtn.onclick = () => {
+      current++;
+      if (current >= stations.length) renderFinalReady();
+      else renderStation();
+    };
+  } else {
+    mistakes++;
+    feedback.classList.add('bad');
+    feedback.classList.remove('ok');
+    feedback.innerHTML = `<div class="fb-title">NON ANCORA</div>${s.feedbackBad}`;
+    confirmBtn.textContent = 'Riprova';
+    confirmBtn.disabled = false;
+    confirmBtn.onclick = () => renderStation();
+  }
+}
+
+function renderFinalReady(){
+  current = stations.length;
+  updateHud();
+  titleblockEl.innerHTML = `
+    <span>PROGETTO: <b>Supporto motore nautico SM-14</b></span>
+    <span>SCALA 1:2</span>
+    <span>REV: <b>FINALE</b></span>
+  `;
+  cardBodyEl.innerHTML = `
+    <div class="final">
+      <div class="icon">🔓</div>
+      <h2>Codice di varo completo: ${CODE}</h2>
+      <p class="lead">Vincoli, materiale, prototipo, produzione, collaudo e manutenzione sono stati verificati. Il componente è pronto per il varo.</p>
+      <div class="actions" style="justify-content:center;">
+        <button id="launchBtn">Vara il progetto</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('launchBtn').addEventListener('click', renderSuccess);
+}
+
+function formatTime(ms){
+  const totalSec = Math.round(ms / 1000);
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return `${m}:${s.toString().padStart(2,'0')}`;
+}
+
+function renderSuccess(){
+  statusPill.classList.add('ok');
+  statusText.textContent = 'PROGETTO VARATO';
+  const elapsed = Date.now() - startTime;
+  cardBodyEl.innerHTML = `
+    <div class="final">
+      <div class="icon">⚓</div>
+      <h2>Progetto completato</h2>
+      <p class="lead">Il componente meccatronico è pronto per la produzione e il collaudo finale.</p>
+      <div class="report">
+        <div class="report-row"><span>Tempo impiegato</span><span>${formatTime(elapsed)}</span></div>
+        <div class="report-row"><span>Tentativi errati</span><span>${mistakes}</span></div>
+        <div class="report-row"><span>Codice di varo</span><span>${CODE}</span></div>
+      </div>
+      <div class="actions" style="justify-content:center;">
+        <button class="ghost" id="restartBtn">Rigioca</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('restartBtn').addEventListener('click', resetGame);
+}
+
+function resetGame(){
+  current = 0;
+  mistakes = 0;
+  startTime = Date.now();
+  statusPill.classList.remove('ok');
+  statusText.textContent = 'PROGETTO IN CORSO';
+  renderStation();
+}
+
+initHud();
+renderStation();
+</script>
+
+</body>
+</html>
