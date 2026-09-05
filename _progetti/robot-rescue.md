@@ -14,7 +14,11 @@ corso_id: robotica
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-2__corso_tecnico_superiore_per_l_automazione_e_la_robotica_industriale_35.html"
 descrizione_breve: "La linea di produzione si è fermata: analizza sensori, logica PLC, qualità e sicurezza per far ripartire il robot."
 description: "Guasto in una linea automatizzata industriale: prove tecniche su sensori, programmazione, KPI e sicurezza."
+gioco_url: "/robot-rescue/"
+gioco_cta: "Riavvia la linea"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/robot-rescue/' | relative_url }}">Riavvia la linea</a></p>
 
 ## Obiettivo
 
@@ -27,7 +31,8 @@ Far capire il ruolo del tecnico superiore nella progettazione, programmazione, c
 ## Materiali
 
 - **Versione fisica:** schede prova, immagini sensori/robot/PLC, tabella dati produzione, cartoncini logici, QR finale, lucchetto.
-- **Versione digitale:** Google Form, Genially, quiz interattivo, dashboard KPI fittizia.
+- **Versione digitale:** gioco web *Robot Rescue* (5 prove, sul dispositivo).
+- **Versione alternativa:** Google Form, Genially, quiz interattivo, dashboard KPI fittizia.
 
 ## Prove dell'attività
 
@@ -36,7 +41,7 @@ Far capire il ruolo del tecnico superiore nella progettazione, programmazione, c
 | 1 | Trova il sensore giusto | Un nastro deve fermarsi quando un pezzo arriva davanti al robot. Quale componente rileva la presenza? | **Sensore di prossimità** | I sensori raccolgono informazioni dal mondo fisico e le inviano al sistema di controllo. |
 | 2 | Scegli la logica corretta | Il robot è attivo solo se pezzo presente, porta chiusa ed emergenza non premuta | **Logica AND di sicurezza** | La programmazione industriale serve a far lavorare le macchine in modo sicuro e controllato. |
 | 3 | Controllo qualità | Perni metallici conformi solo se rispettano la tolleranza prevista. Quali pezzi sono accettabili? | **A e C** | Il controllo qualità verifica che il prodotto rispetti gli standard prima di arrivare al cliente. |
-| 4 | KPI della linea | La linea produce meno del target previsto. Come va interpretata la performance? | *Da valutare insieme al facilitatore* | I KPI misurano l'efficienza della produzione e indicano dove intervenire. |
+| 4 | KPI della linea | La linea produce meno del target previsto. Come va interpretata la performance? | **Segnalare lo scostamento e indagare le cause** | I KPI misurano l'efficienza della produzione e indicano dove intervenire. |
 | 5 | Sicurezza prima del riavvio | Il robot funziona ma la porta di sicurezza è ancora aperta | **Chiudere la porta e verificare i dispositivi** | La sicurezza è parte integrante del progetto, della programmazione e del collaudo. |
 
 ## Esito

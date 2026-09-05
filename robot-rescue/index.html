@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robot Rescue — Riavvia la linea</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#12161c;
+    --panel:#1a212b;
+    --panel-2:#212a36;
+    --line:#2c3644;
+    --amber:#f2b807;
+    --amber-dim:#7a5f10;
+    --green:#3ecf6e;
+    --red:#e5484d;
+    --steel:#8b95a3;
+    --steel-dim:#5a6472;
+    --white:#eef1f4;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  .iyf-site-nav{
+    position:sticky;top:0;z-index:3000;
+    width:100%;
+    display:flex;align-items:center;justify-content:space-between;gap:0.75rem;
+    min-height:52px;
+    padding:max(0.4rem, env(safe-area-inset-top)) 0.85rem 0.4rem;
+    background:#fff;border-bottom:1px solid #d8dee8;
+  }
+  .iyf-site-nav__home{
+    display:flex;align-items:center;min-height:44px;min-width:44px;flex-shrink:0;text-decoration:none;
+  }
+  .iyf-site-nav__logo{display:block;height:40px;width:auto;max-width:140px;object-fit:contain;}
+  .iyf-site-nav__percorso{
+    margin-left:auto;display:inline-flex;align-items:center;min-height:44px;
+    font-family:'Oswald',sans-serif;font-size:clamp(0.72rem,2.8vw,0.95rem);font-weight:600;
+    letter-spacing:0.02em;line-height:1.25;text-align:right;text-decoration:none;color:#133b7a;
+  }
+  .iyf-site-nav__percorso:hover,.iyf-site-nav__percorso:focus-visible{text-decoration:underline;}
+  body{
+    background:
+      radial-gradient(ellipse at top, #1b222c 0%, var(--bg) 60%);
+    color:var(--white);
+    font-family:'IBM Plex Mono', monospace;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:0 0 40px 0;
+  }
+  .hud{
+    width:100%;
+    max-width:760px;
+    padding:18px 20px 14px 20px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .hud-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .brand{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+    color:var(--white);
+  }
+  .brand small{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:400;
+    font-size:0.68rem;
+    color:var(--steel);
+    letter-spacing:0.04em;
+    margin-top:1px;
+  }
+  .status-pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:3px;
+    border:1px solid var(--red);
+    color:var(--red);
+    background:rgba(229,72,77,0.08);
+    display:flex;
+    align-items:center;
+    gap:7px;
+    white-space:nowrap;
+    transition:all .4s ease;
+  }
+  .status-pill.ok{
+    border-color:var(--green);
+    color:var(--green);
+    background:rgba(62,207,110,0.08);
+  }
+  .status-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:currentColor;
+    box-shadow:0 0 8px currentColor;
+    animation:blink 1.4s infinite;
+  }
+  .status-pill.ok .status-dot{animation:none;}
+  @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.25;}}
+
+  .progress-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .lights{display:flex;gap:8px;flex:1;}
+  .light{
+    flex:1;
+    height:6px;
+    border-radius:2px;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .light.done{background:var(--amber);border-color:var(--amber);box-shadow:0 0 6px rgba(242,184,7,0.5);}
+  .light.current{border-color:var(--amber);}
+  .light.current::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent,rgba(242,184,7,0.6),transparent);
+    animation:sweep 1.3s infinite;
+  }
+  @keyframes sweep{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
+
+  .code-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.72rem;
+    color:var(--steel);
+  }
+  .code-letters{display:flex;gap:5px;}
+  .code-letters span{
+    width:22px;height:26px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;
+    color:var(--steel-dim);
+    background:var(--panel);
+    font-size:0.85rem;
+    transition:all .3s ease;
+  }
+  .code-letters span.lit{
+    color:var(--amber);
+    border-color:var(--amber);
+    background:rgba(242,184,7,0.08);
+  }
+
+  main{
+    width:100%;
+    max-width:760px;
+    padding:26px 20px 10px 20px;
+    flex:1;
+  }
+
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:24px 24px 22px 24px;
+  }
+  .card-eyebrow{
+    font-size:0.68rem;
+    color:var(--amber);
+    letter-spacing:0.03em;
+    margin-bottom:6px;
+    font-weight:500;
+  }
+  .card-art{
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:3392 / 1248;
+    object-fit:cover;
+    object-position:center;
+    border-radius:4px;
+    margin:0 0 16px 0;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+  }
+  .card h2{
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:1.35rem;
+    margin:0 0 14px 0;
+    color:var(--white);
+    line-height:1.25;
+  }
+  .scenario{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.92rem;
+    line-height:1.6;
+    color:#c8cfd8;
+    margin-bottom:18px;
+  }
+
+  .schematic{
+    border:1px dashed var(--line);
+    border-radius:4px;
+    padding:14px 16px;
+    margin-bottom:18px;
+    background:var(--panel-2);
+  }
+  .schematic-title{
+    font-size:0.65rem;
+    color:var(--steel);
+    letter-spacing:0.03em;
+    margin-bottom:8px;
+  }
+  table.tol{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.85rem;
+  }
+  table.tol th, table.tol td{
+    padding:6px 8px;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+    color:#c8cfd8;
+  }
+  table.tol th{color:var(--steel);font-weight:500;font-size:0.72rem;}
+  table.tol td.fail{color:var(--red);}
+  table.tol td.pass{color:var(--green);}
+
+  .kpi-bars{display:flex;gap:26px;align-items:flex-end;height:120px;margin-bottom:6px;}
+  .kpi-bar-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;}
+  .kpi-bar-track{width:44px;height:90px;background:var(--panel);border:1px solid var(--line);border-radius:3px;display:flex;align-items:flex-end;overflow:hidden;}
+  .kpi-bar-fill{width:100%;background:var(--steel-dim);}
+  .kpi-bar-fill.actual{background:var(--amber);}
+  .kpi-label{font-size:0.68rem;color:var(--steel);text-align:center;}
+  .kpi-value{font-size:0.78rem;color:var(--white);font-weight:600;}
+
+  .options{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .opt{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:11px 14px;
+    border:1px solid var(--line);
+    border-radius:4px;
+    background:var(--panel-2);
+    cursor:pointer;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    color:#dfe4e9;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .opt:hover{border-color:var(--steel-dim);}
+  .opt.selected{border-color:var(--amber);background:rgba(242,184,7,0.06);}
+  .opt.correct{border-color:var(--green);background:rgba(62,207,110,0.08);color:var(--green);}
+  .opt.wrong{border-color:var(--red);background:rgba(229,72,77,0.08);color:var(--red);}
+  .opt .marker{
+    width:16px;height:16px;flex-shrink:0;
+    border:1.5px solid var(--steel-dim);
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.6rem;
+    color:transparent;
+  }
+  .opt.radio .marker{border-radius:50%;}
+  .opt.checkbox .marker{border-radius:3px;}
+  .opt.selected .marker{border-color:var(--amber);color:var(--amber);}
+  .opt.correct .marker{border-color:var(--green);color:var(--green);}
+  .opt.wrong .marker{border-color:var(--red);color:var(--red);}
+
+  .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  button{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:0.8rem;
+    letter-spacing:0.02em;
+    padding:11px 20px;
+    border-radius:4px;
+    border:1px solid var(--amber);
+    background:var(--amber);
+    color:#1a1400;
+    cursor:pointer;
+    transition:opacity .15s ease, transform .1s ease;
+  }
+  button:hover{opacity:0.88;}
+  button:active{transform:scale(0.98);}
+  button:disabled{
+    background:transparent;
+    color:var(--steel-dim);
+    border-color:var(--line);
+    cursor:not-allowed;
+  }
+  button.ghost{
+    background:transparent;
+    color:var(--steel);
+    border-color:var(--line);
+  }
+
+  .feedback{
+    margin-top:14px;
+    padding:12px 14px;
+    border-radius:4px;
+    font-size:0.85rem;
+    line-height:1.5;
+    display:none;
+  }
+  .feedback.show{display:block;}
+  .feedback.ok{background:rgba(62,207,110,0.08);border:1px solid var(--green);color:#c9f5d8;}
+  .feedback.bad{background:rgba(229,72,77,0.08);border:1px solid var(--red);color:#f8d0d1;}
+  .feedback .fb-title{font-weight:600;font-family:'Oswald',sans-serif;font-size:0.78rem;letter-spacing:0.02em;margin-bottom:4px;}
+  .feedback.ok .fb-title{color:var(--green);}
+  .feedback.bad .fb-title{color:var(--red);}
+
+  /* Final screens */
+  .final{
+    text-align:center;
+    padding:10px 0 6px 0;
+  }
+  .final .icon{font-size:3rem;margin-bottom:10px;}
+  .final h2{font-family:'Oswald',sans-serif;font-size:1.6rem;margin:0 0 8px 0;}
+  .final p.lead{color:#c8cfd8;font-size:0.95rem;margin:0 0 22px 0;}
+  .report{
+    text-align:left;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:16px 18px;
+    margin-bottom:20px;
+    font-size:0.82rem;
+  }
+  .report-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line);color:#c8cfd8;}
+  .report-row:last-child{border-bottom:none;}
+  .report-row span:last-child{color:var(--amber);font-weight:600;}
+
+  footer{
+    max-width:760px;
+    width:100%;
+    text-align:center;
+    color:var(--steel-dim);
+    font-size:0.68rem;
+    padding:18px 20px 0 20px;
+  }
+
+  @media (max-width:520px){
+    .card{padding:18px 16px;}
+    .card h2{font-size:1.15rem;}
+    .kpi-bars{gap:16px;}
+  }
+</style>
+</head>
+<body>
+<nav class="iyf-site-nav" aria-label="Navigazione sito">
+  <a class="iyf-site-nav__home" href="../" aria-label="Torna alla home IT'S YOUR FUTURE">
+    <img class="iyf-site-nav__logo" src="../img/IT-Y-Flogo.png" alt="IT'S YOUR FUTURE" onerror="this.remove()">
+  </a>
+  <a class="iyf-site-nav__percorso" href="../meccatronica/">percorsi ITS Meccatronica e Servizi all'Impresa</a>
+</nav>
+
+<div class="hud">
+  <div class="hud-top">
+    <div class="brand">ROBOT RESCUE<small>Cella robotizzata — Linea 3</small></div>
+    <div class="status-pill" id="statusPill"><span class="status-dot"></span><span id="statusText">LINEA FERMA</span></div>
+  </div>
+  <div class="progress-row">
+    <div class="lights" id="lights"></div>
+  </div>
+  <div class="code-row">
+    <span>CODICE RIAVVIO</span>
+    <div class="code-letters" id="codeLetters"></div>
+  </div>
+</div>
+
+<main>
+  <div class="card" id="card"></div>
+</main>
+
+<footer>La linea si è fermata: sensori, logica PLC, qualità, KPI e sicurezza vanno verificati prima del riavvio.</footer>
+
+<script>
+const CODE = "READY";
+
+const stations = [
+  {
+    letter: "R",
+    eyebrow: "PROVA 1 · SENSORISTICA",
+    title: "Trova il sensore giusto",
+    image: "img/01.jpg",
+    imageAlt: "Sensore di prossimità sul nastro: rileva i pezzi in arrivo",
+    scenario: "Un nastro trasportatore deve fermarsi automaticamente quando un pezzo arriva davanti al robot. Quale componente rileva la presenza fisica del pezzo e invia il segnale al sistema di controllo?",
+    type: "radio",
+    options: [
+      "Sensore di prossimità",
+      "Sensore di temperatura",
+      "Sensore di colore RGB",
+      "Microfono industriale"
+    ],
+    correct: [0],
+    feedbackOk: "I sensori raccolgono informazioni dal mondo fisico e le inviano al sistema di controllo: senza il segnale del sensore di prossimità, il PLC non sa che il pezzo è arrivato.",
+    feedbackBad: "Quel componente non rileva la presenza di un oggetto solido davanti al robot. Serve un sensore pensato proprio per questo."
+  },
+  {
+    letter: "E",
+    eyebrow: "PROVA 2 · LOGICA PLC",
+    title: "Scegli la logica corretta",
+    image: "img/02.jpg",
+    imageAlt: "Pannello PLC con porta AND, luci e pulsante di emergenza",
+    scenario: "Il robot deve attivarsi SOLO quando sono vere contemporaneamente tutte queste condizioni: pezzo presente, porta della cella chiusa, pulsante di emergenza non premuto. Che tipo di logica implementa questo comportamento nel PLC?",
+    schematic: `
+      <div class="schematic-title">CONDIZIONI DI ATTIVAZIONE</div>
+      <table class="tol">
+        <tr><th>Pezzo presente</th><th>Porta chiusa</th><th>Emergenza libera</th><th>Robot attivo</th></tr>
+        <tr><td class="pass">1</td><td class="pass">1</td><td class="pass">1</td><td class="pass">1</td></tr>
+        <tr><td class="fail">0</td><td class="pass">1</td><td class="pass">1</td><td class="fail">0</td></tr>
+        <tr><td class="pass">1</td><td class="fail">0</td><td class="pass">1</td><td class="fail">0</td></tr>
+      </table>`,
+    type: "radio",
+    options: [
+      "Logica OR",
+      "Logica AND di sicurezza",
+      "Logica NOT",
+      "Logica XOR"
+    ],
+    correct: [1],
+    feedbackOk: "La programmazione industriale serve a far lavorare le macchine in modo sicuro e controllato: con una logica AND il robot parte solo se ogni condizione di sicurezza è verificata insieme alle altre.",
+    feedbackBad: "Guarda la tabella: il robot si attiva solo quando TUTTE le condizioni sono a 1 contemporaneamente. Che tipo di porta logica richiede che siano vere tutte insieme?"
+  },
+  {
+    letter: "A",
+    eyebrow: "PROVA 3 · CONTROLLO QUALITÀ",
+    title: "Controllo qualità",
+    image: "img/03.jpg",
+    imageAlt: "Braccio robotico e calibro: misura di un perno in qualità",
+    scenario: "I perni metallici prodotti dalla linea sono conformi solo se rispettano la tolleranza prevista. Seleziona tutti i pezzi accettabili.",
+    schematic: `
+      <div class="schematic-title">TOLLERANZA RICHIESTA: 10.00 mm ± 0.05 mm</div>
+      <table class="tol">
+        <tr><th>Pezzo</th><th>Misura rilevata</th><th>Esito</th></tr>
+        <tr><td>A</td><td>10.02 mm</td><td class="pass">conforme</td></tr>
+        <tr><td>B</td><td>10.12 mm</td><td class="fail">fuori tolleranza</td></tr>
+        <tr><td>C</td><td>9.97 mm</td><td class="pass">conforme</td></tr>
+        <tr><td>D</td><td>10.20 mm</td><td class="fail">fuori tolleranza</td></tr>
+      </table>`,
+    type: "checkbox",
+    options: ["Pezzo A", "Pezzo B", "Pezzo C", "Pezzo D"],
+    correct: [0, 2],
+    feedbackOk: "Il controllo qualità verifica che il prodotto rispetti gli standard prima di arrivare al cliente: A e C rientrano nella tolleranza di ±0.05 mm, B e D sono fuori specifica.",
+    feedbackBad: "Ricontrolla le misure rispetto alla tolleranza di ±0.05 mm attorno a 10.00 mm: solo due pezzi rientrano nell'intervallo."
+  },
+  {
+    letter: "D",
+    eyebrow: "PROVA 4 · KPI DI LINEA",
+    title: "KPI della linea",
+    image: "img/04.jpg",
+    imageAlt: "Monitor di linea con barre KPI target e produzione effettiva",
+    scenario: "Il dashboard mostra la produzione dell'ultimo turno. La linea sta producendo sotto il target previsto. Come si comporta correttamente il tecnico superiore davanti a questo scostamento?",
+    schematic: `
+      <div class="schematic-title">PRODUZIONE — TURNO CORRENTE</div>
+      <div class="kpi-bars">
+        <div class="kpi-bar-wrap">
+          <div class="kpi-bar-track"><div class="kpi-bar-fill" style="height:100%"></div></div>
+          <div class="kpi-value">500</div>
+          <div class="kpi-label">Target</div>
+        </div>
+        <div class="kpi-bar-wrap">
+          <div class="kpi-bar-track"><div class="kpi-bar-fill actual" style="height:82%"></div></div>
+          <div class="kpi-value">410</div>
+          <div class="kpi-label">Effettivo (82%)</div>
+        </div>
+      </div>`,
+    type: "radio",
+    options: [
+      "Ignorare lo scostamento, il numero è comunque alto",
+      "Segnalare lo scostamento e indagare le cause (fermi macchina, scarti, tempi ciclo)",
+      "Fermare definitivamente la linea senza ulteriori verifiche",
+      "Aumentare la velocità del nastro per compensare, senza altri controlli"
+    ],
+    correct: [1],
+    feedbackOk: "I KPI misurano l'efficienza della produzione e indicano dove intervenire: uno scostamento va segnalato e analizzato nelle sue cause, non ignorato né corretto a caso.",
+    feedbackBad: "Un KPI sotto target è un'informazione da usare, non da ignorare né da 'coprire' aumentando la velocità senza controlli."
+  },
+  {
+    letter: "Y",
+    eyebrow: "PROVA 5 · SICUREZZA",
+    title: "Sicurezza prima del riavvio",
+    image: "img/05.jpg",
+    imageAlt: "Cella robotizzata con la porta di sicurezza ancora aperta",
+    scenario: "Sensori, logica, qualità e KPI sono a posto. Il robot è pronto a ripartire, ma la porta di sicurezza della cella è ancora aperta. Cosa fai prima di dare il via libera?",
+    type: "radio",
+    options: [
+      "Avvio comunque, tanto ci vuole un attimo",
+      "Chiudo la porta e verifico i dispositivi di sicurezza prima del riavvio",
+      "Disattivo il sensore di porta per velocizzare l'avvio",
+      "Chiedo a un collega di restare vicino al robot mentre riparte"
+    ],
+    correct: [1],
+    feedbackOk: "La sicurezza è parte integrante del progetto, della programmazione e del collaudo: nessun riavvio è valido finché i dispositivi di sicurezza non sono verificati e attivi.",
+    feedbackBad: "Nessuna di queste scorciatoie protegge davvero le persone attorno al robot. La cella va richiusa e i dispositivi di sicurezza verificati prima di dare il via libera."
+  }
+];
+
+let current = 0;
+let selected = [];
+let answered = false;
+let mistakes = 0;
+let startTime = Date.now();
+
+const lightsEl = document.getElementById('lights');
+const codeLettersEl = document.getElementById('codeLetters');
+const cardEl = document.getElementById('card');
+const statusPill = document.getElementById('statusPill');
+const statusText = document.getElementById('statusText');
+
+function initHud(){
+  lightsEl.innerHTML = stations.map((_, i) => `<div class="light" data-i="${i}"></div>`).join('');
+  codeLettersEl.innerHTML = CODE.split('').map(l => `<span data-l="${l}">${l}</span>`).join('');
+}
+
+function updateHud(){
+  document.querySelectorAll('.light').forEach((el, i) => {
+    el.classList.remove('done','current');
+    if (i < current) el.classList.add('done');
+    else if (i === current) el.classList.add('current');
+  });
+  document.querySelectorAll('.code-letters span').forEach((el, i) => {
+    el.classList.toggle('lit', i < current);
+  });
+}
+
+function renderStation(){
+  answered = false;
+  selected = [];
+  const s = stations[current];
+  cardEl.innerHTML = `
+    <div class="card-eyebrow">${s.eyebrow}</div>
+    ${s.image ? `<img class="card-art" src="${s.image}" alt="${s.imageAlt || ''}" width="1200" height="442">` : ''}
+    <h2>${s.title}</h2>
+    <div class="scenario">${s.scenario}</div>
+    ${s.schematic ? `<div class="schematic">${s.schematic}</div>` : ''}
+    <div class="options" id="opts">
+      ${s.options.map((opt, i) => `
+        <div class="opt ${s.type}" data-i="${i}">
+          <span class="marker">${s.type === 'checkbox' ? '✓' : '●'}</span>
+          <span>${opt}</span>
+        </div>`).join('')}
+    </div>
+    <div class="actions">
+      <button id="confirmBtn" disabled>Conferma</button>
+    </div>
+    <div class="feedback" id="feedback"></div>
+  `;
+
+  document.querySelectorAll('.opt').forEach(el => {
+    el.addEventListener('click', () => {
+      if (answered) return;
+      const i = parseInt(el.dataset.i);
+      if (s.type === 'radio') {
+        selected = [i];
+        document.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+        el.classList.add('selected');
+      } else {
+        if (selected.includes(i)) {
+          selected = selected.filter(x => x !== i);
+          el.classList.remove('selected');
+        } else {
+          selected.push(i);
+          el.classList.add('selected');
+        }
+      }
+      document.getElementById('confirmBtn').disabled = selected.length === 0;
+    });
+  });
+
+  document.getElementById('confirmBtn').addEventListener('click', () => checkAnswer());
+  updateHud();
+}
+
+function arraysMatch(a, b){
+  if (a.length !== b.length) return false;
+  const sa = [...a].sort();
+  const sb = [...b].sort();
+  return sa.every((v, i) => v === sb[i]);
+}
+
+function checkAnswer(){
+  const s = stations[current];
+  const isCorrect = arraysMatch(selected, s.correct);
+  const feedback = document.getElementById('feedback');
+  const confirmBtn = document.getElementById('confirmBtn');
+
+  document.querySelectorAll('.opt').forEach((el, i) => {
+    el.style.pointerEvents = 'none';
+    if (s.correct.includes(i)) el.classList.add('correct');
+    else if (selected.includes(i)) el.classList.add('wrong');
+  });
+
+  feedback.classList.add('show');
+  if (isCorrect) {
+    answered = true;
+    feedback.classList.add('ok');
+    feedback.classList.remove('bad');
+    feedback.innerHTML = `<div class="fb-title">CORRETTO</div>${s.feedbackOk}`;
+    confirmBtn.textContent = current < stations.length - 1 ? 'Prova successiva' : 'Vai al riavvio';
+    confirmBtn.disabled = false;
+    confirmBtn.onclick = () => {
+      current++;
+      if (current >= stations.length) renderFinalReady();
+      else renderStation();
+    };
+  } else {
+    mistakes++;
+    feedback.classList.add('bad');
+    feedback.classList.remove('ok');
+    feedback.innerHTML = `<div class="fb-title">NON ANCORA</div>${s.feedbackBad}`;
+    confirmBtn.textContent = 'Riprova';
+    confirmBtn.disabled = false;
+    confirmBtn.onclick = () => renderStation();
+  }
+}
+
+function renderFinalReady(){
+  updateHud();
+  cardEl.innerHTML = `
+    <div class="final">
+      <div class="icon">🔓</div>
+      <h2>Codice di riavvio completo: ${CODE}</h2>
+      <p class="lead">Sensori, logica, qualità, KPI e sicurezza sono stati verificati. La cella robotizzata è pronta a ripartire.</p>
+      <div class="actions" style="justify-content:center;">
+        <button id="launchBtn">Avvia linea</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('launchBtn').addEventListener('click', renderSuccess);
+}
+
+function formatTime(ms){
+  const totalSec = Math.round(ms / 1000);
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return `${m}:${s.toString().padStart(2,'0')}`;
+}
+
+function renderSuccess(){
+  statusPill.classList.add('ok');
+  statusText.textContent = 'LINEA ATTIVA';
+  const elapsed = Date.now() - startTime;
+  cardEl.innerHTML = `
+    <div class="final">
+      <div class="icon">✅</div>
+      <h2>Missione completata</h2>
+      <p class="lead">La linea di produzione può ripartire in sicurezza.</p>
+      <div class="report">
+        <div class="report-row"><span>Tempo impiegato</span><span>${formatTime(elapsed)}</span></div>
+        <div class="report-row"><span>Tentativi errati</span><span>${mistakes}</span></div>
+        <div class="report-row"><span>Codice riavvio</span><span>${CODE}</span></div>
+      </div>
+      <div class="actions" style="justify-content:center;">
+        <button class="ghost" id="restartBtn">Rigioca</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('restartBtn').addEventListener('click', resetGame);
+}
+
+function resetGame(){
+  current = 0;
+  mistakes = 0;
+  startTime = Date.now();
+  statusPill.classList.remove('ok');
+  statusText.textContent = 'LINEA FERMA';
+  renderStation();
+}
+
+initHud();
+renderStation();
+</script>
+
+</body>
+</html>
