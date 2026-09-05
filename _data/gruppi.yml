@@ -3,8 +3,9 @@ meccatronica:
   logo: "/img/logo_its_meccatronica.png"
   alt: "ITS Meccatronica La Spezia"
   contatti_url: "https://www.itslaspezia.it/contatti.html"
-  landing_img: "/img/marketing/podio-meccatronica.jpeg"
-  landing_alt: "Stand ITS Meccatronica — IT'S YOUR FUTURE"
+  landing_img: "/img/m-cantiere-digitale.jpg"
+  landing_alt: "Ufficio tecnico: prototipo CAD del supporto meccatronico nautico"
+  landing_contain: true
   # Sostituisci con il file del percorso (es. /img/percorsi/meccatronica.png)
   percorso_img: ""
   percorso_alt: "Mappa del percorso Meccatronica in stand"
