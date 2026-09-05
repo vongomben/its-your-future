@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Factory Rescue — Riattiva il sistema IoT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070d14;
+    --panel:#0d1824;
+    --panel-2:#122232;
+    --line:#1e3a52;
+    --cyan:#3ec8e8;
+    --purple:#9b7dff;
+    --ok:#3ecf6e;
+    --red:#e5484d;
+    --ink:#e8f4fa;
+    --dim:#8aa4b8;
+    --dimmer:#4d6678;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  .iyf-site-nav{
+    position:sticky;top:0;z-index:3000;
+    width:100%;
+    display:flex;align-items:center;justify-content:space-between;gap:0.75rem;
+    min-height:52px;
+    padding:max(0.4rem, env(safe-area-inset-top)) 0.85rem 0.4rem;
+    background:#fff;border-bottom:1px solid #d8dee8;
+  }
+  .iyf-site-nav__home{
+    display:flex;align-items:center;min-height:44px;min-width:44px;flex-shrink:0;text-decoration:none;
+  }
+  .iyf-site-nav__logo{display:block;height:40px;width:auto;max-width:140px;object-fit:contain;}
+  .iyf-site-nav__percorso{
+    margin-left:auto;display:inline-flex;align-items:center;min-height:44px;
+    font-family:'Rajdhani',sans-serif;font-size:clamp(0.72rem,2.8vw,0.95rem);font-weight:700;
+    letter-spacing:0.02em;line-height:1.25;text-align:right;text-decoration:none;color:#133b7a;
+  }
+  .iyf-site-nav__percorso:hover,.iyf-site-nav__percorso:focus-visible{text-decoration:underline;}
+  body{
+    background:
+      radial-gradient(ellipse at top, #102033 0%, var(--bg) 62%);
+    color:var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:0 0 40px 0;
+  }
+  .hud{
+    width:100%;
+    max-width:760px;
+    padding:18px 20px 14px 20px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .hud-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .brand{
+    font-family:'Rajdhani', sans-serif;
+    font-weight:700;
+    font-size:1.2rem;
+    letter-spacing:0.04em;
+    color:var(--ink);
+  }
+  .brand small{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:400;
+    font-size:0.68rem;
+    color:var(--dim);
+    letter-spacing:0.03em;
+    margin-top:1px;
+  }
+  .status-pill{
+    font-size:0.72rem;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:3px;
+    border:1px solid var(--red);
+    color:var(--red);
+    background:rgba(229,72,77,0.08);
+    white-space:nowrap;
+    transition:all .4s ease;
+  }
+  .status-pill.ok{
+    border-color:var(--ok);
+    color:var(--ok);
+    background:rgba(62,207,110,0.08);
+  }
+  .progress-row{display:flex;align-items:center;gap:10px;}
+  .lights{display:flex;gap:8px;flex:1;}
+  .light{
+    flex:1;height:6px;border-radius:2px;
+    background:var(--panel-2);border:1px solid var(--line);
+    position:relative;overflow:hidden;
+  }
+  .light.done{background:var(--cyan);border-color:var(--cyan);box-shadow:0 0 6px rgba(62,200,232,0.45);}
+  .light.current{border-color:var(--cyan);}
+  .light.current::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent,rgba(62,200,232,0.55),transparent);
+    animation:sweep 1.3s infinite;
+  }
+  @keyframes sweep{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
+  .code-row{display:flex;align-items:center;gap:10px;font-size:0.72rem;color:var(--dim);}
+  .code-letters{display:flex;gap:5px;}
+  .code-letters span{
+    width:22px;height:26px;border:1px solid var(--line);border-radius:3px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;color:var(--dimmer);background:var(--panel);font-size:0.85rem;
+  }
+  .code-letters span.lit{color:var(--cyan);border-color:var(--cyan);background:rgba(62,200,232,0.08);}
+  main{width:100%;max-width:760px;padding:26px 20px 10px 20px;flex:1;}
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:24px 24px 22px 24px;
+  }
+  .card-eyebrow{font-size:0.68rem;color:var(--cyan);letter-spacing:0.04em;margin-bottom:6px;font-weight:600;}
+  .card-art{
+    display:block;width:100%;height:auto;
+    aspect-ratio:3392 / 1248;
+    object-fit:cover;object-position:center;
+    border-radius:4px;margin:0 0 16px 0;
+    background:var(--panel-2);border:1px solid var(--line);
+  }
+  .card h2{
+    font-family:'Rajdhani', sans-serif;
+    font-weight:700;font-size:1.4rem;margin:0 0 14px 0;color:var(--ink);line-height:1.25;
+  }
+  .scenario{font-size:0.9rem;line-height:1.6;color:#c5d6e2;margin-bottom:18px;}
+  .schematic{
+    border:1px dashed var(--line);border-radius:4px;padding:14px 16px;margin-bottom:18px;background:var(--panel-2);
+  }
+  .schematic-title{font-size:0.65rem;color:var(--dim);letter-spacing:0.03em;margin-bottom:8px;}
+  table.tol{width:100%;border-collapse:collapse;font-size:0.85rem;}
+  table.tol th, table.tol td{padding:6px 8px;text-align:left;border-bottom:1px solid var(--line);color:#c5d6e2;}
+  table.tol th{color:var(--dim);font-weight:500;font-size:0.72rem;}
+  table.tol td.fail{color:var(--red);}
+  table.tol td.pass{color:var(--ok);}
+  .options{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+  .opt{
+    display:flex;align-items:center;gap:10px;padding:11px 14px;
+    border:1px solid var(--line);border-radius:4px;background:var(--panel-2);
+    cursor:pointer;font-size:0.85rem;color:#d7e6ef;
+  }
+  .opt:hover{border-color:var(--dimmer);}
+  .opt.selected{border-color:var(--cyan);background:rgba(62,200,232,0.07);}
+  .opt.correct{border-color:var(--ok);background:rgba(62,207,110,0.08);color:var(--ok);}
+  .opt.wrong{border-color:var(--red);background:rgba(229,72,77,0.08);color:var(--red);}
+  .opt .marker{
+    width:16px;height:16px;flex-shrink:0;border:1.5px solid var(--dimmer);
+    display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:transparent;
+  }
+  .opt.radio .marker{border-radius:50%;}
+  .opt.selected .marker{border-color:var(--cyan);color:var(--cyan);}
+  .opt.correct .marker{border-color:var(--ok);color:var(--ok);}
+  .opt.wrong .marker{border-color:var(--red);color:var(--red);}
+  .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  button{
+    font-family:'IBM Plex Mono', monospace;font-weight:600;font-size:0.8rem;
+    padding:11px 20px;border-radius:4px;border:1px solid var(--cyan);
+    background:var(--cyan);color:#041018;cursor:pointer;
+  }
+  button:hover{opacity:0.88;}
+  button:disabled{background:transparent;color:var(--dimmer);border-color:var(--line);cursor:not-allowed;}
+  button.ghost{background:transparent;color:var(--dim);border-color:var(--line);}
+  .feedback{margin-top:14px;padding:12px 14px;border-radius:4px;font-size:0.85rem;line-height:1.5;display:none;}
+  .feedback.show{display:block;}
+  .feedback.ok{background:rgba(62,207,110,0.08);border:1px solid var(--ok);color:#c9f5d8;}
+  .feedback.bad{background:rgba(229,72,77,0.08);border:1px solid var(--red);color:#f8d0d1;}
+  .feedback .fb-title{font-weight:700;font-family:'Rajdhani',sans-serif;font-size:0.85rem;letter-spacing:0.03em;margin-bottom:4px;}
+  .feedback.ok .fb-title{color:var(--ok);}
+  .feedback.bad .fb-title{color:var(--red);}
+  .final{text-align:center;padding:10px 0 6px 0;}
+  .final .icon{font-size:3rem;margin-bottom:10px;}
+  .final h2{font-family:'Rajdhani',sans-serif;font-size:1.7rem;margin:0 0 8px 0;}
+  .final p.lead{color:#c5d6e2;font-size:0.95rem;margin:0 0 22px 0;}
+  .report{text-align:left;background:var(--panel-2);border:1px solid var(--line);border-radius:4px;padding:16px 18px;margin-bottom:20px;font-size:0.82rem;}
+  .report-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line);color:#c5d6e2;}
+  .report-row:last-child{border-bottom:none;}
+  .report-row span:last-child{color:var(--cyan);font-weight:600;}
+  footer{max-width:760px;width:100%;text-align:center;color:var(--dimmer);font-size:0.68rem;padding:18px 20px 0 20px;}
+  @media (max-width:520px){
+    .card{padding:18px 16px;}
+    .card h2{font-size:1.15rem;}
+  }
+</style>
+</head>
+<body>
+<nav class="iyf-site-nav" aria-label="Navigazione sito">
+  <a class="iyf-site-nav__home" href="../" aria-label="Torna alla home IT'S YOUR FUTURE">
+    <img class="iyf-site-nav__logo" src="../img/IT-Y-Flogo.png" alt="IT'S YOUR FUTURE" onerror="this.remove()">
+  </a>
+  <a class="iyf-site-nav__percorso" href="../digitale/">percorsi ITS Accademia Digitale</a>
+</nav>
+
+<div class="hud">
+  <div class="hud-top">
+    <div class="brand">SMART FACTORY RESCUE<small>Catena IoT — Linea 4 · offline</small></div>
+    <div class="status-pill" id="statusPill"><span id="statusText">SISTEMA OFFLINE</span></div>
+  </div>
+  <div class="progress-row"><div class="lights" id="lights"></div></div>
+  <div class="code-row">
+    <span>CODICE RICOLLEGAMENTO</span>
+    <div class="code-letters" id="codeLetters"></div>
+  </div>
+</div>
+
+<main>
+  <div class="card" id="card"></div>
+</main>
+
+<footer>Sensore → microcontrollore → rete → dashboard → sicurezza → robot. Ricostruisci la catena e riattiva la linea.</footer>
+
+<script>
+const CODE = "ONLINE";
+
+const stations = [
+  {
+    letter: "O",
+    eyebrow: "PROVA 1 · SENSORI",
+    title: "Scegli il sensore",
+    image: "img/01.jpg",
+    imageAlt: "Linea con nastro e robot: serve un sensore che rilevi il pezzo",
+    scenario: "In fabbrica bisogna sapere se un pezzo è arrivato davanti al robot. Quale componente rileva la presenza del pezzo e invia il dato al sistema IoT?",
+    type: "radio",
+    options: [
+      "Sensore di prossimità",
+      "Altoparlante",
+      "LED decorativo",
+      "Cavo USB scollegato"
+    ],
+    correct: [0],
+    feedbackOk: "I sensori raccolgono dati dal mondo fisico e li inviano al sistema IoT: senza il segnale di presenza, il resto della catena non sa che il pezzo è arrivato.",
+    feedbackBad: "Quel componente non rileva un oggetto solido sulla linea. Serve un sensore pensato per la presenza."
+  },
+  {
+    letter: "N",
+    eyebrow: "PROVA 2 · MICROCONTROLLORE",
+    title: "Collega il cervello del sistema",
+    image: "img/02.jpg",
+    imageAlt: "Scheda con microcontrollore: legge i sensori e comanda gli attuatori",
+    scenario: "Il sensore deve inviare il dato a un dispositivo programmabile che legge il segnale e decide cosa fare. Quale componente è adatto per leggere i sensori e comandare gli attuatori?",
+    type: "radio",
+    options: [
+      "Microcontrollore",
+      "Martello",
+      "Carta stampata",
+      "Interruttore casuale"
+    ],
+    correct: [0],
+    feedbackOk: "Il microcontrollore è il nodo che collega sensori, logica software e attuatori: è il cervello locale della linea.",
+    feedbackBad: "Serve un dispositivo programmabile, non un attrezzo o un foglio. Pensa a cosa sta in mezzo tra il sensore e il robot."
+  },
+  {
+    letter: "L",
+    eyebrow: "PROVA 3 · RETE IoT",
+    title: "Scegli la rete giusta",
+    image: "img/03.jpg",
+    imageAlt: "Dal controllore di linea al cloud: dati in rete IoT/OT",
+    scenario: "Il sistema deve inviare i dati dalla linea produttiva a una dashboard di monitoraggio. Quale scelta è coerente con un sistema IoT industriale?",
+    type: "radio",
+    options: [
+      "Trasmettere i dati con rete IoT/OT verso cloud o server locale",
+      "Scrivere i dati su un foglio a mano",
+      "Spegnere il router",
+      "Ignorare la rete"
+    ],
+    correct: [0],
+    feedbackOk: "L’IoT industriale collega dispositivi, macchine e piattaforme dati: senza rete, la dashboard resta vuota e il cloud non vede la linea.",
+    feedbackBad: "Senza un canale di comunicazione i dati restano sulla macchina. Serve una rete IoT/OT verso cloud o server locale."
+  },
+  {
+    letter: "I",
+    eyebrow: "PROVA 4 · DASHBOARD",
+    title: "Interpreta la dashboard",
+    image: "img/04.jpg",
+    imageAlt: "Dashboard: la temperatura supera la soglia",
+    scenario: "La dashboard della linea mostra un valore fuori norma. Cosa dovrebbe fare il sistema?",
+    schematic: `
+      <div class="schematic-title">MONITORAGGIO TEMPERATURA — LINEA 4</div>
+      <table class="tol">
+        <tr><th>Parametro</th><th>Valore</th></tr>
+        <tr><td>Soglia normale</td><td class="pass">70 °C</td></tr>
+        <tr><td>Temperatura attuale</td><td class="fail">92 °C</td></tr>
+      </table>`,
+    type: "radio",
+    options: [
+      "Segnalare l’anomalia e attivare controllo o raffreddamento",
+      "Aumentare ancora la temperatura",
+      "Cancellare i dati",
+      "Ignorare l’allarme"
+    ],
+    correct: [0],
+    feedbackOk: "I dati servono a prendere decisioni automatiche o assistite: 92 °C è sopra soglia, quindi si segnala e si interviene.",
+    feedbackBad: "Un valore sopra soglia non si ignora e non si cancella. La dashboard chiede una decisione."
+  },
+  {
+    letter: "N",
+    eyebrow: "PROVA 5 · CYBERSECURITY OT",
+    title: "Proteggi il sistema",
+    image: "img/05.jpg",
+    imageAlt: "Rete di fabbrica: un nodo sconosciuto prova a entrare",
+    scenario: "Un dispositivo sconosciuto prova a collegarsi alla rete della linea produttiva. Quale azione è più corretta?",
+    type: "radio",
+    options: [
+      "Bloccare l’accesso e verificare identità e autorizzazioni",
+      "Dare accesso a tutti",
+      "Disattivare le password",
+      "Pubblicare le chiavi online"
+    ],
+    correct: [0],
+    feedbackOk: "Nelle reti industriali la sicurezza informatica protegge dati, macchine e persone: prima si blocca, poi si verifica chi è.",
+    feedbackBad: "Aprire la rete o togliere le protezioni espone la linea. In OT si chiude e si controlla."
+  },
+  {
+    letter: "E",
+    eyebrow: "PROVA 6 · ROBOT",
+    title: "Riattiva il robot",
+    image: "img/06.jpg",
+    imageAlt: "Il robot riparte solo se sensori, rete e sicurezza sono a posto",
+    scenario: "Il sistema ha ricevuto i dati corretti, la rete funziona e la sicurezza è verificata. Quando il robot può ripartire?",
+    type: "radio",
+    options: [
+      "Solo se sensori OK, sicurezza OK e comando valido",
+      "Sempre, anche con emergenza attiva",
+      "Anche senza dati dai sensori",
+      "Anche con rete scollegata"
+    ],
+    correct: [0],
+    feedbackOk: "La robotica industriale lavora insieme a sensori, controlli, software e sicurezza: il via libera arriva solo se tutta la catena è a posto.",
+    feedbackBad: "Il robot non riparte “comunque”. Mancano ancora le condizioni minime di un riavvio sicuro."
+  }
+];
+
+let current = 0;
+let selected = [];
+let answered = false;
+let mistakes = 0;
+let startTime = Date.now();
+
+const lightsEl = document.getElementById('lights');
+const codeLettersEl = document.getElementById('codeLetters');
+const cardEl = document.getElementById('card');
+const statusPill = document.getElementById('statusPill');
+const statusText = document.getElementById('statusText');
+
+function initHud(){
+  lightsEl.innerHTML = stations.map(() => `<div class="light"></div>`).join('');
+  codeLettersEl.innerHTML = CODE.split('').map(l => `<span>${l}</span>`).join('');
+}
+
+function updateHud(){
+  document.querySelectorAll('.light').forEach((el, i) => {
+    el.classList.remove('done','current');
+    if (i < current) el.classList.add('done');
+    else if (i === current) el.classList.add('current');
+  });
+  document.querySelectorAll('.code-letters span').forEach((el, i) => {
+    el.classList.toggle('lit', i < current);
+  });
+}
+
+function renderStation(){
+  answered = false;
+  selected = [];
+  const s = stations[current];
+  cardEl.innerHTML = `
+    <div class="card-eyebrow">${s.eyebrow}</div>
+    ${s.image ? `<img class="card-art" src="${s.image}" alt="${s.imageAlt || ''}" width="1200" height="442">` : ''}
+    <h2>${s.title}</h2>
+    <div class="scenario">${s.scenario}</div>
+    ${s.schematic ? `<div class="schematic">${s.schematic}</div>` : ''}
+    <div class="options">
+      ${s.options.map((opt, i) => `
+        <div class="opt ${s.type}" data-i="${i}">
+          <span class="marker">●</span>
+          <span>${opt}</span>
+        </div>`).join('')}
+    </div>
+    <div class="actions">
+      <button id="confirmBtn" disabled>Conferma</button>
+    </div>
+    <div class="feedback" id="feedback"></div>
+  `;
+
+  document.querySelectorAll('.opt').forEach(el => {
+    el.addEventListener('click', () => {
+      if (answered) return;
+      const i = parseInt(el.dataset.i, 10);
+      selected = [i];
+      document.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      document.getElementById('confirmBtn').disabled = false;
+    });
+  });
+
+  document.getElementById('confirmBtn').addEventListener('click', checkAnswer);
+  updateHud();
+}
+
+function arraysMatch(a, b){
+  if (a.length !== b.length) return false;
+  const sa = [...a].sort();
+  const sb = [...b].sort();
+  return sa.every((v, i) => v === sb[i]);
+}
+
+function checkAnswer(){
+  const s = stations[current];
+  const isCorrect = arraysMatch(selected, s.correct);
+  const feedback = document.getElementById('feedback');
+  const confirmBtn = document.getElementById('confirmBtn');
+
+  document.querySelectorAll('.opt').forEach((el, i) => {
+    el.style.pointerEvents = 'none';
+    if (s.correct.includes(i)) el.classList.add('correct');
+    else if (selected.includes(i)) el.classList.add('wrong');
+  });
+
+  feedback.classList.add('show');
+  if (isCorrect) {
+    answered = true;
+    feedback.classList.add('ok');
+    feedback.classList.remove('bad');
+    feedback.innerHTML = `<div class="fb-title">CORRETTO</div>${s.feedbackOk}`;
+    confirmBtn.textContent = current < stations.length - 1 ? 'Prova successiva' : 'Vai al ricollegamento';
+    confirmBtn.disabled = false;
+    confirmBtn.onclick = () => {
+      current++;
+      if (current >= stations.length) renderFinalReady();
+      else renderStation();
+    };
+  } else {
+    mistakes++;
+    feedback.classList.add('bad');
+    feedback.classList.remove('ok');
+    feedback.innerHTML = `<div class="fb-title">NON ANCORA</div>${s.feedbackBad}`;
+    confirmBtn.textContent = 'Riprova';
+    confirmBtn.disabled = false;
+    confirmBtn.onclick = () => renderStation();
+  }
+}
+
+function renderFinalReady(){
+  updateHud();
+  cardEl.innerHTML = `
+    <div class="final">
+      <div class="icon">🔓</div>
+      <h2>Codice di ricollegamento: ${CODE}</h2>
+      <p class="lead">Sensori, microcontrollore, rete, dashboard, sicurezza e robot sono allineati. La smart factory può tornare online.</p>
+      <div class="actions" style="justify-content:center;">
+        <button id="launchBtn">Riattiva la linea</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('launchBtn').addEventListener('click', renderSuccess);
+}
+
+function formatTime(ms){
+  const totalSec = Math.round(ms / 1000);
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return `${m}:${s.toString().padStart(2,'0')}`;
+}
+
+function renderSuccess(){
+  statusPill.classList.add('ok');
+  statusText.textContent = 'SISTEMA ONLINE';
+  const elapsed = Date.now() - startTime;
+  cardEl.innerHTML = `
+    <div class="final">
+      <div class="icon">✅</div>
+      <h2>Missione completata</h2>
+      <p class="lead">Il sistema IoT comunica, la dashboard riceve i dati e il robot può ripartire in sicurezza.</p>
+      <div class="report">
+        <div class="report-row"><span>Tempo impiegato</span><span>${formatTime(elapsed)}</span></div>
+        <div class="report-row"><span>Tentativi errati</span><span>${mistakes}</span></div>
+        <div class="report-row"><span>Codice ricollegamento</span><span>${CODE}</span></div>
+      </div>
+      <div class="actions" style="justify-content:center;">
+        <button class="ghost" id="restartBtn">Rigioca</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('restartBtn').addEventListener('click', resetGame);
+}
+
+function resetGame(){
+  current = 0;
+  mistakes = 0;
+  startTime = Date.now();
+  statusPill.classList.remove('ok');
+  statusText.textContent = 'SISTEMA OFFLINE';
+  renderStation();
+}
+
+initHud();
+renderStation();
+</script>
+</body>
+</html>

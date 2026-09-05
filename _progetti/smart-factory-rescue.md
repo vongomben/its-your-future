@@ -14,7 +14,11 @@ corso_id: iot
 corso_url: "https://www.accademiadigitaleliguria.it/corso/industrial-iot-e-robotics-developer-16/"
 descrizione_breve: "Il sistema IoT ha smesso di inviare dati al cloud: ricostruisci la catena sensore → microcontrollore → rete → dashboard → robot."
 description: "Riattiva una smart factory: sensori, IoT industriale, cybersecurity OT e robotica."
+gioco_url: "/smart-factory-rescue/"
+gioco_cta: "Riattiva il sistema IoT"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/smart-factory-rescue/' | relative_url }}">Riattiva il sistema IoT</a></p>
 
 ## Obiettivo
 
@@ -27,7 +31,8 @@ Far capire il ruolo del Tecnico Superiore IoT & Robotics Developer nella progett
 ## Materiali
 
 - **Versione fisica:** schede prova, immagini di sensori e microcontrollori, mini-dashboard fittizia, tabella dati, QR finale.
-- **Versione digitale:** Google Form, Genially, simulazione su dashboard, eventuale dimostrativo ESP/Arduino.
+- **Versione digitale:** gioco web *Smart Factory Rescue* (6 prove, sul dispositivo).
+- **Versione alternativa:** Google Form, Genially, simulazione su dashboard, eventuale dimostrativo ESP/Arduino.
 
 ## Prove dell'attività
 
