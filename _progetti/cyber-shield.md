@@ -15,7 +15,13 @@ corso_id: cyber
 corso_url: "https://www.accademiadigitaleliguria.it/corso/cyber-security-specialist-16/"
 descrizione_breve: "Entra nel SOC di un'azienda sotto attacco: riconosci minacce, applica contromisure e proteggi l'infrastruttura."
 description: "Mini-simulazione da Security Operations Center: rete, server, cloud, dati e IoT."
+gioco_url: "/cyber-shield/"
+gioco_cta: "Entra nel SOC"
+header_img: "/img/d-cyber-shield.jpg"
+header_alt: "Due analisti nel SOC davanti agli schermi, al centro uno scudo verde"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/cyber-shield/' | relative_url }}">Entra nel SOC</a></p>
 
 ## Obiettivo
 
@@ -28,7 +34,7 @@ Far capire che il Cyber Security Specialist collega reti, sistemi operativi, clo
 ## Materiali
 
 - **Versione fisica:** schede prova, finta dashboard SOC, log di accesso, carta rete aziendale, cartoncini con contromisure, QR finale.
-- **Versione digitale:** Google Form, Genially, mini-dashboard con log e alert, quiz interattivo.
+- **Versione digitale:** gioco web *Cyber Shield* (6 allarmi SOC, sul dispositivo).
 
 ## Prove dell'attività
 
