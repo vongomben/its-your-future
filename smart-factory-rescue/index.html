@@ -374,10 +374,24 @@ function updateHud(){
   });
 }
 
+function shuffledOrder(n, correctIdxs) {
+  const order = Array.from({ length: n }, (_, i) => i);
+  for (let i = n - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  if (n > 1 && correctIdxs.length === 1 && order[0] === correctIdxs[0]) {
+    const k = 1 + Math.floor(Math.random() * (n - 1));
+    [order[0], order[k]] = [order[k], order[0]];
+  }
+  return order;
+}
+
 function renderStation(){
   answered = false;
   selected = [];
   const s = stations[current];
+  const order = shuffledOrder(s.options.length, s.correct);
   cardEl.innerHTML = `
     <div class="card-eyebrow">${s.eyebrow}</div>
     ${s.image ? `<img class="card-art" src="${s.image}" alt="${s.imageAlt || ''}" width="1200" height="442">` : ''}
@@ -385,10 +399,10 @@ function renderStation(){
     <div class="scenario">${s.scenario}</div>
     ${s.schematic ? `<div class="schematic">${s.schematic}</div>` : ''}
     <div class="options">
-      ${s.options.map((opt, i) => `
-        <div class="opt ${s.type}" data-i="${i}">
+      ${order.map((origI) => `
+        <div class="opt ${s.type}" data-i="${origI}">
           <span class="marker">●</span>
-          <span>${opt}</span>
+          <span>${s.options[origI]}</span>
         </div>`).join('')}
     </div>
     <div class="actions">
@@ -425,8 +439,9 @@ function checkAnswer(){
   const feedback = document.getElementById('feedback');
   const confirmBtn = document.getElementById('confirmBtn');
 
-  document.querySelectorAll('.opt').forEach((el, i) => {
+  document.querySelectorAll('.opt').forEach((el) => {
     el.style.pointerEvents = 'none';
+    const i = parseInt(el.dataset.i, 10);
     if (s.correct.includes(i)) el.classList.add('correct');
     else if (selected.includes(i)) el.classList.add('wrong');
   });

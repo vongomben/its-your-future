@@ -1,5 +1,5 @@
 (function () {
-  const APP_VERSION = "0.1.4";
+  const APP_VERSION = "0.1.5";
   const DURATION_MS = 5 * 60 * 1000;
   const stations = window.STATIONS;
   const storage = window.GameStorage;
@@ -34,6 +34,7 @@
   let matchAssign = {};
   let selectedPiece = null;
   let orderIds = [];
+  let awaitingNext = false;
 
   function defaultState() {
     return {
@@ -261,9 +262,32 @@
     el.btnCheck.hidden = false;
   }
 
+  function goNextStation() {
+    awaitingNext = false;
+    el.btnCheck.textContent = "Conferma";
+    if (state.stationIndex >= stations.length - 1) {
+      finish("success");
+    } else {
+      state.stationIndex += 1;
+      persist();
+      renderStation();
+    }
+  }
+
+  function lockStationInputs() {
+    el.stationBody.querySelectorAll("button").forEach((btn) => {
+      btn.disabled = true;
+    });
+    el.stationBody.querySelectorAll(".choice").forEach((btn) => {
+      btn.disabled = true;
+    });
+  }
+
   function renderStation() {
     const station = currentStation();
     if (!station) return;
+    awaitingNext = false;
+    el.btnCheck.textContent = "Conferma";
     el.stationIndex.textContent = `Stazione ${state.stationIndex + 1} di ${stations.length}`;
     if (station.image) {
       el.stationArt.hidden = false;
@@ -286,6 +310,11 @@
   }
 
   function checkAnswer() {
+    if (awaitingNext) {
+      goNextStation();
+      return;
+    }
+
     const station = currentStation();
     let ok = false;
 
@@ -321,18 +350,12 @@
       state.learned.push(station.successMessage);
     }
     persist();
+    awaitingNext = true;
+    lockStationInputs();
     setFeedback("ok", station.successMessage);
-
-    window.setTimeout(() => {
-      if (state.screen !== "play") return;
-      if (state.stationIndex >= stations.length - 1) {
-        finish("success");
-      } else {
-        state.stationIndex += 1;
-        persist();
-        renderStation();
-      }
-    }, 1400);
+    el.btnCheck.textContent =
+      state.stationIndex >= stations.length - 1 ? "Vedi l’esito" : "Avanti";
+    el.feedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 
   function finish(outcome) {
