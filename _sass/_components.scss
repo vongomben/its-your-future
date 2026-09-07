@@ -17,6 +17,23 @@
     font-size: 1.1rem;
     opacity: 0.95;
   }
+
+  &__progetto {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba($paper, 0.25);
+    max-width: 70ch;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+
+    p {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      opacity: 0.92;
+    }
+  }
 }
 
 .iyf-kicker {

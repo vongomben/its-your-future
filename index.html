@@ -9,6 +9,13 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
   <p class="iyf-kicker">{{ site.hero.kicker }}</p>
   <h1>{{ site.hero.title }}</h1>
   <p>{{ site.hero.description }}</p>
+  {% if site.hero.progetto %}
+  <div class="iyf-hero__progetto">
+    {% for p in site.hero.progetto %}
+    <p>{{ p }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
 </section>
 
 <div class="iyf-note">

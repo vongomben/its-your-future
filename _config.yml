@@ -7,6 +7,10 @@ hero:
   kicker: "Percorsi didattico-orientativi ITS"
   title: "IT'S YOUR FUTURE"
   description: "Raccoglie corsi, materiali e percorsi ludico-didattici utilizzabili per orientamento, open day, installazioni interattive e attività brevi da 3–7 minuti."
+  progetto:
+    - "Il progetto IT'S YOUR FUTURE, realizzato nell'ambito del PNRR e finanziato dall'Unione europea – Next Generation EU, propone la sperimentazione di uno strumento innovativo per la programmazione e realizzazione di attività di Orientamento e diffusione delle opportunità formative degli ITS liguri aderenti alla presente iniziativa, in cui studenti e studentesse diventano protagonisti di una sfida immersiva tra enigmi, logica e creatività digitale."
+    - "Un percorso di gamification collaborativo e asimmetrico in cui testare le principali conoscenze e abilità delle Aree tecnologiche rappresentate dal partenariato, mediante enigmi da risolvere all'interno di uno showcase fisico e digitale, orientando i giovani nella scelta del percorso post diploma più idoneo alle loro potenzialità, ambizioni e aspettative."
+    - "Attraverso un percorso strutturato, i partecipanti vengono coinvolti in prove da risolvere con strumenti digitali e indizi interattivi che richiamano i principali ambiti dei profili in esito ai percorsi formativi degli ITS coinvolti: dall'ambito ICT (ITS ICT ACCADEMIA DIGITALE LIGURIA - GENOVA) e del Turismo (ITS TURISMO LIGURIA - ACADEMY OF TOURISM, CULTURE AND HOSPITALITY), alle professionalità legate ai settori dei Servizi alle imprese e della Meccatronica (ITS ACADEMY - LA SPEZIA)."
 
 # Sezione "Come funziona" homepage — modificabile da qui
 come_funziona:
