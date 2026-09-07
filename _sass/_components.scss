@@ -1,9 +1,10 @@
 // Hero
 .iyf-hero {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(10rem, 0.5fr);
   align-items: stretch;
-  gap: 1rem 1.5rem;
+  column-gap: 1rem;
   padding: 3rem 1.25rem 3rem 2rem;
   border-radius: $radius-lg;
   background: linear-gradient(135deg, $brand, $brand-light);
@@ -24,7 +25,6 @@
   }
 
   &__copy {
-    flex: 1 1 22rem;
     min-width: 0;
     z-index: 1;
   }
@@ -48,11 +48,8 @@
 
   &__faro {
     position: relative;
-    flex: 0 0 auto;
-    align-self: stretch;
-    aspect-ratio: 650 / 975;
-    height: auto;
     min-height: 0;
+    align-self: stretch;
     pointer-events: none;
   }
 
@@ -62,9 +59,9 @@
     display: block;
     width: 100%;
     height: 100%;
+    max-width: none;
     object-fit: contain;
     object-position: bottom center;
-    mix-blend-mode: screen;
   }
 
   &__faro-flare {
