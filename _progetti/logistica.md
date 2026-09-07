@@ -1,7 +1,7 @@
 ---
 title: "Supply Chain Mission"
 titolo_attivita: "Supply Chain Mission"
-its: "ITS La Spezia"
+its: "ITS La Spezia — Servizi alle imprese"
 area: "Marketing logistico e doganale"
 gruppo: meccatronica
 order: 6
@@ -9,7 +9,7 @@ durata: "3–7 minuti"
 modalita: "Simulazione di spedizione internazionale"
 formato:
   - digitale
-corso: "Tecnico Superiore per la Strategia Commerciale — Marketing logistico e gestione pratiche doganali"
+corso: "Strategia commerciale — Marketing logistico e pratiche doganali"
 corso_id: logistica
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-1__corso_tecnico_superiore_per_la_strategia_commerciale___marketing_logistico_e_gestione_pratiche_doganali_40.html"
 descrizione_breve: "Gestisci una spedizione internazionale urgente: mercato, trasporto intermodale, dogana, tracciabilità e KPI."

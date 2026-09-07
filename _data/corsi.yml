@@ -127,27 +127,33 @@
   destinatari: "Per chi vuole lavorare su IoT, robotica e automazione. Serve un diploma di scuola secondaria superiore (o titolo equivalente)."
 
 - id: amm-finanza
-  its: "ITS La Spezia — Meccatronica"
+  its: "ITS La Spezia — Servizi alle imprese"
   gruppo: meccatronica
   corso: "Amministrazione, gestione finanziaria e controllo di gestione — Marketing e internazionalizzazione"
-  url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-2__corso_tecnico_superiore_per_l_amministrazione_la_gestione__finanziaria_e_il_controllo_di_gestione__marketing_e_l_internazionalizzazione_delle_imprese_33.html"
-  scheda_corso_url: "https://www.itslaspezia.it/uploaded_files/attachments/202506301751273931/its_2025_2_corso_amministrativo_scheda_validata.pdf"
-  testo: "Forma tecnici qualificati per i servizi d’impresa, specializzati nei processi amministrativi, commerciali e di internazionalizzazione e nel controllo dei processi produttivi e gestionali. Il Tecnico superiore per i servizi d’impresa è una figura polivalente: collabora ad amministrazione, gestione finanziaria e controllo di gestione per migliorare le performance aziendali."
+  url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-3__corso_tecnico_superiore_per_l_amministrazione_la_gestione__finanziaria_e_il_controllo_di_gestione_39.html"
+  iscrizione_url: "https://sistemaits.istruzione.gov.it/portaleitsacademy"
+  iscrizione_label: "Iscriviti sul Portale ITS Academy"
+  scheda_iscrizione_url: "https://www.itslaspezia.it/uploaded_files/attachments/202606301782823104/all__10___scheda_iscrizione_3_amm_1_comm.pdf"
+  bando_url: "https://www.itslaspezia.it/uploaded_files/attachments/202606301782823114/bando_its_3_ammin.pdf"
+  guida_iscrizione_url: "https://www.itslaspezia.it/uploaded_files/attachments/202607021783002192/guida_per_iscrizione_on_line_dal_portale_its_academy_(1).pdf"
+  scheda_corso_url: "https://www.itslaspezia.it/uploaded_files/attachments/202606301782823083/scheda_informativa.pdf"
+  brochure_url: "https://www.itslaspezia.it/uploaded_files/attachments/202606301782823092/brochure_del_corso_3_amm.pdf"
+  testo: "3° corso ITS La Spezia, area Servizi alle imprese. Forma tecnici qualificati per i processi amministrativi, commerciali e di internazionalizzazione e per il controllo dei processi produttivi e gestionali. Il Tecnico superiore per l’amministrazione, la gestione finanziaria e il controllo di gestione è una figura polivalente: esamina informazioni organizzative, contabili e finanziarie, supporta il budgeting e collabora alle decisioni strategiche, anche sui mercati internazionali, con piattaforme digitali e software ERP."
   fatti:
     - { label: "Tipologia", valore: "ITS post diploma biennale" }
     - { label: "Durata", valore: "2.000 ore" }
     - { label: "Orario", valore: "9:00–18:00" }
-    - { label: "Inizio (scheda ufficiale)", valore: "30/10/2025" }
+    - { label: "Inizio corso", valore: "29/10/2026" }
     - { label: "Stage", valore: "800 ore" }
-    - { label: "Sede", valore: "La Spezia" }
+    - { label: "Sede", valore: "La Spezia, Via Pianagrande 18" }
     - { label: "Costo", valore: "Gratuito, totalmente finanziato" }
-    - { label: "Posti", valore: "25, dopo selezione" }
+    - { label: "Domande", valore: "Online 1 luglio–14 ottobre 2026; a mano anche 1 luglio–5 agosto e 26 agosto–14 ottobre 2026" }
   competenze:
     - "Analizzare i processi aziendali e predisporre la contabilità analitica."
     - "Controllare la contabilità generale e modellare il controllo di gestione, anche con software ERP."
     - "Supportare produzione, piano commerciale e vendita; pianificazione strategica sui mercati internazionali."
   destinatari: "Diploma di scuola secondaria di secondo grado (o titolo equivalente). 25 partecipanti senza limiti di età, dopo le selezioni."
-  note_date: "Date di avvio e documentazione come pubblicate sulla scheda ITS La Spezia; verificare sul sito ufficiale se è aperta una nuova edizione."
+  note_iscrizione: "Domanda (Allegato 10) più CV europeo, titolo di studio, documento, foto tessere. Online con SPID sul Portale ITS Academy, oppure a mano in sede lunedì–venerdì 9:00–13:00. Info: info@itslaspezia.it"
 
 - id: robotica
   its: "ITS La Spezia — Meccatronica"
@@ -196,7 +202,7 @@
   note_date: "Date di avvio e documentazione come pubblicate sulla scheda ITS La Spezia; verificare sul sito ufficiale se è aperta una nuova edizione."
 
 - id: logistica
-  its: "ITS La Spezia — Meccatronica"
+  its: "ITS La Spezia — Servizi alle imprese"
   gruppo: meccatronica
   corso: "Strategia commerciale — Marketing logistico e pratiche doganali"
   url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-1__corso_tecnico_superiore_per_la_strategia_commerciale___marketing_logistico_e_gestione_pratiche_doganali_40.html"
@@ -205,7 +211,9 @@
   scheda_iscrizione_url: "https://www.itslaspezia.it/uploaded_files/attachments/202606301782822264/all_10___scheda_iscrizione_3_amm_1_comm.pdf"
   bando_url: "https://www.itslaspezia.it/uploaded_files/attachments/202606301782822274/bando_its_1_commerciale.pdf"
   guida_iscrizione_url: "https://www.itslaspezia.it/uploaded_files/attachments/202607021783002283/guida_per_iscrizione_on_line_dal_portale_its_academy_(1).pdf"
-  testo: "Forma tecnici per i servizi d’impresa specializzati nei processi commerciali nazionali e internazionali: strategia commerciale, marketing, supply chain, magazzini digitalizzati, pratiche doganali e commercio estero. Figura polivalente che collega commerciale, logistica e dogane, con visione sistemica del business."
+  scheda_corso_url: "https://www.itslaspezia.it/uploaded_files/attachments/202606301782822119/scheda_corso.pdf"
+  brochure_url: "https://www.itslaspezia.it/uploaded_files/attachments/202606301782822129/brochure_its_commerciale_marketing_logistico.pdf"
+  testo: "1° corso ITS La Spezia, area Servizi alle imprese. Forma tecnici per i processi commerciali nazionali e internazionali: strategia commerciale, marketing, supply chain, magazzini digitalizzati, pratiche doganali e commercio estero. Figura polivalente che collega commerciale, logistica e dogane, con visione sistemica del business."
   fatti:
     - { label: "Tipologia", valore: "ITS post diploma biennale" }
     - { label: "Durata", valore: "2.000 ore" }
