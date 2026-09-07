@@ -48,14 +48,21 @@
 
   &__faro {
     position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
     min-height: 0;
-    align-self: stretch;
     pointer-events: none;
   }
 
+  &__faro-stage {
+    position: relative;
+    height: 100%;
+    width: auto;
+    aspect-ratio: 650 / 975;
+  }
+
   &__faro-tower {
-    position: absolute;
-    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
@@ -66,18 +73,18 @@
 
   &__faro-flare {
     position: absolute;
-    left: 51.6%;
-    top: 9%;
+    left: 51%;
+    top: 7%;
     z-index: 2;
-    width: 160%;
+    width: 55%;
     aspect-ratio: 1 / 1;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background: radial-gradient(
       circle,
       rgba(255, 240, 190, 1) 0%,
-      rgba(255, 200, 90, 0.75) 22%,
-      rgba(255, 160, 50, 0.2) 48%,
+      rgba(255, 200, 90, 0.85) 18%,
+      rgba(255, 160, 50, 0.35) 42%,
       rgba(255, 140, 40, 0) 70%
     );
     animation: iyf-faro-pulse 2.4s ease-in-out infinite;
