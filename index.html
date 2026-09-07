@@ -6,16 +6,29 @@ description: "Percorsi ludico-didattici ITS: corsi, materiali e attività per or
 ---
 
 <section class="iyf-hero">
-  <p class="iyf-kicker">{{ site.hero.kicker }}</p>
-  <h1>{{ site.hero.title }}</h1>
-  <p>{{ site.hero.description }}</p>
-  {% if site.hero.progetto %}
-  <div class="iyf-hero__progetto">
-    {% for p in site.hero.progetto %}
-    <p>{{ p }}</p>
-    {% endfor %}
+  <div class="iyf-hero__copy">
+    <p class="iyf-kicker">{{ site.hero.kicker }}</p>
+    <h1>{{ site.hero.title }}</h1>
+    <p>{{ site.hero.description }}</p>
+    {% if site.hero.progetto %}
+    <div class="iyf-hero__progetto">
+      {% for p in site.hero.progetto %}
+      <p>{{ p }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
+  <div class="iyf-hero__faro" aria-hidden="true">
+    <img
+      class="iyf-hero__faro-tower"
+      src="{{ '/img/faro-torre.png' | relative_url }}"
+      alt=""
+      width="650"
+      height="975"
+      decoding="async"
+    >
+    <span class="iyf-hero__faro-flare"></span>
+  </div>
 </section>
 
 <div class="iyf-note">

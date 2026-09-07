@@ -1,10 +1,15 @@
 // Hero
 .iyf-hero {
-  padding: 3rem 2rem;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 1rem 1.5rem;
+  padding: 3rem 1.25rem 3rem 2rem;
   border-radius: $radius-lg;
   background: linear-gradient(135deg, $brand, $brand-light);
   color: $paper;
   margin: 1.5rem 0 2.5rem;
+  overflow: hidden;
 
   h1 {
     margin: 0 0 0.5rem;
@@ -16,6 +21,12 @@
     max-width: 70ch;
     font-size: 1.1rem;
     opacity: 0.95;
+  }
+
+  &__copy {
+    flex: 1 1 22rem;
+    min-width: 0;
+    z-index: 1;
   }
 
   &__progetto {
@@ -33,6 +44,88 @@
       line-height: 1.55;
       opacity: 0.92;
     }
+  }
+
+  &__faro {
+    position: relative;
+    flex: 0 0 min(34%, 15.5rem);
+    align-self: flex-end;
+    margin: -3rem -0.4rem -3.1rem 0;
+    min-height: 18rem;
+    pointer-events: none;
+  }
+
+  &__faro-tower {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom center;
+    mix-blend-mode: screen;
+  }
+
+  &__faro-flare {
+    position: absolute;
+    left: 51.6%;
+    top: 9%;
+    z-index: 2;
+    width: 160%;
+    aspect-ratio: 1 / 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 240, 190, 1) 0%,
+      rgba(255, 200, 90, 0.75) 22%,
+      rgba(255, 160, 50, 0.2) 48%,
+      rgba(255, 140, 40, 0) 70%
+    );
+    animation: iyf-faro-pulse 2.4s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes iyf-faro-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    filter: blur(2px) brightness(0.9);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(1px) brightness(1.35);
+  }
+}
+
+@media (max-width: 720px) {
+  .iyf-hero {
+    padding: 2rem 1.15rem 2.2rem;
+  }
+
+  .iyf-hero__faro {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    flex: none;
+    width: min(38%, 9.5rem);
+    min-height: 0;
+    margin: 0;
+    z-index: 0;
+    opacity: 0.9;
+  }
+
+  .iyf-hero__copy {
+    position: relative;
+    z-index: 1;
+    padding-right: 22%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iyf-hero__faro-flare {
+    animation: none;
+    opacity: 0.85;
+    filter: none;
   }
 }
 
