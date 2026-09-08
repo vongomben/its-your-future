@@ -14,7 +14,13 @@ corso_id: social
 corso_url: "https://www.accademiadigitaleliguria.it/corso/social-e-digital-marketing-specialist/"
 descrizione_breve: "Crea e ottimizza una campagna digitale per il lancio di una borraccia smart eco-friendly: target, canali, contenuti e KPI."
 description: "Percorso creativo per strategia digitale, social media, advertising, analytics e ottimizzazione campagna."
+gioco_url: "/campagna-digitale-smart/"
+gioco_cta: "Lancia la campagna"
+header_img: "/img/d-campagna-digitale-smart.jpg"
+header_alt: "Due creativi in agenzia intorno a una borraccia smart e a una moodboard"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/campagna-digitale-smart/' | relative_url }}">Lancia la campagna</a></p>
 
 ## Obiettivo
 
@@ -27,7 +33,7 @@ Far capire il ruolo del Digital Media Specialist nella progettazione di strategi
 ## Materiali
 
 - **Versione fisica:** schede prova, card target/canali, mockup contenuto, tabella KPI, QR finale.
-- **Versione digitale:** Google Form, Genially, dashboard analytics fittizia, mockup social.
+- **Versione digitale:** gioco web *Campagna Digitale Smart* (6 brief, sul dispositivo).
 
 ## Prove dell'attività
 
