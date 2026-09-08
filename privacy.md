@@ -10,6 +10,16 @@ description: "IT'S YOUR FUTURE non carica risorse da altri siti: font, stili e g
   <h1>Privacy</h1>
   <p>IT'S YOUR FUTURE è un sito statico per stand, open day e orientamento ITS. Non c’è un backend, non ci sono account e non raccogliamo dati personali.</p>
 
+  <h2>Chi l’ha fatto e per chi</h2>
+  <p>Progettazione e sviluppo del sito e dei videogiochi: Davide, per il progetto <strong>IT'S YOUR FUTURE</strong>.</p>
+  <p>Il progetto è realizzato nell’ambito del PNRR e finanziato dall’Unione europea – Next Generation EU. Serve agli ITS liguri aderenti, per attività di orientamento e per far conoscere i loro corsi:</p>
+  <ul>
+    <li>ITS ICT Accademia Digitale Liguria (Genova)</li>
+    <li>ITS Turismo Liguria — Academy of Tourism, Culture and Hospitality</li>
+    <li>ITS Academy La Spezia — Meccatronica e Servizi alle imprese</li>
+  </ul>
+  <p>Destinatari delle attività in stand sono studentesse e studenti in orientamento post diploma, famiglie e visitatori degli open day.</p>
+
   <h2>Nessun collegamento esterno automatico</h2>
   <p>Pagine e giochi si caricano solo da questo sito. Non usiamo analytics, pixel pubblicitari, cookie di profilazione, CDN di terze parti né servizi di monitoraggio. Il browser non scarica script, stili o immagini da altri domini per far funzionare il sito.</p>
   <p>Nelle schede dei corsi possono comparire link alle pagine ufficiali delle scuole ITS (iscrizione, PDF, sito della scuola). Si aprono solo se li scegli tu: non partono richieste verso quei siti in automatico.</p>
