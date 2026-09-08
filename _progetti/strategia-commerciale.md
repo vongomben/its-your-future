@@ -14,7 +14,11 @@ corso_id: logistica
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-1__corso_tecnico_superiore_per_la_strategia_commerciale___marketing_logistico_e_gestione_pratiche_doganali_40.html"
 descrizione_breve: "Dal piano commerciale alla pratica doganale: scegli mercato, trasporto, documenti e tracking per una spedizione verso l'estero."
 description: "Attività per il Tecnico superiore in strategia commerciale, marketing logistico e gestione delle pratiche doganali."
+gioco_url: "/strategia-commerciale/"
+gioco_cta: "Chiudi la filiera"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/strategia-commerciale/' | relative_url }}">Chiudi la filiera</a></p>
 
 ## Obiettivo
 
@@ -29,7 +33,7 @@ Far capire come il tecnico superiore collega vendita, logistica, magazzino digit
 ## Materiali
 
 - **Versione fisica:** schede mercato, mappa dei trasporti, finti documenti di trasporto e doganali, card Incoterms/TARIC, tabella scorte.
-- **Versione digitale:** Google Form, Genially, dashboard di tracking, WMS/TMS simulato.
+- **Versione digitale:** gioco web *Strategia commerciale e dogane* (6 prove, sul dispositivo).
 
 ## Prove dell'attività
 
