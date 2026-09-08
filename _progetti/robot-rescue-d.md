@@ -14,6 +14,8 @@ corso_id: robotica
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-2__corso_tecnico_superiore_per_l_automazione_e_la_robotica_industriale_35.html"
 descrizione_breve: "Insegna al Dobot Magician Lite un ciclo pick & place in modalità Learn: sicurezza, punti di lavoro, playback e collaudo."
 description: "Riavvio di una micro-linea robotizzata con Dobot Magician Lite in modalità Teach & Playback."
+header_img: "/img/dobot.png"
+header_alt: "Dobot Magician Lite con ventosa, controller e moduli sensori"
 ---
 
 ## Obiettivo

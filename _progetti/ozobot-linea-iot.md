@@ -14,6 +14,8 @@ corso_id: iot
 corso_url: "https://www.accademiadigitaleliguria.it/corso/industrial-iot-e-robotics-developer-16/"
 descrizione_breve: "Programma un Ozobot con codici colore per simulare una mini-linea IoT: routing, checkpoint e monitoraggio del flusso."
 description: "Attività STEAM con Ozobot per introdurre logica di controllo e monitoraggio in un contesto IoT industriale."
+header_img: "/img/ozobot.png"
+header_alt: "Kit Ozobot Evo: robot, astuccio, marker per i codici colore, cavo USB e schede attività"
 ---
 
 ## Obiettivo
