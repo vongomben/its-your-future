@@ -16,6 +16,8 @@ descrizione_breve: "La linea di produzione si è fermata: analizza sensori, logi
 description: "Guasto in una linea automatizzata industriale: prove tecniche su sensori, programmazione, KPI e sicurezza."
 gioco_url: "/robot-rescue/"
 gioco_cta: "Riavvia la linea"
+header_img: "/img/m-robot-rescue.jpg"
+header_alt: "Linea automatizzata: nastro, sensore e dashboard di controllo"
 ---
 
 <p><a class="iyf-btn iyf-btn--accent" href="{{ '/robot-rescue/' | relative_url }}">Riavvia la linea</a></p>
