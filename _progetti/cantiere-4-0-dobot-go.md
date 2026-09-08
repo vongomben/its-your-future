@@ -14,6 +14,8 @@ corso_id: meccatronica-avanzata
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-15__corso_tecnico_superiore_per_la_progettazione_e_la_produzione_meccatronica_avanzata_34.html"
 descrizione_breve: "Programma con DobotLab il Dobot Magician Go per movimentare componenti nautici: prelievo, controllo qualità e deposito."
 description: "Missione di movimentazione e controllo qualità con Dobot Magician Go e DobotLab in modalità blocchi."
+header_img: "/img/go.png"
+header_alt: "Dobot Magician Go su tappeto a griglia, con braccio, ruote omnidirezionali e cubetti colorati"
 ---
 
 ## Obiettivo
