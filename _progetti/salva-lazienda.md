@@ -16,6 +16,8 @@ descrizione_breve: "Diventa il team di controllo di gestione di un'azienda che v
 description: "Simulazione aziendale: controllo di gestione, internazionalizzazione e strumenti digitali in prove rapide."
 gioco_url: "/salva-lazienda/"
 gioco_cta: "Inizia la missione"
+header_img: "/img/m-salva-lazienda.jpg"
+header_alt: "Il team di controllo di GustaVera in ufficio, con bottiglie, fogli costi e la domanda Export?"
 ---
 
 <p><a class="iyf-btn iyf-btn--accent" href="{{ '/salva-lazienda/' | relative_url }}">Inizia la missione</a></p>

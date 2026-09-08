@@ -16,6 +16,8 @@ descrizione_breve: "Entra in un ufficio amministrazione: leggi i costi, usi l'ER
 description: "Attività per il Tecnico superiore in amministrazione, gestione finanziaria e controllo di gestione: contabilità, ERP, budgeting e internazionalizzazione."
 gioco_url: "/salva-lazienda/"
 gioco_cta: "Inizia la missione"
+header_img: "/img/m-salva-lazienda.jpg"
+header_alt: "Il team di controllo di GustaVera in ufficio, con bottiglie, fogli costi e la domanda Export?"
 ---
 
 <p><a class="iyf-btn iyf-btn--accent" href="{{ '/salva-lazienda/' | relative_url }}">Inizia la missione</a></p>
