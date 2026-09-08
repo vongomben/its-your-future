@@ -1,7 +1,7 @@
 ---
 title: "Cantiere digitale Dobot Magician Go"
 titolo_attivita: "Cantiere digitale Dobot Magician Go"
-its: "ITS La Spezia"
+its: "ITS La Spezia — Meccatronica"
 area: "Meccatronica Avanzata"
 gruppo: meccatronica
 order: 5
@@ -9,7 +9,7 @@ durata: "3–7 minuti"
 modalita: "Programmazione visuale a blocchi / cella produttiva digitale"
 formato:
   - fisico
-corso: "Corso TECNICO SUPERIORE PER LA PROGETTAZIONE E LA PRODUZIONE MECCATRONICA AVANZATA"
+corso: "Progettazione e produzione meccatronica avanzata"
 corso_id: meccatronica-avanzata
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-15__corso_tecnico_superiore_per_la_progettazione_e_la_produzione_meccatronica_avanzata_34.html"
 descrizione_breve: "Programma con DobotLab il Dobot Magician Go per movimentare componenti nautici: prelievo, controllo qualità e deposito."

@@ -59,12 +59,18 @@ layout: default
   {% if corsi.size > 0 %}
   <section class="iyf-section" id="corsi">
     <h2>Corsi</h2>
+    {% if info.corsi_layout == "tabella" %}
+    <p class="iyf-section-desc">Quattro percorsi ITS La Spezia collegati a questo stand. Il nome del corso apre la scheda ufficiale della scuola.</p>
+    {% assign corsi = corsi | sort: "ordine" %}
+    {% include corsi-tabella.html %}
+    {% else %}
     <p class="iyf-section-desc">Corsi ITS collegati a questo percorso. Testo, date e iscrizione dalla scheda ufficiale della scuola. Il form resta sul sito ITS.</p>
     <div class="iyf-corsi">
       {% for c in corsi %}
         {% include corso-scheda.html %}
       {% endfor %}
     </div>
+    {% endif %}
   </section>
   {% endif %}
 

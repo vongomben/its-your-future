@@ -1113,6 +1113,23 @@
   gap: 1.25rem;
 }
 
+.iyf-corsi-table {
+  min-width: 36rem;
+  font-size: 1rem;
+
+  th:first-child,
+  td:first-child {
+    width: 38%;
+  }
+
+  @media (min-width: 700px) {
+    th:first-child,
+    td:first-child {
+      white-space: nowrap;
+    }
+  }
+}
+
 .iyf-corso {
   background: $paper;
   border: 1px solid $border;
