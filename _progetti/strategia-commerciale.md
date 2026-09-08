@@ -16,6 +16,8 @@ descrizione_breve: "Dal piano commerciale alla pratica doganale: scegli mercato,
 description: "Attività per il Tecnico superiore in strategia commerciale, marketing logistico e gestione delle pratiche doganali."
 gioco_url: "/strategia-commerciale/"
 gioco_cta: "Chiudi la filiera"
+header_img: "/img/m-strategia-commerciale.jpg"
+header_alt: "Due professionisti analizzano mercato, target e obiettivi su una dashboard"
 ---
 
 <p><a class="iyf-btn iyf-btn--accent" href="{{ '/strategia-commerciale/' | relative_url }}">Chiudi la filiera</a></p>
