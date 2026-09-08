@@ -11,7 +11,7 @@ description: "IT'S YOUR FUTURE non carica risorse da altri siti: font, stili e g
   <p>IT'S YOUR FUTURE è un sito statico per stand, open day e orientamento ITS. Non c’è un backend, non ci sono account e non raccogliamo dati personali.</p>
 
   <h2>Chi l’ha fatto e per chi</h2>
-  <p>Progettazione e sviluppo del sito e dei videogiochi: Davide, per il progetto <strong>IT'S YOUR FUTURE</strong>.</p>
+  <p>Progettazione e sviluppo del sito e dei videogiochi: <strong>Officine Inneto SRL</strong> (<a href="https://officine.cc" target="_blank" rel="noopener">officine.cc</a>), per il progetto <strong>IT'S YOUR FUTURE</strong>.</p>
   <p>Il progetto è realizzato nell’ambito del PNRR e finanziato dall’Unione europea – Next Generation EU. Serve agli ITS liguri aderenti, per attività di orientamento e per far conoscere i loro corsi:</p>
   <ul>
     <li>ITS ICT Accademia Digitale Liguria (Genova)</li>
