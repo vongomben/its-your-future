@@ -90,6 +90,20 @@
   padding: 0 1.5rem 3rem;
 }
 
+.iyf-privacy {
+  max-width: 40rem;
+  padding-top: 1.5rem;
+
+  h1 {
+    margin: 0 0 1rem;
+  }
+
+  h2 {
+    margin: 1.75rem 0 0.6rem;
+    font-size: 1.2rem;
+  }
+}
+
 .site-footer {
   background: $brand;
   color: rgba($paper, 0.9);
