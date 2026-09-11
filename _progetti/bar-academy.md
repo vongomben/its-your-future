@@ -1,57 +1,57 @@
 ---
-title: "Bar Academy"
-titolo_attivita: "Bar Academy"
+title: "Apri il tuo locale"
+titolo_attivita: "Apri il tuo locale"
 its: "ITS Turismo Liguria"
 area: "Food & Beverage Management"
 gruppo: turismo
 order: 14
-durata: "3–7 minuti"
+durata: "5–8 minuti"
 modalita: "Simulazione a scenari interattiva con timer, debrief e mini sfida finale"
 formato:
   - digitale
 corso: "Food & Beverage Manager"
 corso_id: food-beverage
 corso_url: "https://www.itsturismoliguria.it/corso-food-beverage-manager/"
-descrizione_breve: "Gestisci una serata di servizio tra mixology, vino, HACCP, allergeni, reclami e food cost prendendo decisioni professionali sotto pressione."
-description: "Simulazione digitale per scoprire il lavoro del Food & Beverage Manager attraverso otto scenari professionali e una mini sfida finale di mise en place."
+descrizione_breve: "Progetta l'apertura di un ristorante in 6 mesi: location, business plan, fornitori, menu, magazzino e conti di fine mese."
+description: "Simulazione digitale per scoprire il lavoro del Food & Beverage Manager nell'apertura di un locale: otto decisioni professionali e una mini sfida finale di mise en place."
 gioco_url: "/bar-academy/"
-gioco_cta: "Entra in Bar Academy"
-header_img: "/img/t-bar-academy.png"
-header_alt: "Bar Academy: The Mixology & Management Challenge"
+gioco_cta: "Apri il locale"
+header_img: "/img/its-turismo/itsturismoliguria_header_APRIiltuoLOCALE.jpg"
+header_alt: "Apri il tuo locale: location, fornitori, menu e conti"
 ---
 
-<p><a class="iyf-btn iyf-btn--accent" href="{{ '/bar-academy/' | relative_url }}">Entra in Bar Academy</a></p>
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/bar-academy/' | relative_url }}">Apri il locale</a></p>
 
 ## Obiettivo
 
-Far capire il ruolo del **Food & Beverage Manager** nella gestione di bar e ristorante: ricette IBA e tecniche di miscelazione, servizio del vino e abbinamenti, HACCP e catena del freddo, allergeni e normativa UE, gestione del reclamo in sala, food cost e pricing.
+Far capire il ruolo manageriale del **Food & Beverage Manager** nell'apertura e nella gestione di un locale: scelta della location, break-even e business plan, selezione fornitori, menu engineering, scontrino medio e upselling, gestione scorte e sprechi, lettura integrata dei costi (food cost, personale, costi fissi), gestione prenotazioni e relazione col cliente.
 
 ## Storia / contesto
 
-> Anno 2026, Space Academy ITS. Il giocatore entra nella **Bar Academy**, il ristorante-bar dell'Accademia in piena serata di servizio, tra ordini al banco, sala piena e cucina sotto pressione.
+> Anno 2026, Space Academy ITS. Hai vinto un bando: hai **6 mesi** per aprire il tuo locale. Ogni settimana arriva un alert.
 >
-> Sei il Food & Beverage Manager di turno: ogni ordine, reclamo o controllo richiede una decisione entro 30 secondi. Ogni scelta modifica la qualità del servizio e viene seguita da un breve debrief professionale.
+> Sei il Food & Beverage Manager che progetta l'apertura. Ogni decisione va presa entro 30 secondi, fra 4 opzioni; in alcuni casi più di una scelta è valida. La barra **solidità del progetto** parte dal 50% e si muove di 15 punti a ogni scelta.
 
 ## Materiali
 
 - **Versione digitale:** web app mobile-first accessibile da smartphone tramite link o QR code.
 - **Supporto consigliato:** smartphone personale degli studenti e un eventuale totem/monitor per demo e classifica.
-- **Contenuti:** 8 scenari professionali, feedback tecnico dopo ogni scelta, mini sfida finale di mise en place, schermata risultati e collegamento al corso.
+- **Contenuti:** 8 scenari professionali, 32 opzioni con debrief, barra solidità del progetto, mini sfida arcade finale di mise en place, schermata risultati e collegamento al corso.
 - **Audio:** effetti sonori e musica synthwave con possibilità di mute.
 
 ## Prove dell'attività
 
 | N° | Titolo | Domanda o situazione | Risposta corretta | Messaggio didattico |
 |:--:|--------|----------------------|-------------------|---------------------|
-| 1 | Negroni IBA | Un cliente ordina un Negroni. Qual è la ricetta IBA corretta? | **1/3 Gin · 1/3 Vermouth Rosso · 1/3 Bitter Campari.** | Il Negroni è costruito su tre parti uguali e si serve nel tumbler basso con scorza d'arancia. |
-| 2 | Il Vermentino giusto | Il cliente ordina un Vermentino ligure. A quale temperatura lo servi? | **8–10 °C, in secchiello con ghiaccio e acqua.** | I bianchi giovani devono mantenere freschezza e profilo aromatico. |
-| 3 | Vino col pesce | Pesce con salsa un po' piccante: l'ospite chiede un vino che ci stia, niente di pesante. | **Un bianco fresco e locale, spiegando perché.** | Con il pesce si cerca un vino fresco e sapido, che accompagni senza coprire. |
-| 4 | Catena del freddo | Un vassoio di antipasti di pesce è rimasto a temperatura ambiente per 3 ore. | **Lo smaltisci: la catena del freddo è compromessa.** | Il rischio microbiologico non è visibile: la sicurezza alimentare viene prima del costo del prodotto. |
-| 5 | Il piatto freddo | Un cliente lamenta che il piatto è freddo. Come gestisci il reclamo? | **Ti scusi, ritiri il piatto, lo fai rifare subito e offri un gesto di cortesia.** | Il modello LEARN aiuta a trasformare un reclamo in un'occasione di fidelizzazione. |
-| 6 | Il prezzo del piatto | Un secondo costa 6 € di ingredienti. Cucina propone 12 € «per fare volume». | **Un prezzo che copre gli ingredienti e lascia margine.** | Volume a basso margine brucia il conto: listino e coperti devono stare insieme. |
-| 7 | Shakerato o stirred? | Devi preparare un Martini Cocktail con gin e vermouth secco. | **Stirred, nel mixing glass.** | I cocktail composti da distillati limpidi vengono mescolati per mantenere trasparenza e struttura. |
-| 8 | Allergia ai crostacei | Un cliente dichiara un'allergia ai crostacei. Qual è il tuo obbligo? | **Consultare la scheda allergeni e verificare la cross-contamination in cucina.** | La normativa richiede informazione sugli allergeni e attenzione anche alle contaminazioni indirette. |
-| BONUS | Mise en place | Hai 12 secondi per scegliere solo gli ingredienti corretti per il banco bar. | **Seleziona prodotti freschi e utili, evitando scaduti o rischiosi.** | Dietro al banco velocità e precisione devono convivere con la sicurezza. |
+| 1 | Dove apro? | Centro caro con passaggio, o periferia economica in crescita? | **Analizzo target, concorrenza e sostenibilità dell'affitto rispetto ai coperti previsti, poi decido.** | La location si sceglie con i numeri, non con l'istinto: quanti coperti servono per pagare l'affitto? |
+| 2 | Quanti coperti servono? | Prima di firmare l'affitto: quanti coperti al giorno per non andare in rosso? | **Calcolo i coperti per coprire affitto, staff e utenze, prima di firmare.** | Il break-even è il primo numero da conoscere: sotto quella soglia ogni giorno perde soldi. |
+| 3 | Il fornitore giusto | Carne più economica ma in ritardo, o +10% e sempre puntuale? | **Valuto prezzo, affidabilità delle consegne e qualità insieme.** | Un fornitore inaffidabile fa saltare il menu: il costo nascosto pesa più del 10%. |
+| 4 | Il menu che vende | Piatto amato a basso margine vs piatto meno scenografico ad alto margine. | **Metto in evidenza (grafica, posizione, nome) il piatto ad alto margine.** | Il menu è uno strumento di vendita: dove metti un piatto cambia quanto guadagni. |
+| 5 | Scontrino medio basso | Dopo un mese lo scontrino medio è sotto le attese. | **Guardo cosa si vende poco: bevande, dessert, extra al tavolo (upselling).** | Lo scontrino si alza sul mix di vendita, non solo alzando i prezzi. |
+| 6 | Doppie scorte in scadenza | Inventario: doppie scorte che scadono fra due giorni. Due risposte valide. | **Correggo il prossimo ordine sullo storico · OPPURE · promo last minute.** | La promo limita il danno, la correzione dell'ordine risolve la causa. |
+| 7 | Conti in rosso | Food cost 32% e personale 28% (in norma), ma il mese è in rosso. | **Controllo costi fissi (affitto, utenze) e coperti reali rispetto al minimo.** | I numeri vanno letti insieme: costi in linea non bastano se mancano i coperti. |
+| 8 | L'ultimo tavolo del sabato | Un tavolo, due gruppi nello stesso momento. Due risposte valide. | **Tavolo a chi ha chiamato per primo · OPPURE · orario alternativo spiegato.** | Precedenza cronologica o alternativa trasparente. Scegliere in base alla spesa è scorretto. |
+| BONUS | Mise en place | 12 secondi: solo ingredienti corretti al banco, niente scaduti o a rischio. | **Tocca i freschi e utili; evita scaduti e pericolosi (+25 / −15).** | Dietro al banco velocità e precisione stanno insieme. |
 
 ## Codice finale
 
@@ -59,27 +59,26 @@ Far capire il ruolo del **Food & Beverage Manager** nella gestione di bar e rist
 
 ## Esito
 
-- **Positivo:** *Servizio impeccabile: hai gestito bar, sala, sicurezza alimentare e conti senza abbassare la qualità.*
-- **Negativo:** *Servizio da rivedere: servono nuove verifiche su ricette, temperature, HACCP, allergeni e food cost.*
+- **Positivo:** *Progetto solido: hai ragionato da vero Food & Beverage Manager, con numeri, fornitori e menu sotto controllo.*
+- **Negativo:** *Il progetto traballa: location, conti e magazzino sono proprio ciò che si impara nel corso.*
 
 ## Competenze collegate
 
 <ul class="competenze-list">
-  <li>Mixology e cultura del bar</li>
-  <li>Sommellerie e servizio del vino</li>
-  <li>Abbinamento cibo-vino</li>
-  <li>HACCP e sicurezza alimentare</li>
-  <li>Normativa allergeni e cross-contamination</li>
-  <li>Gestione della sala e customer care</li>
-  <li>Food cost, pricing e marginalità</li>
-  <li>Gestione acquisti e magazzino</li>
-  <li>Menu engineering e carta dei drink</li>
-  <li>Organizzazione del servizio e lavoro in team</li>
-  <li>Valorizzazione dei prodotti liguri</li>
+  <li>Analisi di mercato e scelta della location</li>
+  <li>Business plan e break-even</li>
+  <li>Gestione acquisti e rapporto con i fornitori</li>
+  <li>Menu engineering</li>
+  <li>Scontrino medio, mix di vendita e upselling</li>
+  <li>Gestione del magazzino e riduzione degli sprechi</li>
+  <li>Controllo di gestione (food cost, personale, costi fissi)</li>
+  <li>Gestione delle prenotazioni e customer care</li>
+  <li>Organizzazione del servizio e operatività</li>
+  <li>Decisione rapida, problem solving e ragionamento sui numeri</li>
 </ul>
 
 ## Fonti
 
 - [Corso Food & Beverage Manager — ITS Turismo Liguria](https://www.itsturismoliguria.it/corso-food-beverage-manager/)
 
-<p><a class="iyf-btn iyf-btn--accent" href="{{ '/bar-academy/' | relative_url }}">Entra in Bar Academy</a></p>
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/bar-academy/' | relative_url }}">Apri il locale</a></p>

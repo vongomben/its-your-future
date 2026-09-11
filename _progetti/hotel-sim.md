@@ -16,8 +16,8 @@ descrizione_breve: "Gestisci un hotel tra RevPAR, pricing dinamico, OTA, overboo
 description: "Simulazione digitale per scoprire il lavoro dell'Hospitality & Revenue Manager attraverso otto decisioni professionali e una mini sfida finale di housekeeping."
 gioco_url: "/hotel-sim/"
 gioco_cta: "Entra in Hotel Sim"
-header_img: "/img/t-hotel-sim.png"
-header_alt: "Hotel Sim: Revenue, Service & Reputation Simulator"
+header_img: "/img/its-turismo/itsturismoliguria_header_HOTELsimulation.jpg"
+header_alt: "Hotel Simulation: RevPAR, camere e reputazione"
 ---
 
 <p><a class="iyf-btn iyf-btn--accent" href="{{ '/hotel-sim/' | relative_url }}">Entra in Hotel Sim</a></p>

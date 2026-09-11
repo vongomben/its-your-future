@@ -42,8 +42,8 @@ turismo:
   logo: "/img/logo_its_turismo_liguria.png"
   alt: "ITS Turismo Liguria"
   contatti_url: "https://www.itsturismoliguria.it/"
-  landing_img: "/img/t-crisis-room.png"
-  landing_alt: "Crisis Room — simulazione Event Management ITS Turismo"
+  landing_img: "/img/its-turismo/itsturismoliguria_header.jpg"
+  landing_alt: "Orientamento Interstellare — scopri i corsi ITS Turismo Liguria"
   landing_contain: true
   percorso_img: ""
   percorso_alt: "Mappa del percorso Turismo in stand"
