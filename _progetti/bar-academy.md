@@ -16,7 +16,7 @@ descrizione_breve: "Progetta l'apertura di un ristorante in 6 mesi: location, bu
 description: "Simulazione digitale per scoprire il lavoro del Food & Beverage Manager nell'apertura di un locale: otto decisioni professionali e una mini sfida finale di mise en place."
 gioco_url: "/bar-academy/"
 gioco_cta: "Apri il locale"
-header_img: "/img/its-turismo/itsturismoliguria_header_APRIiltuoLOCALE.jpg"
+header_img: "/img/its-turismo/itsturismoliguria_header_APRIiltuoLOCALE.webp"
 header_alt: "Apri il tuo locale: location, fornitori, menu e conti"
 ---
 
