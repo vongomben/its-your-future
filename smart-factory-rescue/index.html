@@ -191,6 +191,11 @@
   .report-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line);color:#c5d6e2;}
   .report-row:last-child{border-bottom:none;}
   .report-row span:last-child{color:var(--cyan);font-weight:600;}
+  .punteggio{margin:0 0 18px 0;}
+  .punteggio__label{color:var(--dim);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 4px 0;}
+  .punteggio__stelle{font-size:2.6rem;letter-spacing:0.08em;line-height:1;margin:0;}
+  .stella{color:var(--line);}
+  .stella--on{color:var(--cyan);}
   footer{max-width:760px;width:100%;text-align:center;color:var(--dimmer);font-size:0.68rem;padding:18px 20px 0 20px;}
   @media (max-width:520px){
     .card{padding:18px 16px;}
@@ -421,7 +426,7 @@ function renderStation(){
     });
   });
 
-  document.getElementById('confirmBtn').addEventListener('click', checkAnswer);
+  document.getElementById('confirmBtn').onclick = checkAnswer;
   updateHud();
 }
 
@@ -491,6 +496,23 @@ function formatTime(ms){
   return `${m}:${s.toString().padStart(2,'0')}`;
 }
 
+// Punteggio a stelle comune ai giochi IT'S YOUR FUTURE: soglie[i] = errori massimi per (5 - i) stelle.
+// 0 errori → 5, 1 → 4, 2–3 → 3, 4–5 → 2, 6+ → 1.
+const SOGLIE_STELLE = [0, 1, 3, 5];
+
+function calcolaStelle(errori){
+  const i = SOGLIE_STELLE.findIndex(max => errori <= max);
+  return i === -1 ? 1 : 5 - i;
+}
+
+function stelleHtml(stelle){
+  const stars = [1, 2, 3, 4, 5].map(i => `<span class="stella${i <= stelle ? ' stella--on' : ''}">★</span>`).join('');
+  return `<div class="punteggio" role="img" aria-label="${stelle} stelle su 5">
+      <p class="punteggio__label">Punteggio</p>
+      <p class="punteggio__stelle" aria-hidden="true">${stars}</p>
+    </div>`;
+}
+
 function renderSuccess(){
   statusPill.classList.add('ok');
   statusText.textContent = 'SISTEMA ONLINE';
@@ -500,6 +522,7 @@ function renderSuccess(){
       <div class="icon">✅</div>
       <h2>Missione completata</h2>
       <p class="lead">Il sistema IoT comunica, la dashboard riceve i dati e il robot può ripartire in sicurezza.</p>
+      ${stelleHtml(calcolaStelle(mistakes))}
       <div class="report">
         <div class="report-row"><span>Tempo impiegato</span><span>${formatTime(elapsed)}</span></div>
         <div class="report-row"><span>Tentativi errati</span><span>${mistakes}</span></div>

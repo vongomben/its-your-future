@@ -430,6 +430,44 @@ h2 {
   margin-top: 1rem;
 }
 
+.punteggio {
+  margin: 1.2rem 0 0.4rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px dashed rgba(246, 241, 232, 0.35);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.punteggio__label {
+  margin: 0 0 0.3rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aeb8c8;
+}
+
+.punteggio__stelle {
+  margin: 0;
+  font-size: clamp(2.2rem, 10vw, 3rem);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.stella {
+  color: rgba(246, 241, 232, 0.18);
+}
+
+.stella--on {
+  color: #f2b807;
+}
+
+.punteggio__dettaglio {
+  margin: 0.5rem 0 0;
+  color: #d7deea;
+  font-size: 0.92rem;
+}
+
 .end-sub {
   color: var(--card);
   font-size: 1.05rem;

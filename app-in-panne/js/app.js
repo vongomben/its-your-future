@@ -1,6 +1,9 @@
 (function () {
-  const APP_VERSION = "0.1.5";
+  const APP_VERSION = "0.1.6";
   const DURATION_MS = 5 * 60 * 1000;
+  // Punteggio a stelle comune ai giochi IT'S YOUR FUTURE: soglie[i] = errori massimi per (5 - i) stelle.
+  // 0 errori → 5, 1 → 4, 2–3 → 3, 4–5 → 2, 6+ → 1. A tempo scaduto non si superano le stazioni risolte.
+  const SOGLIE_STELLE = [0, 1, 3, 5];
   const stations = window.STATIONS;
   const storage = window.GameStorage;
 
@@ -27,6 +30,7 @@
     endTitle: document.getElementById("end-title"),
     endLead: document.getElementById("end-lead"),
     endList: document.getElementById("end-list"),
+    endScore: document.getElementById("end-score"),
   };
 
   let state = null;
@@ -46,8 +50,17 @@
       startedAt: null,
       finishedAt: null,
       outcome: null,
+      mistakes: 0,
       order: {},
     };
+  }
+
+  function calcolaStelle() {
+    const errori = state.mistakes || 0;
+    const i = SOGLIE_STELLE.findIndex((max) => errori <= max);
+    const stelle = i === -1 ? 1 : 5 - i;
+    if (state.outcome === "success") return stelle;
+    return Math.max(1, Math.min(stelle, state.completed.length));
   }
 
   function shuffle(list) {
@@ -341,6 +354,8 @@
     }
 
     if (!ok) {
+      state.mistakes = (state.mistakes || 0) + 1;
+      persist();
       setFeedback("fail", station.failMessage);
       return;
     }
@@ -372,6 +387,8 @@
     const result = {
       outcome,
       stationsCompleted: state.completed.slice(),
+      mistakes: state.mistakes || 0,
+      stars: calcolaStelle(),
       elapsedSeconds,
       remainingSeconds: Math.round(remainingMs() / 1000),
       startedAt: state.startedAt,
@@ -391,6 +408,7 @@
     el.endLead.textContent = ok
       ? "L’app per prenotare i laboratori è online, i dati sono in ordine e gli input vengono controllati. Hai fatto il giro da pulsante a cloud."
       : "La build non è partita in tempo. Niente panico: le stazioni restano, puoi riprovare e rivedere cosa fa ogni pezzo dell’app.";
+    renderScore();
     el.endList.innerHTML = "";
     const learned =
       state.learned.length > 0
@@ -407,6 +425,18 @@
       li.textContent = t;
       el.endList.appendChild(li);
     });
+  }
+
+  function renderScore() {
+    const stelle = calcolaStelle();
+    const errori = state.mistakes || 0;
+    el.endScore.setAttribute("aria-label", `${stelle} stelle su 5`);
+    el.endScore.querySelectorAll(".stella").forEach((s, i) => {
+      s.classList.toggle("stella--on", i < stelle);
+    });
+    el.endScore.querySelector(".punteggio__dettaglio").textContent =
+      `Stazioni risolte ${state.completed.length} di ${stations.length} · ` +
+      (errori === 0 ? "nessun errore" : `${errori} ${errori === 1 ? "errore" : "errori"}`);
   }
 
   function startTick() {
