@@ -2,7 +2,7 @@
 layout: default
 title: "Privacy"
 permalink: /privacy/
-description: "IT'S YOUR FUTURE non carica risorse da altri siti: font, stili e giochi restano su questo dominio, per lo stand e per la privacy."
+description: "IT'S YOUR FUTURE non usa analytics né cookie di profilazione. Font, stili e quasi tutti i giochi restano su questo dominio; le tre missioni Turismo sono ospitate su Lovable."
 ---
 
 <article class="iyf-privacy">
@@ -20,8 +20,10 @@ description: "IT'S YOUR FUTURE non carica risorse da altri siti: font, stili e g
   </ul>
   <p>Destinatari delle attività in stand sono studentesse e studenti in orientamento post diploma, famiglie e visitatori degli open day.</p>
 
-  <h2>Nessun collegamento esterno automatico</h2>
-  <p>Pagine e giochi si caricano solo da questo sito. Non usiamo analytics, pixel pubblicitari, cookie di profilazione, CDN di terze parti né servizi di monitoraggio. Il browser non scarica script, stili o immagini da altri domini per far funzionare il sito.</p>
+  <h2>Collegamenti esterni</h2>
+  <p>Non usiamo analytics, pixel pubblicitari, cookie di profilazione, CDN di terze parti né servizi di monitoraggio. Le pagine del sito e quasi tutti i giochi si caricano solo da questo dominio.</p>
+  <p>Fanno eccezione tre missioni del percorso ITS Turismo e Cultura: <strong>Crisis Room</strong>, <strong>Apri il tuo locale</strong> e <strong>Hotel Sim</strong>. Sono realizzate e ospitate sulla piattaforma <strong>Lovable</strong> e compaiono nel sito dentro un riquadro (iframe) che si carica da <code>itsyourfuture.lovable.app</code>. Quando apri una di queste pagine il tuo browser si collega a quel dominio, che riceve i dati tecnici di ogni connessione web (ad esempio indirizzo IP, tipo di browser, pagina richiesta). Per quei contenuti vale anche l’<a href="https://lovable.dev/privacy" target="_blank" rel="noopener">informativa privacy di Lovable</a>.</p>
+  <p>Le altre pagine del sito non contattano Lovable. Le tre missioni richiedono una connessione a internet.</p>
   <p>Nelle schede dei corsi possono comparire link alle pagine ufficiali delle scuole ITS (iscrizione, PDF, sito della scuola). Si aprono solo se li scegli tu: non partono richieste verso quei siti in automatico.</p>
 
   <h2>Font ospitati internamente</h2>
@@ -29,7 +31,7 @@ description: "IT'S YOUR FUTURE non carica risorse da altri siti: font, stili e g
   <p>Alcuni giochi usano i font di sistema del dispositivo, sempre senza scaricare nulla da fuori.</p>
 
   <h2>Dati sul dispositivo</h2>
-  <p>Le partite restano in memoria per la sessione. Non inviamo punteggi, nomi o risposte a un server. Se un gioco tiene un avanzamento in locale, resta solo sul tuo browser e non lascia il dispositivo.</p>
+  <p>Le partite dei giochi ospitati su questo sito restano in memoria per la sessione. Non inviamo punteggi, nomi o risposte a un server. Se un gioco tiene un avanzamento in locale, resta solo sul tuo browser e non lascia il dispositivo.</p>
 
   <p><a class="iyf-btn iyf-btn--outline" href="{{ '/' | relative_url }}">Torna alla home</a></p>
 </article>
