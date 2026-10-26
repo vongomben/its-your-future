@@ -14,7 +14,11 @@ corso_id: logistica
 corso_url: "https://www.itslaspezia.it/i_nostri_corsi/dettaglio-cat-1__corso_tecnico_superiore_per_la_strategia_commerciale___marketing_logistico_e_gestione_pratiche_doganali_40.html"
 descrizione_breve: "Gestisci una spedizione internazionale urgente: mercato, trasporto intermodale, dogana, tracciabilità e KPI."
 description: "Dalla strategia commerciale alla consegna doganale: supply chain, logistica intermodale e relazione con il cliente."
+gioco_url: "/supply-chain-mission/"
+gioco_cta: "Parti con il container"
 ---
+
+<p><a class="iyf-btn iyf-btn--accent" href="{{ '/supply-chain-mission/' | relative_url }}">Parti con il container</a></p>
 
 ## Obiettivo
 
@@ -27,7 +31,7 @@ Far capire il ruolo del tecnico superiore nella gestione integrata di strategia 
 ## Materiali
 
 - **Versione fisica:** schede prova, mappa semplificata dei trasporti, tabella risorse/tempi, finti documenti doganali, card TARIC/Incoterms, QR finale.
-- **Versione digitale:** Google Form, Genially, dashboard con tracking, WMS/TMS simulato, foglio KPI.
+- **Versione digitale:** gioco web *Supply Chain Mission*; in alternativa Google Form, Genially o quiz su smartphone.
 
 ## Prove dell'attività
 
