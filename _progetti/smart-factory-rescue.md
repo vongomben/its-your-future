@@ -16,6 +16,8 @@ descrizione_breve: "Il sistema IoT ha smesso di inviare dati al cloud: ricostrui
 description: "Riattiva una smart factory: sensori, IoT industriale, cybersecurity OT e robotica."
 gioco_url: "/smart-factory-rescue/"
 gioco_cta: "Riattiva il sistema IoT"
+header_img: "/img/d-smart-factory-rescue.webp"
+header_alt: "Tre tecnici in sala controllo indicano un allarme su un monitor; oltre il vetro, bracci robotici e navette."
 ---
 
 <p><a class="iyf-btn iyf-btn--accent" href="{{ '/smart-factory-rescue/' | relative_url }}">Riattiva il sistema IoT</a></p>

@@ -16,6 +16,8 @@ descrizione_breve: "Un'app web per prenotare laboratori smette di funzionare: ri
 description: "Simulazione full-stack: correzione delle scelte tecniche prima del rilascio in produzione."
 gioco_url: "/app-in-panne/"
 gioco_cta: "Sistema l'app"
+header_img: "/img/d-app-in-panne.webp"
+header_alt: "Tre sviluppatori in un open space, attorno a un tavolo con monitor, tastiere e una tavoletta grafica."
 ---
 
 <p><a class="iyf-btn iyf-btn--accent" href="{{ '/app-in-panne/' | relative_url }}">Sistema l'app</a></p>
