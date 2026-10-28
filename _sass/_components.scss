@@ -278,12 +278,6 @@
     background: #0b1c2c;
   }
 
-  &__brand {
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.65rem;
-    border-bottom: 1px solid $border;
-  }
-
   &:hover {
     transform: translateY(-3px);
     box-shadow: $shadow-hover;
